@@ -10,7 +10,7 @@ html,body{
 }
 
 header{
-    background: rgba(107, 201, 230, 0.548);
+    background: rgba(213, 232, 212, 1);
     height: 60px;
    
 }
@@ -177,14 +177,14 @@ header ul li a:hover{
 .footer{
     background: #005255;
     color: #062325;
-    height: 120px;
+    height: 100px;
     position: relative;
     
 }
 
 .footer .footer-content{
     /* border: 1px solid rgb(248, 9, 9); */
-    height: 100px;
+    height: 60px;
     display: flex;
 }
 
@@ -206,13 +206,14 @@ header ul li a:hover{
 .footer .footer-bottom{
     background: #0b2829;
     color: #d4e3e4;
-    height: 50px;
+    height: 40px;
     width: 100%;
     text-align: center;
     position: absolute;
     bottom: 0px;
     left: 0px;
     padding-top: 20px;
+    
 }
 
 /*Media queries*/
