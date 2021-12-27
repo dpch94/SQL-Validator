@@ -39,13 +39,34 @@
         </ul>
     </header>
 
+
     <div class="page-wrapper">
-        <div class="content clearfix">
-            <div class="main-content">
-                <h1 class="post-title">This is the title of the post</h1>
-            </div>
+        <div class="post-content">
+            <form action="createpost.html" method="post">
+                <h2 class="createpost-title">Create Post</h2>
+    
+                <!-- <div class="msg">
+                    <li>Subject required</li>
+                </div> -->
+    
+                <div>
+                    <label>Subject</label>
+                    <input type="text" name="subject" class="text-input">
+                </div>
+                <div>
+                    <label>Description</label>
+                    <input type="text" name="description" class="createpost-input">
+                </div>
+                
+                <div>
+                    <button type="submit" name="addpost-btn"class="btn btn-post">Submit</button>
+                </div>
+                
+            </form>
         </div>
     </div>
+
+    
     <!-- footer -->
     <div class="footer">
         <div class="footer-content">

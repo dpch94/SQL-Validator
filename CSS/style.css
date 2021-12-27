@@ -72,7 +72,7 @@ a{
 
 .btn{
     padding: .5rem 1rem;
-    background: #005255;
+    background: #737475;
     color: white;
     border: 1px solid transparent;
     border-radius: .25rem;
@@ -212,6 +212,13 @@ header ul li a:hover{
     line-height: 1.3rem;
 }
 
+.btn-post{
+    margin-top: 5px;
+    padding: .7rem 1.3rem;
+    line-height: 1.3rem;
+    
+}
+
 .text-input{
     outline: none;
     font-size: 1.2em;
@@ -222,7 +229,23 @@ header ul li a:hover{
     line-height: 1.5rem;
     color: #444;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 }
+
+
+.createpost-input{
+    
+    outline: none;
+    font-size: 1.2em;
+    padding: .7rem 2rem;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    line-height: 10.5rem;
+    color: #444;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 
 .auth-content{
     width: 30%;
@@ -230,6 +253,16 @@ header ul li a:hover{
     padding: 20px;
     background: white;
     border-radius: 5px;
+    
+}
+
+.post-content{
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    float: left;
 }
 
 .auth-content .form-title{
@@ -238,6 +271,7 @@ header ul li a:hover{
 
 .auth-content form div{
     margin-bottom: 10px;
+    
 
 }
 
