@@ -45,7 +45,7 @@
         <div class="create">
             <div class="create-post">
                 <!-- <h1 class="create-post-text">Create Post</h1> -->
-                <h1><a href="createpost.html">Create Post</a></h1>
+                <h1><a href="createpost.php">Create Post</a></h1>
             </div>
         </div>
     </div>

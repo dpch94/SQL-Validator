@@ -49,7 +49,7 @@
     <div class="page-wrapper">
         <div class="post-content">
             <form method="POST">
-                <h2 class="createpost-title">Create Post</h2>
+                
     
                 <!-- <div class="msg">
                     <li>Subject required</li>
@@ -65,7 +65,7 @@
                 </div>
                 
                 <div>
-                    <button type="submit" name="addpost-btn"class="btn btn-post">Submit</button>
+                    <button type="submit" name="add_post" class="btn btn-post">Submit</button>
                 </div>
                 
             </form>
