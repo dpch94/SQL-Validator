@@ -1,3 +1,9 @@
+<?php
+
+    include "logic.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
     <link rel ="stylesheet" href="css/style.css">
-    <title>Blog and Learn</title>
+    <title>createpost</title>
 </head>
 
 <body>
@@ -25,58 +31,48 @@
             <li><a href="#">Documents</a></li>
             <li><a href="#">Tutorial</a></li>
             <li><a href="#">Download</a></li>
-            <li><a href="#">GoogleDrive</a></li>
-            <li><a href="#">Zoom</a></li>
-            <li><a href="#">GitHub</a></li>
             <li><a href="#"><i class="fas fa-search"></i></a></li>            
-            
+            <li>
+                <a href="#">
+                    UsefulLinks
+                    <i class="fa fa-chevron-down"></i>
+                </a>
+                <ul style="left: 0px;">
+                    <li><a href="#">GoogleDrive</a></li>
+                    <li><a href="#">Zoom</a></li>
+                    <li><a href="#">Github</a></li>
+                </ul>
         </ul>
     </header>
 
-    
+
     <div class="page-wrapper">
-        <div class="create">
-            <div class="create-post">
-                <!-- <h1 class="create-post-text">Create Post</h1> -->
-                <h1><a href="createpost.html">Create Post</a></h1>
-            </div>
-        </div>   
-        <div class="content clearfix">
-            <div class="main-content">
-                <h1 class="recent-post-title">Recent Posts</h1>
-                
-                <div class="post">
-                    <div class="post-preview">
-                        <h2><a href="single.html">Database Model and Database schema</a></h2>
-                        <p class="preview-text">
-                            it is the most confusing asuasof
-                        </p>
-                        <a href="single.html" class="btn read-more">Read More</a>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="post-preview">
-                        <h2><a href="single.html">Types of TensorFlow callbacks</a></h2>
-                        <p class="preview-text">
-                            it is the most confusing asuasof
-                        </p>
-                        <a href="single.html" class="btn read-more">Read More</a>
-                    </div>
-                </div>
-                <div class="post">
-                    <div class="post-preview">
-                        <h2><a href="single.html">Machine Learning logistic regression</a></h2>
-                        <p class="preview-text">
-                            it is the most confusing asuasof
-                        </p>
-                        <a href="single.html" class="btn read-more">Read More</a>
-                    </div>
-                </div>
+        <div class="post-content">
+            <form method="POST">
+                <h2 class="createpost-title">Create Post</h2>
     
-            </div>
+                <!-- <div class="msg">
+                    <li>Subject required</li>
+                </div> -->
+    
+                <div>
+                    <label>Subject</label>
+                    <input type="text" name="subject" class="text-input">
+                </div>
+                <div>
+                    <label>Description</label>
+                    <input type="text" name="description" class="createpost-input">
+                </div>
+                
+                <div>
+                    <button type="submit" name="addpost-btn"class="btn btn-post">Submit</button>
+                </div>
+                
+            </form>
         </div>
     </div>
 
+    
     <!-- footer -->
     <div class="footer">
         <div class="footer-content">
@@ -93,11 +89,16 @@
             Blog Developed by Team 3
         </div>
     </div>
+
     <!-- //footer -->
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="js/scripts.js"></script>
+
+    
 
 </body>
 </html>
