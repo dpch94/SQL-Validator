@@ -1,3 +1,10 @@
+<?php
+
+    include "logic.php";
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
     <link rel ="stylesheet" href="css/style.css">
-    <title>singlecreatepost</title>
+    <title>Blog and Learn</title>
 </head>
 
 <body>
@@ -28,17 +35,35 @@
             <li><a href="#">GoogleDrive</a></li>
             <li><a href="#">Zoom</a></li>
             <li><a href="#">GitHub</a></li>
-            <li><a href="#"><i class="fas fa-search"></i></a></li>
+            <li><a href="#"><i class="fas fa-search"></i></a></li>            
+            
         </ul>
     </header>
 
+    
     <div class="page-wrapper">
-        <div class="content clearfix">
-            <div class="main-content">
-                <!-- <h1 class="post-title">This is the title of the post</h1> -->
+        <div class="create">
+            <div class="create-post">
+                <!-- <h1 class="create-post-text">Create Post</h1> -->
+                <h1><a href="createpost.html">Create Post</a></h1>
             </div>
         </div>
     </div>
+    <!-- Display posts from database -->
+    <div class="row">
+            <?php foreach($query as $q){ ?>
+                <div class="col-12 col-lg-4 d-flex justify-content-center">
+                    <div class="card text-white bg-dark mt-5" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $q['subject'];?></h5>
+                            <p class="card-text"><?php echo substr($q['description'], 0, 50);?>...</p>
+                            <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-danger">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+            <?php }?>
+        </div>
+
     <!-- footer -->
     <div class="footer">
         <div class="footer-content">
@@ -55,19 +80,11 @@
             Blog Developed by Team 3
         </div>
     </div>
-
-
-    <!-- footer -->
-
     <!-- //footer -->
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="js/scripts.js"></script>
-
-    
 
 </body>
 </html>
