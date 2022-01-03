@@ -16,7 +16,7 @@
     $query = mysqli_query($conn, $sql);
 
     // Create a new post
-    if(isset($_REQUEST['new_post'])){
+    if(isset($_REQUEST['add_post'])){
         $subject = $_REQUEST['subject'];
         $description = $_REQUEST['description'];
 
