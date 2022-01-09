@@ -27,7 +27,7 @@
         </div>
         <i class="fa fa-bars menu-toggle"></i>
         <ul class="nav" align-content: center;>
-            <li><a href="#">Home</a></li> 
+            <li><a href="index.php">Home</a></li> 
             <li><a href="#">Documents</a></li>
             <li><a href="#">Tutorial</a></li>
             <li><a href="#">Download</a></li>
@@ -74,6 +74,7 @@
 
     
     <!-- footer -->
+    <!--
     <div class="footer">
         <div class="footer-content">
             <div class="footer-section about">
@@ -89,7 +90,7 @@
             Blog Developed by Team 3
         </div>
     </div>
-
+            -->
     <!-- //footer -->
 
 

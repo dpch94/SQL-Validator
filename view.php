@@ -26,7 +26,7 @@ include "logic.php";
     </div>
     <i class="fa fa-bars menu-toggle"></i>
     <ul class="nav" align-content: center;>
-        <li><a href="#">Home</a></li> 
+        <li><a href="index.php">Home</a></li> 
         <li><a href="#">Documents</a></li>
         <li><a href="#">Tutorial</a></li>
         <li><a href="#">Download</a></li>
@@ -52,37 +52,43 @@ include "logic.php";
                 <h1><?php echo $q['subject'];?></h1>
 
                 <div class="d-flex mt-2 justify-content-center align-items-center">
-                    <a href="edit.php?id=<?php echo $q['id']?>" class="btn btn-light btn-sm" name="edit">Edit</a>
+                    
                     <form method="POST">
                         <input type="text" hidden value='<?php echo $q['id']?>' name="id">
                         <button class="btn btn-danger btn-sm ml-2" name="delete">Delete</button>
+
+                        
                     </form>
                 </div>
 
             </div>
             <p class="mt-5 border-left border-dark pl-3"><?php echo $q['description'];?></p>
         <?php } ?>    
-
-        <a href="index.php" class="btn btn-outline-dark my-3">Go Home</a>
+        
+        <!-- <a href="index.php" class="btn btn-outline-dark my-3">Go Home</a> -->
+        <a href="edit.php?id=<?php echo $q['id']?>" class="btn btn-outline-dark my-3" name="edit">Edit</a>
+        
    </div>
 
 
 <!-- footer -->
-<div class="footer">
-    <div class="footer-content">
-        <div class="footer-section about">
-            <h2 class="logo-text">Learn and Blog</h2>
+    <!--
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2 class="logo-text">Learn and Blog</h2>
 
+            </div>
+            <div class="footer-section contact-form" >
+                <h2>Contact us   <i class="fas fa-envelope"></i>   team03@gmail.com   </h2>                
+            </div>
         </div>
-        <div class="footer-section contact-form" >
-            <h2>Contact us   <i class="fas fa-envelope"></i>   team03@gmail.com   </h2>                
+
+        <div class="footer-bottom">
+            Blog Developed by Team 3
         </div>
     </div>
-
-    <div class="footer-bottom">
-        Blog Developed by Team 3
-    </div>
-</div>
+            -->
 
 <!-- //footer -->
 

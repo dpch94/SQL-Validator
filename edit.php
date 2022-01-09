@@ -26,7 +26,7 @@ include "logic.php";
     </div>
     <i class="fa fa-bars menu-toggle"></i>
     <ul class="nav" align-content: center;>
-        <li><a href="#">Home</a></li> 
+        <li><a href="index.php">Home</a></li> 
         <li><a href="#">Documents</a></li>
         <li><a href="#">Tutorial</a></li>
         <li><a href="#">Download</a></li>
@@ -65,22 +65,25 @@ include "logic.php";
 </div>
 
 
+
 <!-- footer -->
-<div class="footer">
-    <div class="footer-content">
-        <div class="footer-section about">
-            <h2 class="logo-text">Learn and Blog</h2>
+    <!--
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2 class="logo-text">Learn and Blog</h2>
 
+            </div>
+            <div class="footer-section contact-form" >
+                <h2>Contact us   <i class="fas fa-envelope"></i>   team03@gmail.com   </h2>                
+            </div>
         </div>
-        <div class="footer-section contact-form" >
-            <h2>Contact us   <i class="fas fa-envelope"></i>   team03@gmail.com   </h2>                
+
+        <div class="footer-bottom">
+            Blog Developed by Team 3
         </div>
     </div>
-
-    <div class="footer-bottom">
-        Blog Developed by Team 3
-    </div>
-</div>
+            -->
 
 <!-- //footer -->
 

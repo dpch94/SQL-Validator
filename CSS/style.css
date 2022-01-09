@@ -240,8 +240,9 @@ header ul li a:hover{
     padding: .7rem 2rem;
     display: block;
     width: 100%;
+    margin: auto;
     border-radius: 5px;
-    line-height: 10.5rem;
+    line-height: 5rem;
     color: #444;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -257,7 +258,7 @@ header ul li a:hover{
 }
 
 .post-content{
-    width: 70%;
+    width: 100%;
     margin: auto;
     padding: 20px;
     background: rgb(255, 255, 255);

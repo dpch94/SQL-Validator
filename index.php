@@ -28,7 +28,7 @@
         </div>
         <i class="fa fa-bars menu-toggle"></i>
         <ul class="nav" align-content: center;>
-            <li><a href="#">Home</a></li> 
+            <li><a href="index.php">Home</a></li> 
             <li><a href="#">Documents</a></li>
             <li><a href="#">Tutorial</a></li>
             <li><a href="#">Download</a></li>
@@ -76,6 +76,7 @@
         </div>
 
     <!-- footer -->
+    <!--
     <div class="footer">
         <div class="footer-content">
             <div class="footer-section about">
@@ -91,6 +92,7 @@
             Blog Developed by Team 3
         </div>
     </div>
+            -->
     <!-- //footer -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
