@@ -21,28 +21,22 @@ include "logic.php";
 
 <body>
 <header>
-    <div class="logo">
-        <h1 class="logo-text"style="text-align:center">Blog and Learn</h1>
-    </div>
-    <i class="fa fa-bars menu-toggle"></i>
-    <ul class="nav" align-content: center;>
-        <li><a href="index.php">Home</a></li> 
-        <li><a href="#">Documents</a></li>
-        <li><a href="#">Tutorial</a></li>
-        <li><a href="#">Download</a></li>
-        <li><a href="#"><i class="fas fa-search"></i></a></li>            
-        <li>
-            <a href="#">
-                UsefulLinks
-                <i class="fa fa-chevron-down"></i>
-            </a>
-            <ul style="left: 0px;">
-                <li><a href="#">GoogleDrive</a></li>
-                <li><a href="#">Zoom</a></li>
-                <li><a href="#">Github</a></li>
-            </ul>
-    </ul>
-</header>
+        <div class="logo">
+            <h1 class="logo-text"style="text-align:center">Blog and Learn</h1>
+        </div>
+        <i class="fa fa-bars menu-toggle"></i>
+        <ul class="nav" align-content: center;>
+            <li><a href="index.php">Home</a></li> 
+            <li><a href="#">Documents</a></li>
+            <li><a href="#">Tutorial</a></li>
+            <li><a href="#">Download</a></li>
+            <li><a href="#">GoogleDrive</a></li>
+            <li><a href="#">Zoom</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#"><i class="fas fa-search"></i></a></li>            
+            
+        </ul>
+    </header>
 
 
     <div class="container mt-5">
