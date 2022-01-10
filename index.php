@@ -40,40 +40,48 @@
         </ul>
     </header>
 
-    <div class="container mt-5">
+        <div class="container mt-5">
 
-        <!-- Display any info -->
-        <?php if(isset($_REQUEST['info'])){ ?>
-            <?php if($_REQUEST['info'] == "added"){?>
-                <div class="alert alert-success" role="alert">
-                    Post has been added successfully
-                </div>
+            <!-- Display any info -->
+            <?php if(isset($_REQUEST['info'])){?>
+                <?php if($_REQUEST['info'] == "added"){?>
+                    <div class="alert alert-success" role="alert">
+                        Post has been added successfully
+                    </div>
+                <?php }else if ($_REQUEST['info'] == "updated"){ ?>
+                    <div class="alert alert-success" role="alert">
+                        Post has been edited successfully
+                    </div>
+                <?php }else if ($_REQUEST['info'] == "deleted"){ ?>
+                    <div class="alert alert-caution" role="alert">
+                        Post has been deleted successfully
+                    </div>
+                <?php }?>      
             <?php }?>
-        <?php } ?>
 
-     <!-- Create Post button -->
-    <div class="page-wrapper">
-        <div class="create">
-            <div class="create-post">
-                <!-- <h1 class="create-post-text">Create Post</h1> -->
-                <h1><a href="createpost.php">Create Post</a></h1>
+        <!-- Create Post button -->
+        <div class="page-wrapper">
+            <div class="create">
+                <div class="create-post">
+                    <!-- <h1 class="create-post-text">Create Post</h1> -->
+                    <h1><a href="createpost.php">Create Post</a></h1>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Display posts from database -->
-    <div class="row">
-            <?php foreach($query as $q){ ?>
-                <div class="col-12 col-lg-4 d-flex justify-content-center">
-                    <div class="card text-white bg-dark mt-5" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $q['subject'];?></h5>
-                            <p class="card-text"><?php echo substr($q['description'], 0, 50);?>...</p>
-                            <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-danger">&rarr;</span></a>
+        <!-- Display posts from database -->
+        <div class="row">
+                <?php foreach($query as $q){ ?>
+                    <div class="col-12 col-lg-4 d-flex justify-content-center">
+                        <div class="card text-white bg-dark mt-5" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $q['subject'];?></h5>
+                                <p class="card-text"><?php echo substr($q['description'], 0, 50);?>...</p>
+                                <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-danger">&rarr;</span></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <?php }?>
-        </div>
+                <?php }?>
+            </div>
 
     <!-- footer -->
     <!--

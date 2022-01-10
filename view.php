@@ -45,28 +45,29 @@ include "logic.php";
 </header>
 
 
-<div class="container mt-5">
+    <div class="container mt-5">
 
-        <?php foreach($query as $q){?>
-            <div class="bg-dark p-5 rounded-lg text-white text-center">
-                <h1><?php echo $q['subject'];?></h1>
+            <?php foreach($query as $q){?>
+                <div class="bg-dark p-5 rounded-lg text-white text-center">
+                    <h1><?php echo $q['subject'];?></h1>
 
-                <div class="d-flex mt-2 justify-content-center align-items-center">
-                    
-                    <form method="POST">
-                        <input type="text" hidden value='<?php echo $q['id']?>' name="id">
-                        <button class="btn btn-danger btn-sm ml-2" name="delete">Delete</button>
-
+                    <div>
+                        <a href="edit.php?id=<?php echo $q['id']?>" class="btn btn-outline-dark my-3" name="edit">Edit</a>
                         
-                    </form>
-                </div>
+                        <form method="POST">
+                            <input type="text" hidden value='<?php echo $q['id']?>' name="id">
+                            <button class="btn btn-danger btn-sm ml-2" name="delete">Delete</button>
 
-            </div>
-            <p class="mt-5 border-left border-dark pl-3"><?php echo $q['description'];?></p>
-        <?php } ?>    
+                            
+                        </form>
+                    </div>
+
+                </div>
+                <p class="mt-5 border-left border-dark pl-3"><?php echo $q['description'];?></p>
+            <?php } ?>    
         
-        <!-- <a href="index.php" class="btn btn-outline-dark my-3">Go Home</a> -->
-        <a href="edit.php?id=<?php echo $q['id']?>" class="btn btn-outline-dark my-3" name="edit">Edit</a>
+        
+        
         
    </div>
 

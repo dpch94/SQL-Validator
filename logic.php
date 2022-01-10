@@ -43,7 +43,7 @@
         $sql = "DELETE FROM data WHERE id = $id";
         mysqli_query($conn, $sql);
 
-        header("Location: index.php");
+        header("Location: index.php?info=deleted");
         exit();
     }
 
@@ -56,7 +56,7 @@
         $sql = "UPDATE data SET subject = '$subject', description = '$description' WHERE id = $id";
         mysqli_query($conn, $sql);
 
-        header("Location: index.php");
+        header("Location: index.php?info=updated");
         exit();
     }
 

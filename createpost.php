@@ -46,31 +46,31 @@
     </header>
 
 
-    <div class="page-wrapper">
-        <div class="post-content">
-            <form method="POST">
-                
-    
-                <!-- <div class="msg">
-                    <li>Subject required</li>
-                </div> -->
-    
-                <div>
-                    <label>Subject</label>
-                    <input type="text" name="subject" class="text-input">
-                </div>
-                <div>
-                    <label>Description</label>
-                    <input type="text" name="description" class="createpost-input">
-                </div>
-                
-                <div>
-                    <button type="submit" name="add_post" class="btn-post">Submit</button>
-                </div>
-                
-            </form>
+        <div class="page-wrapper">
+            <div class="post-content">
+                <form method="POST">
+                    
+        
+                    <!-- <div class="msg">
+                        <li>Subject required</li>
+                    </div> -->
+        
+                    <div>
+                        <label>Subject</label>
+                        <input type="text" name="subject" class="text-input">
+                    </div>
+                    <div>
+                        <label>Description</label>
+                        <input type="text" name="description" class="createpost-input">
+                    </div>
+                    
+                    <div>
+                        <button type="submit" name="add_post" class="btn-post">Submit</button>
+                    </div>
+                    
+                </form>
+            </div>
         </div>
-    </div>
 
     
     <!-- footer -->

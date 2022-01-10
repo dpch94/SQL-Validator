@@ -24,7 +24,7 @@ include "logic.php";
     <div class="logo">
         <h1 class="logo-text"style="text-align:center">Blog and Learn</h1>
     </div>
-    <i class="fa fa-bars menu-toggle"></i>
+    <!-- <i class="fa fa-bars menu-toggle"></i>
     <ul class="nav" align-content: center;>
         <li><a href="index.php">Home</a></li> 
         <li><a href="#">Documents</a></li>
@@ -41,28 +41,54 @@ include "logic.php";
                 <li><a href="#">Zoom</a></li>
                 <li><a href="#">Github</a></li>
             </ul>
-    </ul>
+    </ul>      -->
+    <style>
+        form {
+        width:100%;
+        height:450px;
+        margin:auto;
+        position:relative;
+        }
+        
+        input {
+        width:100%;
+        height: 30px;
+        }
+    </style>
 </header>
+    <div class="container mt-5">
+
+        <?php foreach($query as $q){?>
+            <form method="GET">
+                <input type="text" hidden name="id" value="<?php echo $q['id'];?>">
+                <input type="text" name="subject" placeholder="Blog Subject" class="form-control bg-dark text-white my-3 text-center"
+                value="<?php echo $q['subject']?>">
+                <textarea name="description" class="form-control bg-dark text-white my-3"><?php echo $q['description']?></textarea>
+                <!-- <textarea name="description" class="form"><?php echo $q['description']?></textarea> -->
+                <button name="update" class="btn btn-dark">Update</button>
+            </form>
+        <?php }?> 
+    </div>              
 
 
-<div class="page-wrapper">
+<!-- <div class="page-wrapper">
     <div class="EDIT-content">
         <form method="POST">
-        <input type="text" hidden value='<?php echo $q['id']?>' name="id">
-        <input type="text" placeholder="Blog Title" class="text-input" name="subject" value="<?php echo $q['subject']?>">
-        <textarea name="content" class="createpost-input" cols="30" rows="10"><?php echo $q['description']?></textarea>
+            <input type="text" hidden value='<?php echo $q['id']?>' name="id">
+            <input type="text" placeholder="Blog Title" class="text-input" name="subject" value="<?php echo $q['subject']?>">
+            <textarea name="description" class="createpost-input" cols="30" rows="10"><?php echo $q['description']?></textarea>
 
             <!-- <div class="msg">
                 <li>Subject required</li>
             </div> -->
 
-            <div>
+            <!-- <div>
                 <button type="update" name="update"class="btn btn-edit">Update</button>
             </div>
             
         </form>
     </div>
-</div>
+</div> -->
 
 
 
