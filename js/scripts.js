@@ -5,3 +5,9 @@ $(document).ready(function(){
         $('.nav ul li ul').toggleClass('showing');
     });
 });
+
+const downloadaspdf = document.querySelector(".download-btn");
+
+downloadaspdf.addEventListener("click", () => {
+  window.print();
+});
