@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<header>
+    <header>
         <div class="logo">
             <h1 class="logo-text"style="text-align:center">Blog and Learn</h1>
         </div>
@@ -42,26 +42,25 @@
 
         <div class="page-wrapper">
             <div class="post-content">
-                <form method="POST">
-                    
-        
+                <form method="POST">        
                     <!-- <div class="msg">
                         <li>Subject required</li>
-                    </div> -->
-        
+                    </div> -->        
                     <div>
-                        <label>Subject</label>
+                        <h1>Subject</h1>
                         <input type="text" name="subject" class="textsubject-input" style="margin:30px 2px;" >
                     </div>
                     <div>
-                        <label>Description</label>
-                        <input type="text" name="description" class="createpost-input" style="margin:30px 2px; ">
+                        <h2>Description</h2>
+                        <!-- <input type="text" name="description" class="createpost-input" style="margin:30px 2px; "> -->
                     </div>
-                    
+                    <div> 
+                    <!-- <label>Description</label>                        -->
+                        <textarea  name="description" class="form-control bg-dark text-white my-3" style="margin:30px 2px; border-radius: 5px; width:60%; height: 150px; font-size: 1.3em;"></textarea>                        
+                    </div>                    
                     <div>
                         <button type="submit" name="add_post" class="btn-post">Submit</button>
-                    </div>
-                    
+                    </div>                    
                 </form>
             </div>
         </div>
