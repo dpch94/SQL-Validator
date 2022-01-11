@@ -65,27 +65,29 @@
                 <div class="create-post">
                     <!-- <h1 class="create-post-text">Create Post</h1> -->
                     <h1><a href="createpost.php">Create Post</a></h1>
-                </div>
+                </div>                
             </div>
-        </div>
+            <div style="margin:60px 30px;">
+                <h1>Recent Posts</h1>                
+            </div>
         <!-- Display posts from database -->
-        <div class="row">
+            <div class="row">
                 <?php foreach($query as $q){ ?>
-                    <div class="col-12 col-lg-4 d-flex justify-content-center">
-                        <div class="card text-white bg-dark mt-5" style="width: 18rem;">
+                    <div class="col-12 col-lg-4 d-flex justify-content-center">                    
+                        <div class="card text-white bg-dark mt-5" style=" border:1px solid #005255; margin:30px; width: 50%; line-height: 2rem; border-radius: 15px;">                                                
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $q['subject'];?></h5>
-                                <p class="card-text"><?php echo substr($q['description'], 0, 50);?>...</p>
+                                <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['subject'];?></h5>
+                                <p class="card-text" style="padding:5px;"><?php echo substr($q['description'], 0, 50);?>...</p>
                                 <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-danger">&rarr;</span></a>
                             </div>
                         </div>
                     </div>
                 <?php }?>
             </div>
-
+        </div>
     <!-- footer -->
-    <!--
-    <div class="footer">
+    
+    <!-- <div class="footer">
         <div class="footer-content">
             <div class="footer-section about">
                 <h2 class="logo-text">Learn and Blog</h2>
@@ -99,8 +101,8 @@
         <div class="footer-bottom">
             Blog Developed by Team 3
         </div>
-    </div>
-            -->
+    </div> -->
+           
     <!-- //footer -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

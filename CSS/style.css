@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    
 }
 html,body{
     height: 100%;
@@ -138,9 +139,9 @@ header ul li a:hover{
 .page-wrapper{
     min-height: 100%;
 }
-/* .content {
+.card-body {
     min-height: 100%;
-} */
+}
 .create{
     margin-top: 120px;
     background: rgb(163, 163, 168);
@@ -225,6 +226,7 @@ header ul li a:hover{
     padding: .7rem 1rem;
     display: block;
     width: 100%;
+    word-wrap: break-word;
     border-radius: 5px;
     line-height: 1.5rem;
     color: #444;
@@ -232,16 +234,44 @@ header ul li a:hover{
     
 }
 
+.textsubject-input{
+    
+    border: 1px solid #000000;
+    
+    
+    font-size: 1.2em;
+    padding: .7rem 1rem;
+    display: block;
+    width: 80%;
+    word-wrap: break-word;
+    inline-size: 550px;
+    overflow-wrap: break-word;
+    hyphens: manual;
+    border-radius: 5px;
+    
+    color: #444;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+/* .textsubject-input {
+    inline-size: 550px;
+    overflow-wrap: break-word;
+    hyphens: manual;
+} */
+
+
+    
 
 .createpost-input{
-    
+    word-wrap: break-word;
     outline: none;
     font-size: 1.2em;
     padding: .7rem 2rem;
     display: block;
-    width: 100%;
+    width: 80%;
     margin: auto;
-    border-radius: 5px;
+    border-radius: 10px;
     line-height: 5rem;
     color: #444;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -329,6 +359,10 @@ form{
     left: 0px;
     padding-top: 20px;
     
+}
+
+.postcontentwer .card-body{
+    border: 1px solid red;
 }
 
 /*Media queries*/

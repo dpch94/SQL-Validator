@@ -51,11 +51,11 @@
         
                     <div>
                         <label>Subject</label>
-                        <input type="text" name="subject" class="text-input">
+                        <input type="text" name="subject" class="textsubject-input" style="margin:30px 2px;" >
                     </div>
                     <div>
                         <label>Description</label>
-                        <input type="text" name="description" class="createpost-input">
+                        <input type="text" name="description" class="createpost-input" style="margin:30px 2px; ">
                     </div>
                     
                     <div>

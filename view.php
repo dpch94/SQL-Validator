@@ -38,36 +38,27 @@ include "logic.php";
         </ul>
     </header>
 
-
-    <div class="container mt-5">
-
+    <div class="page-wrapper">
+        <div class="container mt-5">
             <?php foreach($query as $q){?>
-                <div class="bg-dark p-5 rounded-lg text-white text-center">
+                <div class="bg-dark p-5 rounded-lg text-white text-center" style="border:1px solid white; margin:70px 40px; position:relative; width:80%;">
                     <h1><?php echo $q['subject'];?></h1>
-
                     <div>
-                        <a href="edit.php?id=<?php echo $q['id']?>" class="btn btn-outline-dark my-3" name="edit">Edit</a>
-                        
+                        <p class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 20px; padding: 5px 15px; margin:60px 0px;  width: 80%; height: 200px;"><?php echo $q['description'];?></p>
+                        <a href="edit.php?id=<?php echo $q['id']?>" class="btn btn-outline-dark my-3" name="edit" style=" position:absolute; width: 140px; bottom:20px; height: 40px; left:460px;">Edit</a>                        
                         <form method="POST">
-                            <input type="text" hidden value='<?php echo $q['id']?>' name="id">
-                            <button class="btn btn-danger btn-sm ml-2" name="delete">Delete</button>
-
-                            
+                            <input type="text" hidden value='<?php echo $q['id']?>' name="id" style="border:1px solid red; ">
+                            <button class="btn btn-danger btn-sm ml-2" name="delete" style=" position:absolute ; left:60px; bottom:20px; width: 140px; height: 40px;">Delete</button>                            
                         </form>
                     </div>
-
                 </div>
-                <p class="mt-5 border-left border-dark pl-3"><?php echo $q['description'];?></p>
-            <?php } ?>    
-        
-        
-        
-        
-   </div>
-
+                
+            <?php } ?>        
+        </div>
+    </div>
 
 <!-- footer -->
-    <!--
+    
     <div class="footer">
         <div class="footer-content">
             <div class="footer-section about">
@@ -83,7 +74,7 @@ include "logic.php";
             Blog Developed by Team 3
         </div>
     </div>
-            -->
+           
 
 <!-- //footer -->
 

@@ -56,19 +56,24 @@ include "logic.php";
         }
     </style>
 </header>
-    <div class="container mt-5">
 
-        <?php foreach($query as $q){?>
-            <form method="GET">
-                <input type="text" hidden name="id" value="<?php echo $q['id'];?>">
-                <input type="text" name="subject" placeholder="Blog Subject" class="form-control bg-dark text-white my-3 text-center"
-                value="<?php echo $q['subject']?>">
-                <textarea name="description" class="form-control bg-dark text-white my-3"><?php echo $q['description']?></textarea>
-                <!-- <textarea name="description" class="form"><?php echo $q['description']?></textarea> -->
-                <button name="update" class="btn btn-dark">Update</button>
-            </form>
-        <?php }?> 
-    </div>              
+        <div class="page-wrapper">
+            <div class="container mt-5">
+                <?php foreach($query as $q){?>
+                    <form method="GET">
+                        <input type="text" hidden name="id" value="<?php echo $q['id'];?>">
+                        <input type="text" name="subject" placeholder="Blog Subject" class="form-control bg-dark text-white my-3 text-center"
+                        value="<?php echo $q['subject']?>">
+                        <textarea name="description" class="form-control bg-dark text-white my-3"><?php echo $q['description']?></textarea>
+                        <!-- <textarea name="description" class="form"><?php echo $q['description']?></textarea> -->
+                        <button name="update" class="btn btn-dark">Update</button>
+                    </form>
+                <?php }?> 
+            </div>          
+        </div>
+
+           
+        
 
 
 <!-- <div class="page-wrapper">
@@ -93,7 +98,7 @@ include "logic.php";
 
 
 <!-- footer -->
-    <!--
+    
     <div class="footer">
         <div class="footer-content">
             <div class="footer-section about">
@@ -109,7 +114,7 @@ include "logic.php";
             Blog Developed by Team 3
         </div>
     </div>
-            -->
+           
 
 <!-- //footer -->
 
