@@ -57,9 +57,9 @@
                     <form method="GET">
                         <input type="text" hidden name="id" style="border:1px solid blue; margin:60px;"value="<?php echo $q['id'];?>">
                         <input type="text" name="subject" placeholder="Blog Subject" class="form-control bg-dark text-white my-3" style="margin:60px 20px; width:60%; height: 60px; font-size: 1.5em;" value="<?php echo $q['subject']?>">
-                        <textarea name="description" class="form-control bg-dark text-white my-3" style="margin:20px 20px; width:60%; height: 150px; font-size: 1.3em;"><?php echo $q['description']?></textarea>
+                        <textarea name="description" class="form-control bg-dark text-white my-3" style="margin:20px 20px; width:60%; height: 450px; font-size: 1.3em;"><?php echo $q['description']?></textarea>
                         <!-- <textarea name="description" class="form"><?php echo $q['description']?></textarea> -->
-                        <button name="update" class="btn btn-dark">Update</button>
+                        <button name="update" class="btn btn-dark" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Update</button>
                     </form>
                 <?php }?> 
             </div>          
