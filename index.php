@@ -34,6 +34,7 @@
             <!-- <li><a href="#"class="downloadaspdf">Download</a></li> -->
             <li><button class="download-btn">Download</button></li>
             <li><a href="#">GoogleDrive</a></li>
+            
             <li><a href="#">Zoom</a></li>
             <li><a href="#">GitHub</a></li>
             <li><a href="#"><i class="fas fa-search"></i></a></li>            
@@ -41,24 +42,25 @@
         </ul>
     </header>
 
-        <div class="container mt-5">
+        <div class="blog-alert">
 
             <!-- Display any info -->
             <?php if(isset($_REQUEST['info'])){?>
                 <?php if($_REQUEST['info'] == "added"){?>
-                    <div class="alert alert-success" role="alert">
-                        Post has been added successfully
+                    <div class="alert-alert-success" role="alert" style="width: 680px; height: 80px;">
+                        <p>Post has been added successfully at <span id="date-time"></span>.</p>
                     </div>
                 <?php }else if ($_REQUEST['info'] == "updated"){ ?>
-                    <div class="alert alert-success" role="alert">
-                        Post has been edited successfully
+                    <div class="alert-alert-success" role="alert" style="width: 680px; height: 80px;">
+                        <p>Post has been edited successfully at <span id="date-time"></span>.</p>
                     </div>
                 <?php }else if ($_REQUEST['info'] == "deleted"){ ?>
-                    <div class="alert alert-caution" role="alert">
-                        Post has been deleted successfully
+                    <div class="alert alert-caution" role="alert" style="width: 680px; height: 80px;">
+                        <p>Post has been deleted successfully at <span id="date-time"></span>.</p>
                     </div>
                 <?php }?>      
             <?php }?>
+        </div>    
 
         <!-- Create Post button -->
         <div class="page-wrapper">
@@ -78,8 +80,10 @@
                         <div class="card text-white bg-dark mt-5" style=" border:1px solid #005255; margin:30px; width: 50%; line-height: 2rem; border-radius: 15px;">                                                
                             <div class="card-body">
                                 <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['subject'];?></h5>
-                                <p class="card-text" style="padding:5px;"><?php echo substr($q['description'], 0, 50);?>...</p>
-                                <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-danger">&rarr;</span></a>
+                                <p class="card-text" style="padding:5px;"><?php echo substr($q['description'], 0, 200);?>...</p>
+                                <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-more">&rarr;</span></a>
+                                <p>*****</p>
+
                             </div>
                         </div>
                     </div>
@@ -109,6 +113,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="js/scripts.js"></script>
+    <script>
+    var dt = new Date();
+    document.getElementById('date-time').innerHTML=dt;
+    </script>
 
 </body>
 </html>

@@ -83,15 +83,18 @@ a{
 .download-btn{
     padding: .5rem 1rem;
     background: rgb(163, 163, 168);
-    
     position: relative;
     width: 165px;
     height: 60px;
     
 }
-.download-btn:hover {
+
+.download-btn:hover{
     transform: translateY(-4px);
-  }
+}
+
+
+
 
 .btn:hover{
     color: white !important;

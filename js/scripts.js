@@ -6,8 +6,11 @@ $(document).ready(function(){
     });
 });
 
+
+
 const downloadaspdf = document.querySelector(".download-btn");
 
 downloadaspdf.addEventListener("click", () => {
   window.print();
 });
+

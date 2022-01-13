@@ -37,34 +37,22 @@
             <li><a href="#"><i class="fas fa-search"></i></a></li>            
             
         </ul>
-    <!-- <style>
-        form {
-        width:100%;
-        height:450px;
-        margin:auto;
-        position:relative;
-        }
-        
-        input {
-        width:100%;
-        height: 30px;
-        }
-    </style> -->
+    
     </header>
 
-        <div class="page-wrapper">
-            <div class="container mt-5">
-                <?php foreach($query as $q){?>
-                    <form method="GET">
-                        <input type="text" hidden name="id" style="border:1px solid blue; margin:60px;"value="<?php echo $q['id'];?>">
-                        <input type="text" name="subject" placeholder="Blog Subject" class="form-control bg-dark text-white my-3" style="margin:60px 20px; width:60%; height: 60px; font-size: 1.5em;" value="<?php echo $q['subject']?>">
-                        <textarea name="description" class="form-control bg-dark text-white my-3" style="margin:20px 20px; width:60%; height: 450px; font-size: 1.3em;"><?php echo $q['description']?></textarea>
-                        <!-- <textarea name="description" class="form"><?php echo $q['description']?></textarea> -->
-                        <button name="update" class="btn btn-dark" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Update</button>
-                    </form>
-                <?php }?> 
-            </div>          
-        </div>
+    <div class="page-wrapper">
+        <div class="container mt-5">
+            <?php foreach($query as $q){?>
+                <form method="GET">
+                    <input type="text" hidden name="id" style="border:1px solid blue; margin:60px;"value="<?php echo $q['id'];?>">
+                    <input type="text" name="subject" placeholder="Blog Subject" class="form-control bg-dark text-white my-3" style="margin:60px 20px; width:60%; height: 60px; font-size: 1.5em;" value="<?php echo $q['subject']?>">
+                    <textarea name="description" class="form-control bg-dark text-white my-3" style="margin:20px 20px; width:60%; height: 450px; font-size: 1.3em;"><?php echo $q['description']?></textarea>
+                    <!-- <textarea name="description" class="form"><?php echo $q['description']?></textarea> -->
+                    <button name="update" class="btn btn-dark" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Update</button>
+                </form>
+            <?php }?> 
+        </div>          
+    </div>
 
            
         
