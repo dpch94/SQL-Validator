@@ -1,8 +1,19 @@
 <?php
-
-    include "logic.php";
-
+include "logic.php";
 ?>
+<?php
+//searching
+// if (isset($_GET['id'])) {
+//     $posts = getPostsByTopicId($_GET['id']);
+//     $postsTitle = "You searched for posts under '" . $_GET['subject'] . "'";
+// } else if (isset($_POST['search-term'])) {
+//     $postsTitle = "You searched for '" . $_POST['search-term'] . "'";
+//     $posts = searchPosts($_POST['search-term']);
+// } else {
+//     $posts = getPublishedPosts($_GET['description']);
+// }
+?>
+
 
 
 <!DOCTYPE html>
@@ -37,7 +48,8 @@
             
             <li><a href="#">Zoom</a></li>
             <li><a href="#">GitHub</a></li>
-            <li><a href="#"><i class="fas fa-search"></i></a></li>            
+            <li><a href="#"><i class="fas fa-search"></i></a></li>
+                 
             
         </ul>
     </header>
@@ -60,7 +72,23 @@
                     </div>
                 <?php }?>      
             <?php }?>
-        </div>    
+        </div>
+        <br>
+        <br>
+
+         
+        <!-- Search posts -->
+        <div class="sidebar">
+            <div class="section search">
+                    
+                <form action="index.php" method="post">
+                    <input type="text" name="search-term" class="text-input" placeholder="Search...">
+                </form>
+            </div>
+
+            
+            
+        </div>
 
         <!-- Create Post button -->
         <div class="page-wrapper">
@@ -90,6 +118,8 @@
                 <?php }?>
             </div>
         </div>
+
+                       
     <!-- footer -->
     
     <!-- <div class="footer">

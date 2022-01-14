@@ -55,7 +55,7 @@ include "logic.php";
                         <form method="POST" onsubmit="return confirm('Are you sure you want to delete this Post?');">
                         <input type="hidden" name="_METHOD" value="DELETE">
                         <input type="hidden" name="id" value="<?php echo $q['id']; ?>">
-                        <button type="submit" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Delete</button>
+                        <button  class="btn btn-danger btn-sm ml-2" type="submit" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Delete</button>
                         </form>
                     </div>
                 </div>
