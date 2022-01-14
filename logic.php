@@ -37,16 +37,29 @@
     }
 
     // Delete a post
-    if(isset($_REQUEST['delete'])){
-        $id = $_REQUEST['id'];
-
+    // if(isset($_REQUEST['delete'])){
+    //     $id = $_REQUEST['id'];
+    //     $sql = "DELETE FROM data WHERE id = $id";
+    //     mysqli_query($conn, $sql);
+    //     header("Location: index.php?info=deleted");
+    //     exit();
+    // }
+    if ($_SERVER['REQUEST_METHOD'] == 'DELETE' || ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['_METHOD'] == 'DELETE')) {
+        $id = (int) $_POST['id'];
+        // $result = mysql_query('DELETE FROM data WHERE id='.$id);
         $sql = "DELETE FROM data WHERE id = $id";
-        mysqli_query($conn, $sql);
-
-        header("Location: index.php?info=deleted");
-        exit();
+        $result = mysqli_query($conn, $sql);
+        if ($result !== false) {
+            // there's no way to return a 200 response and show a different resource, so redirect instead. 303 means "see other page" and does not indicate that the resource has moved.
+            header("Location: index.php?info=deleted");
+            exit;
+        }
     }
 
+
+    
+
+    
     // Update a post
     if(isset($_REQUEST['update'])){
         $id = $_REQUEST['id'];

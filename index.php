@@ -82,7 +82,7 @@
                                 <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['subject'];?></h5>
                                 <p class="card-text" style="padding:5px;"><?php echo substr($q['description'], 0, 200);?>...</p>
                                 <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-more">&rarr;</span></a>
-                                <p>*****</p>
+                                
 
                             </div>
                         </div>

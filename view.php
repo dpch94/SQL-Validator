@@ -47,9 +47,15 @@ include "logic.php";
                     <div>
                         <p class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 20px; padding: 5px 15px; margin:60px 0px;  width: 80%; min-height: 300px;overflow: hidden"><?php echo $q['description'];?></p>
                         <a href="edit.php?id=<?php echo $q['id']?>" class="btn btn-outline-dark my-3" name="edit" style=" position:absolute; text-align:center; width: 140px; bottom:100px; height: 40px; left:1300px;">Edit</a>                        
-                        <form method="POST">
+                        <!-- <form method="POST">
                             <input type="text" hidden value='<?php echo $q['id']?>' name="id" style="border:1px solid red; ">
                             <button class="btn btn-danger btn-sm ml-2" name="delete" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Delete</button>                            
+                        </form> -->
+
+                        <form method="POST" onsubmit="return confirm('Are you sure you want to delete this Post?');">
+                        <input type="hidden" name="_METHOD" value="DELETE">
+                        <input type="hidden" name="id" value="<?php echo $q['id']; ?>">
+                        <button type="submit" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Delete</button>
                         </form>
                     </div>
                 </div>
