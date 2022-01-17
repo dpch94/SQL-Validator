@@ -2,16 +2,18 @@
 include "logic.php";
 ?>
 <?php
+$posts = array();
+$postsTitle = 'Recent Posts';
 //searching
-// if (isset($_GET['id'])) {
-//     $posts = getPostsByTopicId($_GET['id']);
-//     $postsTitle = "You searched for posts under '" . $_GET['subject'] . "'";
-// } else if (isset($_POST['search-term'])) {
-//     $postsTitle = "You searched for '" . $_POST['search-term'] . "'";
-//     $posts = searchPosts($_POST['search-term']);
-// } else {
-//     $posts = getPublishedPosts($_GET['description']);
-// }
+if (isset($_GET['subject'])) {
+    $posts = getPostsById($_GET['subject']);
+    $postsTitle = "You searched for posts under '" . $_GET['subject'] . "'";
+} else if (isset($_POST['search-term'])) {
+    $postsTitle = "You searched for '" . $_POST['search-term'] . "'";
+    $posts = searchPosts($_POST['search-term']);
+} else {
+    $posts = getPosts($_GET['description']);
+}
 ?>
 
 
@@ -85,6 +87,31 @@ include "logic.php";
                     <input type="text" name="search-term" class="text-input" placeholder="Search...">
                 </form>
             </div>
+
+        <!-- Page Wrapper -->
+        <div class="page-wrapper">
+
+        <!-- Post Slider -->
+            <div class="post-slider">
+                <h1 class="slider-title">Searched Posts</h1>
+                    <!-- <i class="fas fa-chevron-left prev"></i>
+                    <i class="fas fa-chevron-right next"></i> -->
+
+                    <div class="post-wrapper">
+
+                        <?php foreach ($posts as $post): ?>
+                            <div class="post">
+                
+                                <div class="post-info">
+                                    <h4><a href="view.php?id=<?php echo $post['id']; ?>"><?php echo $post['subject']; ?></a></h4>
+                                    <p class="card-text" style="padding:5px;"><?php echo $post['description'];?></p>
+                                    
+                                    <i class="far fa-calendar"> <?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>  
+                    </div>  
+            </div>            
 
             
             

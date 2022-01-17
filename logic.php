@@ -93,5 +93,100 @@
         exit();
         }
     }
+    
+    //Displaying search results
+    function selectAll($table, $conditions = [])
+    {
+        global $conn;
+        $sql = "SELECT * FROM $table";
+        if (empty($conditions)) {
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+            return $records;
+        } else {
+            $i = 0;
+            foreach ($conditions as $key => $value) {
+                if ($i === 0) {
+                    $sql = $sql . " WHERE $key=?";
+                } else {
+                    $sql = $sql . " AND $key=?";
+                }
+                $i++;
+            }
+            
+            $stmt = executeQuery($sql, $conditions);
+            $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+            return $records;
+        }
+    }
+
+
+    function selectOne($table, $conditions)
+    {
+        global $conn;
+        $sql = "SELECT * FROM $table";
+
+        $i = 0;
+        foreach ($conditions as $key => $value) {
+            if ($i === 0) {
+                $sql = $sql . " WHERE $key=?";
+            } else {
+                $sql = $sql . " AND $key=?";
+            }
+            $i++;
+        }
+
+        $sql = $sql . " LIMIT 1";
+        $stmt = executeQuery($sql, $conditions);
+        $records = $stmt->get_result()->fetch_assoc();
+        return $records;
+    }
+
+
+    function executeQuery($sql, $data)
+    {
+        global $conn;
+        $stmt = $conn->prepare($sql);
+        $values = array_values($data);
+        $types = str_repeat('s', count($values));
+        $stmt->bind_param($types, ...$values);
+        $stmt->execute();
+        return $stmt;
+    }
+    function getPosts()
+    {
+        global $conn;
+        $sql = "SELECT d.* FROM data AS d WHERE d.created_at=?";
+
+        $stmt = executeQuery($sql, ['created_at' => $created_at]);
+        $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $records;
+    }
+
+
+    function getPostsById($subject)
+    {
+        global $conn;
+        $sql = "SELECT d.* FROM data AS d WHERE d.subject=?";
+
+        $stmt = executeQuery($sql, ['subject' => $subject]);
+        $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $records;
+    }
+
+
+    //Search posts method
+    function searchPosts($term)
+    {
+        $match = '%' . $term . '%';
+        global $conn;
+        $sql = "SELECT d.* FROM data AS d WHERE d.subject LIKE ? OR d.description LIKE ?";
+                    
+
+        $stmt = executeQuery($sql, ['subject' => $match, 'description' => $match]);
+        $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $records;
+    }    
 
 ?>
