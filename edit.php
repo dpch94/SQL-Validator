@@ -34,7 +34,7 @@
             <li><a href="#">GoogleDrive</a></li>
             <li><a href="#">Zoom</a></li>
             <li><a href="#">GitHub</a></li>
-            <li><a href="#"><i class="fas fa-search"></i></a></li>            
+                       
             
         </ul>
     
