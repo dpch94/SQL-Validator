@@ -17,7 +17,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
     <link rel ="stylesheet" href="css/style.css">
+
     <title>createpost</title>
+
+    <style>
+		.error {
+			color: red;
+		}
+	</style>
 </head>
 
 <body>

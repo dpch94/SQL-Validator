@@ -17,6 +17,15 @@
 
     // Create a new post
     if(isset($_REQUEST['add_post'])){
+
+        if (empty($_REQUEST['subject'])) {
+            echo "<span class=\"error\">Error: Subject is required</span>";
+        }
+        elseif (empty($_REQUEST['description'])) {
+            echo "<span class=\"error\">Error: Description is required</span>";
+        }
+        else {
+
         $subject = $_REQUEST['subject'];
         $description = $_REQUEST['description'];
 
@@ -27,6 +36,7 @@
 
         header("Location: index.php?info=added");
         exit();
+        }
     }
 
     // Get post data based on id
@@ -36,7 +46,7 @@
         $query = mysqli_query($conn, $sql);
     }
 
-    // Delete a post
+    
     // if(isset($_REQUEST['delete'])){
     //     $id = $_REQUEST['id'];
     //     $sql = "DELETE FROM data WHERE id = $id";
@@ -44,13 +54,15 @@
     //     header("Location: index.php?info=deleted");
     //     exit();
     // }
+
+    // Delete a post
     if ($_SERVER['REQUEST_METHOD'] == 'DELETE' || ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['_METHOD'] == 'DELETE')) {
         $id = (int) $_POST['id'];
         // $result = mysql_query('DELETE FROM data WHERE id='.$id);
         $sql = "DELETE FROM data WHERE id = $id";
         $result = mysqli_query($conn, $sql);
         if ($result !== false) {
-            // there's no way to return a 200 response and show a different resource, so redirect instead. 303 means "see other page" and does not indicate that the resource has moved.
+            
             header("Location: index.php?info=deleted");
             exit;
         }
@@ -62,6 +74,14 @@
     
     // Update a post
     if(isset($_REQUEST['update'])){
+
+        if (empty($_REQUEST['subject'])) {
+            echo "<span class=\"error\">Error: Subject is required</span>";
+        }
+        elseif (empty($_REQUEST['description'])) {
+            echo "<span class=\"error\">Error: Description is required</span>";
+        }
+        else {
         $id = $_REQUEST['id'];
         $subject = $_REQUEST['subject'];
         $description = $_REQUEST['description'];
@@ -71,6 +91,7 @@
 
         header("Location: index.php?info=updated");
         exit();
+        }
     }
 
 ?>
