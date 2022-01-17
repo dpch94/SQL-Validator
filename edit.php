@@ -24,19 +24,19 @@
         <div class="logo">
             <h1 class="logo-text"style="text-align:center">Blog and Learn</h1>
         </div>
-        <i class="fa fa-bars menu-toggle"></i>
+        <!-- <i class="fa fa-bars menu-toggle"></i>
         <ul class="nav" align-content: center;>
             <li><a href="index.php">Home</a></li> 
             <li><a href="#">Documents</a></li>
             <li><a href="#">Tutorial</a></li>
             <!-- <li><a href="#">Download</a></li> -->
-            <li><button class="download-btn">Download</button></li>
+            <!-- <li><button class="download-btn">Download</button></li>
             <li><a href="#">GoogleDrive</a></li>
             <li><a href="#">Zoom</a></li>
             <li><a href="#">GitHub</a></li>
                        
             
-        </ul>
+        </ul> -->
     
     </header>
 
@@ -48,7 +48,10 @@
                     <input type="text" name="subject" placeholder="Blog Subject" class="form-control bg-dark text-white my-3" style="margin:60px 20px; width:60%; height: 60px; font-size: 1.5em;" value="<?php echo $q['subject']?>">
                     <textarea name="description" class="form-control bg-dark text-white my-3" style="margin:20px 20px; width:60%; height: 450px; font-size: 1.3em;"><?php echo $q['description']?></textarea>
                     <!-- <textarea name="description" class="form"><?php echo $q['description']?></textarea> -->
-                    <button name="update" class="btn btn-dark" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Update</button>
+                    <button name="update" class="btn btn-dark" style=" position:absolute ; left:1300px; bottom:100px; text-align:center; width: 140px; height: 40px;">Update</button>
+                    
+                    <button formaction="index.php" class="btn btn-dark" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Cancel</button>
+
                 </form>
             <?php }?> 
         </div>          
