@@ -3,7 +3,7 @@ include "logic.php";
 ?>
 <?php
 $posts = array();
-$postsTitle = 'Recent Posts';
+$postsTitle = 'Searched Posts';
 //searching
 if (isset($_GET['subject'])) {
     $posts = getPostsById($_GET['subject']);
@@ -106,7 +106,7 @@ if (isset($_GET['subject'])) {
                                     <h4><a href="view.php?id=<?php echo $post['id']; ?>"><?php echo $post['subject']; ?></a></h4>
                                     <p class="card-text" style="padding:5px;"><?php echo $post['description'];?></p>
                                     
-                                    <i class="far fa-calendar"> <?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
+                                    <i class="far fa-calendar"> <?php echo date('F j, Y H:i', strtotime($post['created_at'])); ?></i>
                                 </div>
                             </div>
                         <?php endforeach; ?>  
