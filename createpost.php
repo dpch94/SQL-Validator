@@ -50,7 +50,7 @@
 
         <div class="page-wrapper">
             <div class="post-content">
-                <form method="POST">        
+                <form method="POST" action="" enctype="multipart/form-data">        
                     <!-- <div class="msg">
                         <li>Subject required</li>
                     </div> -->        
@@ -65,7 +65,18 @@
                     <div> 
                     <!-- <label>Description</label>                        -->
                         <textarea  name="description" class="form-control bg-dark text-white my-3" style="margin:30px 2px; border-radius: 5px; width:80%; height: 250px; font-size: 1.3em;"></textarea>                        
-                    </div>                    
+                    </div>  
+                    
+                    <div id="image_content">
+                        <label>Attachment</label>
+                        <input type="file" name="uploadfile" value="" />
+                        <div>
+                            <button type="submit"
+                                    name="upload" style="display: none;">
+                            Upload
+                            </button>
+                        </div>
+                    </div>
                     <div>
                         <button type="submit" name="add_post" class="btn-post">Submit</button>
                     </div>                    

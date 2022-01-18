@@ -29,15 +29,39 @@
         $subject = $_REQUEST['subject'];
         $description = $_REQUEST['description'];
 
-        $sql = "INSERT INTO data(subject, description) VALUES('$subject', '$description')";
-        mysqli_query($conn, $sql);
+        error_reporting(0);
 
-        echo $sql;
+        $msg = "";
+            if (isset($_POST['add_post'])) {
 
-        header("Location: index.php?info=added");
-        exit();
+                $filename = $_FILES["uploadfile"]["name"];
+                $tempname = $_FILES["uploadfile"]["tmp_name"];	
+                $folder = "image/".$filename;
+                $sql = "INSERT INTO data(subject, description, image) VALUES('$subject', '$description', '$filename')";
+                mysqli_query($conn, $sql);
+
+                echo $sql;
+
+                header("Location: index.php?info=added");
+                exit();
+            }
+            else {                   
+                $sql = "INSERT INTO data(subject, description) VALUES('$subject', '$description')";
+                mysqli_query($conn, $sql);
+
+                echo $sql;
+
+                header("Location: index.php?info=added");
+                exit();
+            }
+
         }
+        
     }
+
+   
+        
+
 
     // Get post data based on id
     if(isset($_REQUEST['id'])){
@@ -85,7 +109,7 @@
         $id = $_REQUEST['id'];
         $subject = $_REQUEST['subject'];
         $description = $_REQUEST['description'];
-
+        
         $sql = "UPDATE data SET subject = '$subject', description = '$description' WHERE id = $id";
         mysqli_query($conn, $sql);
 
