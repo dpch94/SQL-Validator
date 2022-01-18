@@ -42,9 +42,27 @@ include "logic.php";
             <?php foreach($query as $q){?>
                 <div class="bg-dark p-5 rounded-lg text-white text-center" style="border:1px solid white; margin:70px 40px; position:relative; width:80%;">
                     <h1><?php echo $q['subject'];?></h1>
+                    
                     <div>
                         <p class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 20px; padding: 5px 15px; margin:60px 0px;  width: 80%; min-height: 300px;overflow: hidden"><?php echo $q['description'];?></p>
                         
+                        
+                        <?php
+                        $db = mysqli_connect("localhost","root","","blogdb");
+                        $records = mysqli_query($db,"select * from data WHERE id = $id"); // fetch data from database
+
+                        while($data = mysqli_fetch_array($records))
+                        {
+                        ?>
+                            <td><img src="<?php echo $data['image']; ?>" width="100" height="100"></td>
+
+                        <?php
+                        }
+                        ?>
+                                                
+                            
+                        
+                                      
                         <a href="edit.php?id=<?php echo $q['id']?>" class="btn btn-outline-dark my-3" name="edit" style=" position:absolute; text-align:center; width: 140px; bottom:100px; height: 40px; left:1300px;">Edit</a>                        
                         
 
