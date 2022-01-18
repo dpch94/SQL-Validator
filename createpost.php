@@ -39,10 +39,7 @@
             <li><a href="#">Tutorial</a></li>
             <!-- <li><a href="#">Download</a></li> -->
             <li><button class="download-btn">Download</button></li>
-            <li><a href="#">GoogleDrive</a></li>
-            <li><a href="#">Zoom</a></li>
-            <li><a href="#">GitHub</a></li>
-                       
+            
             
         </ul>
     </header>
