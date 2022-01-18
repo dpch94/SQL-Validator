@@ -64,7 +64,7 @@
                     </div>
                     <div> 
                     <!-- <label>Description</label>                        -->
-                        <textarea  name="description" class="form-control bg-dark text-white my-3" style="margin:30px 2px; border-radius: 5px; width:60%; height: 150px; font-size: 1.3em;"></textarea>                        
+                        <textarea  name="description" class="form-control bg-dark text-white my-3" style="margin:30px 2px; border-radius: 5px; width:80%; height: 250px; font-size: 1.3em;"></textarea>                        
                     </div>                    
                     <div>
                         <button type="submit" name="add_post" class="btn-post">Submit</button>

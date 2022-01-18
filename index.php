@@ -84,7 +84,7 @@ if (isset($_GET['subject'])) {
             <div class="section search">
                     
                 <form action="index.php" method="post">
-                    <input type="text" name="search-term" class="text-input" placeholder="Search...">
+                    <input type="text" name="search-term" class="textsubject-input" placeholder="Search" style="margin:30px 2px;">
                 </form>
             </div>
 
