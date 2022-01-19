@@ -45,20 +45,18 @@ include "logic.php";
                     
                     <div>
                         <p class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 20px; padding: 5px 15px; margin:60px 0px;  width: 80%; min-height: 300px;overflow: hidden"><?php echo $q['description'];?></p>
-                        
-                        
                         <?php
-                        $db = mysqli_connect("localhost","root","","blogdb");
-                        $records = mysqli_query($db,"select * from data WHERE id = $id"); // fetch data from database
-
-                        while($data = mysqli_fetch_array($records))
+                        $conn = mysqli_connect("localhost", "root", "", "blogdb");
+                        $result = mysqli_query($conn, "SELECT * FROM data WHERE id = $id");
+                        while($data = mysqli_fetch_array($result))
                         {
-                        ?>
-                            <td><img src="<?php echo $data['image']; ?>" width="100" height="100"></td>
-
+                        
+                            ?>
+                        <img src="<?php echo 'image/'. $data['image']; ?>" width="300" height="300"> 
+                        
                         <?php
                         }
-                        ?>
+                        ?>                      
                                                 
                             
                         

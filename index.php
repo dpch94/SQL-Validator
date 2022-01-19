@@ -45,13 +45,13 @@ if (isset($_GET['subject'])) {
             <li><a href="#">Documents</a></li>
             <li><a href="#">Tutorial</a></li>
             <!-- <li><a href="#"class="downloadaspdf">Download</a></li> -->
-            <li><button class="download-btn">Download</button></li>
-            
-            
-                 
-            
+            <li><button class="download-btn">Download</button></li>   
         </ul>
+        
     </header>
+        <br>
+        <br>
+        <br>
 
         <div class="blog-alert">
 

@@ -39,11 +39,20 @@
                 $folder = "image/".$filename;
                 $sql = "INSERT INTO data(subject, description, image) VALUES('$subject', '$description', '$filename')";
                 mysqli_query($conn, $sql);
-
+                
                 echo $sql;
+                
+                if (move_uploaded_file($tempname, $folder))  {
+                    $msg = "Image uploaded successfully";
+                }else{
+                    $msg = "Failed to upload image";
+                }
+                
 
                 header("Location: index.php?info=added");
                 exit();
+
+                
             }
             else {                   
                 $sql = "INSERT INTO data(subject, description) VALUES('$subject', '$description')";
