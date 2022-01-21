@@ -52,12 +52,15 @@ include "logic.php";
                         {
                         
                             ?>
-                        <img src="<?php echo 'image/'. $data['image']; ?>" width="300" height="300"> 
+                        <img src="<?php echo "./image/". $data['image'] ?>" style="width:300px;height:200px" />
                         
                         <?php
                         }
-                        ?>                      
-                                                
+                        mysqli_close($conn);
+                        ?>  
+                        
+                       
+                                            
                             
                         
                                       
