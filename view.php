@@ -46,18 +46,26 @@ include "logic.php";
                     <div>
                         <p class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 20px; padding: 5px 15px; margin:60px 0px;  width: 80%; min-height: 300px;overflow: hidden"><?php echo $q['description'];?></p>
                         <?php
-                        $conn = mysqli_connect("localhost", "root", "", "blogdb");
-                        $result = mysqli_query($conn, "SELECT * FROM data WHERE id = $id");
-                        while($data = mysqli_fetch_array($result))
-                        {
+                            $conn = mysqli_connect("localhost", "root", "", "blogdb");
+                            // $result = mysqli_query($conn, "SELECT image FROM data WHERE id = $id");
+                            
+                            // Get image data from database 
+                            $result = $conn->query("SELECT image FROM data WHERE id = $id"); 
+                        ?>    
                         
-                            ?>
-                        <img src="<?php echo "./image/". $data['image'] ?>" style="width:300px;height:200px" />
+
                         
-                        <?php
-                        }
-                        mysqli_close($conn);
-                        ?>  
+                        <?php if($result->num_rows > 0){ ?> 
+                            <div class="gallery"> 
+                                <?php while($row = $result->fetch_assoc()){ ?> 
+                                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" class="imcenter" style="width:500px;height:300px"/> 
+                                <?php } ?> 
+                            </div>
+                        
+                        <?php }
+                        ?>
+                        
+                      
                         
                        
                                             

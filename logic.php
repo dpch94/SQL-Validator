@@ -26,47 +26,92 @@
         }
         else {
 
-        $subject = $_REQUEST['subject'];
-        $description = $_REQUEST['description'];
+            $subject = $_REQUEST['subject'];
+            $description = $_REQUEST['description'];
 
-        error_reporting(0);
+            // If file upload form is submitted 
+            $status = $statusMsg = '';
+            if(isset($_POST["add_post"])){ 
+                $status = 'error'; 
+                if(!empty($_FILES["uploadfile"]["name"])) { 
+                    // Get file info 
+                    $fileName = basename($_FILES["uploadfile"]["name"]); 
+                    $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+                    // Allow certain file formats 
+                    $allowTypes = array('jpg','png','jpeg','gif'); 
+                    if(in_array($fileType, $allowTypes)){ 
+                        $image = $_FILES['uploadfile']['tmp_name']; 
+                        $imgContent = addslashes(file_get_contents($image));   
 
-        $msg = "";
-            if (isset($_POST['add_post'])) {
+                        //inserting into database
+                        
+                        $insert = $conn->query("INSERT into data (subject, description, image) VALUES ('$subject', '$description', '$imgContent')");
+                        //$sql = "INSERT INTO data(subject, description, image) VALUES('$subject', '$description', '$imgContent')";
+                        mysqli_query($conn, $sql);
 
-                $filename = $_FILES["uploadfile"]["name"];
-                $tempname = $_FILES["uploadfile"]["tmp_name"];	
-                $folder = "image/".$filename;
-                $sql = "INSERT INTO data(subject, description, image) VALUES('$subject', '$description', '$filename')";
-                mysqli_query($conn, $sql);
-                
-                echo $sql;
-                
-                if (move_uploaded_file($tempname, $folder))  {
-                    $msg = "Image uploaded successfully";
-                }else{
-                    $msg = "Failed to upload image";
-                }
-                
+                        if($insert){ 
+                            $status = 'success'; 
+                            $statusMsg = "File uploaded successfully.";
+                            echo $statusMsg;
+                            header("Location: index.php?info=added");
+                            exit(); 
+                        }else{ 
+                            $statusMsg = "File upload failed, please try again.";
+                            echo $statusMsg; 
+                        }  
+                    }else{ 
+                        $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
+                        echo $statusMsg;
+                    } 
+                }elseif(empty($_FILES["uploadfile"]["name"])) {  
+                                
+                    $sql = "INSERT INTO data(subject, description) VALUES('$subject', '$description')";
+                    mysqli_query($conn, $sql);
 
-                header("Location: index.php?info=added");
-                exit();
+                    echo $sql;
 
-                
+                    header("Location: index.php?info=added");
+                    exit();
+                }       
+                        
+                        
+                        
             }
-            else {                   
-                $sql = "INSERT INTO data(subject, description) VALUES('$subject', '$description')";
-                mysqli_query($conn, $sql);
-
-                echo $sql;
-
-                header("Location: index.php?info=added");
-                exit();
-            }
-
         }
+    }    
+            
         
-    }
+
+
+    
+                
+        //old code for image uploading
+        // error_reporting(0);
+
+        // $msg = "";
+        //     if (isset($_POST['add_post'])) {
+
+        //         $filename = $_FILES["uploadfile"]["name"];
+        //         $tempname = $_FILES["uploadfile"]["tmp_name"];	
+        //         $folder = "image/".$tempname;
+        //         $sql = "INSERT INTO data(subject, description, image) VALUES('$subject', '$description', '$folder')";
+        //         mysqli_query($conn, $sql);
+                
+        //         echo $sql;
+                
+        //         if ($sql)  {
+        //             $msg = "Image uploaded successfully";
+        //         }else{
+        //             $msg = "Failed to upload image";
+        //         }
+                
+
+        //         header("Location: index.php?info=added");
+        //         exit();
+
+                
+        //     }
+            
 
    
         
@@ -115,16 +160,38 @@
             echo "<span class=\"error\">Error: Description is required</span>";
         }
         else {
-        $id = $_REQUEST['id'];
-        $subject = $_REQUEST['subject'];
-        $description = $_REQUEST['description'];
-        
-        $sql = "UPDATE data SET subject = '$subject', description = '$description' WHERE id = $id";
-        mysqli_query($conn, $sql);
-
-        header("Location: index.php?info=updated");
-        exit();
+            $id = $_REQUEST['id'];
+            $subject = $_REQUEST['subject'];
+            $description = $_REQUEST['description'];
+            if(!empty($_FILES["uploadfile"]["name"])) { 
+                // Get file info 
+                $fileName = basename($_FILES["uploadfile"]["name"]); 
+                $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+                // Allow certain file formats 
+                $allowTypes = array('jpg','png','jpeg','gif'); 
+                if(in_array($fileType, $allowTypes)){ 
+                    $image = $_FILES['uploadfile']['tmp_name']; 
+                    $imgContent_new = addslashes(file_get_contents($image));   
+                    $sql = "UPDATE data SET subject = '$subject', description = '$description', image = '$imgContent_new' WHERE id = $id";
+                    mysqli_query($conn, $sql);
+                    header("Location: index.php?info=updated");
+                    exit();
+            
+                    
+                }
+            }
+            else {                   
+                $sql = "UPDATE data SET subject = '$subject', description = '$description' WHERE id = $id";
+                mysqli_query($conn, $sql);
+    
+                echo $sql;
+    
+                header("Location: index.php?info=updated");
+                exit();
+            }
         }
+    
+    
     }
     
     //Displaying search results

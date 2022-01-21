@@ -18,6 +18,13 @@ html,body{
     list-style: none;
 }
 
+.imcenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+
 .success{
     color: #3a6e3a;
     border: 1px solid #3a6e3a;
