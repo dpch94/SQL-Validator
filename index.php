@@ -42,10 +42,12 @@ if (isset($_GET['subject'])) {
         <i class="fa fa-bars menu-toggle"></i>
         <ul class="nav" align-content: center;>
             <li><a href="index.php">Home</a></li> 
-            <li><a href="#">Documents</a></li>
+            <li><a href="download.php">Go to Download</a></li>
             <li><a href="#">Tutorial</a></li>
+            
             <!-- <li><a href="#"class="downloadaspdf">Download</a></li> -->
-            <li><button class="download-btn">Download</button></li>   
+            <li><button class="download-btn">Download</button></li> 
+              
         </ul>
         
     </header>
