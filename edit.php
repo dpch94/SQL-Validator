@@ -43,7 +43,7 @@
     <div class="page-wrapper">
         <div class="container mt-5">
             <?php foreach($query as $q){?>
-                <form method="GET">
+                <form method="GET" action="" enctype="multipart/form-data">
                     <input type="text" hidden name="id" style="border:1px solid blue; margin:60px;"value="<?php echo $q['id'];?>">
                     <input type="text" name="subject" placeholder="Blog Subject" class="form-control bg-dark text-white my-3" style="margin:60px 20px; width:60%; height: 60px; font-size: 1.5em;" value="<?php echo $q['subject']?>">
                     <textarea name="description" class="form-control bg-dark text-white my-3" style="margin:20px 20px; width:60%; height: 450px; font-size: 1.3em;"><?php echo $q['description']?></textarea>

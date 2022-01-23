@@ -173,26 +173,41 @@
                     $image = $_FILES['uploadfile']['tmp_name']; 
                     $imgContent_new = addslashes(file_get_contents($image));   
                     $sql = "UPDATE data SET subject = '$subject', description = '$description', image = '$imgContent_new' WHERE id = $id";
-                    mysqli_query($conn, $sql);
-                    header("Location: index.php?info=updated");
-                    exit();
-            
+                    $sql_run = mysqli_query($conn, $sql);
+                    if($sql_run)
+                    {
+                        move_uploaded_file($_FILES['uploadfile']['tmp_name'] ,"upload/".$imgContent_new);
+                        header("Location: index.php?info=updated");
+                        exit();
+
+
+                    } 
+
+
+                   
                     
                 }
             }
+
+            
+           
+                    
+        
+            
             else {                   
                 $sql = "UPDATE data SET subject = '$subject', description = '$description' WHERE id = $id";
                 mysqli_query($conn, $sql);
-    
+
                 echo $sql;
-    
+
                 header("Location: index.php?info=updated");
                 exit();
             }
         }
-    
-    
     }
+    
+    
+    
     
     //Displaying search results
     function selectAll($table, $conditions = [])
