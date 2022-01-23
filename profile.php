@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Image Preview and Upload PHP</title>
+  <title>Image Preview and Upload</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="container">
@@ -27,7 +27,7 @@
               <div class="text-center img-placeholder"  onClick="triggerClick()">
                 <h4>Update image</h4>
               </div>
-              <img src="https://thumbs.dreamstime.com/z/cute-lion-cartoon-illustration-33242207.jpg" style = "width:100px; height:100px"; onClick="triggerClick()" id="profileDisplay">
+              <img src="images/avatar1.png"  onClick="triggerClick()" id="profileDisplay">
             </span>
             <input type="file" name="profileImage" onChange="displayImage(this)" id="profileImage" class="form-control" style="display: none;">
             <label>Profile Image</label>
@@ -45,4 +45,4 @@
   </div>
 </body>
 </html>
-<script src="scripts.js"></script>
+<script src="js/scripts.js"></script>
