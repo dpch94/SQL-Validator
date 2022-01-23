@@ -1,7 +1,8 @@
 <?php
-  $conn = mysqli_connect("localhost", "root", "", "blogdb");
-  $results = mysqli_query($conn, "SELECT * FROM users");
-  $users = mysqli_fetch_all($results, MYSQLI_ASSOC);
+include 'userform.php';
+  $sql = "SELECT * FROM users";
+  $result = mysqli_query($conn, $sql);
+  $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +29,9 @@
           <tbody>
             <?php foreach ($users as $user): ?>
               <tr>
-                <td> <img src="<?php echo 'images/' . $user['profile_image'] ?>" width="90" height="90" alt=""> </td>
+                <td> 
+                  <img src="images/<?php echo $user['profile_image']; ?>" width="90" height="90" alt=""> 
+                </td>
                 <td> <?php echo $user['bio']; ?> </td>
               </tr>
             <?php endforeach; ?>

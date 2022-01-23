@@ -24,10 +24,10 @@
           <?php endif; ?>
           <div class="form-group text-center" style="position: relative;" >
             <span class="img-div">
-              <div class="text-center img-placeholder"  onClick="triggerClick()">
+              <div class="text-center img-placeholder"  onclick="triggerClick()">
                 <h4>Update image</h4>
               </div>
-              <img src="images/avatar1.png"  onClick="triggerClick()" id="profileDisplay">
+              <img src="images/avatar5.jpg"  onclick="triggerClick()" id="profileDisplay">
             </span>
             <input type="file" name="profileImage" onChange="displayImage(this)" id="profileImage" class="form-control" style="display: none;">
             <label>Profile Image</label>
