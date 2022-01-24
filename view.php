@@ -1,12 +1,7 @@
 <?php
     date_default_timezone_set('Europe/Copenhagen');
-<<<<<<< HEAD
-    include "db8.inc.php";
-    include "comments.inc.php";
-=======
     include 'comments.inc.php';
     include 'db8.inc.php';
->>>>>>> 400770068527672819ea147e92aae6a5797b9e73
 
     include "logic.php";
 
@@ -109,6 +104,8 @@
         <textarea name='message' style= 'width: 840px; height: 80px; resize=none; background-color: #fff;'></textarea><br>
         <button type='submit' style= 'width: 100px; height: 40px; border=none; color:#fff; background-color: #282828; font-family:arial; cursor:pointer;' name='commentSubmit'>Comment</button>
         </form>";
+        echo "<form method='POST' action='".getComments($conn)."'>
+        </form>";    
     ?>
 <!-- footer -->
     
