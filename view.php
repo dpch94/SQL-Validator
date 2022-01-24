@@ -42,7 +42,7 @@ include "logic.php";
     <div class="page-wrapper">
         <div class="container mt-5">
             <?php foreach($query as $q){?>
-                <div class="bg-dark p-5 rounded-lg text-white text-center" style="border:1px solid red; margin:70px 40px; position:relative; width:80%;">
+                <div class="bg-dark p-5 rounded-lg text-white text-center" style="border:1px solid white; margin:70px 40px; position:relative; width:80%;">
                     <h1><?php echo $q['subject'];?></h1>
                     
                     <div>
@@ -89,19 +89,21 @@ include "logic.php";
                         </form>
                     </div>
                 </div>
-                <?php
-                echo "<form method='POST' action='".setComments($conn)."'>
-                    <input type='hidden' name='uid' value='Anonymous'>
-                    <input type='hidden' name='date' value='".date('Y-m')."'>
-                    <textarea name='message' style= 'width: 840px; height: 80px; resize=none; background-color: #fff;'></textarea><br>
-                    <button type='submit' style= 'width: 100px; height: 40px; border=none; color:#fff; background-color: #282828; font-family:arial; cursor:pointer;' name='commentSubmit'>Comment</button>
-                </form>";
-                ?>
+                
+                
+                
                 
             <?php } ?>        
         </div>
     </div>
-
+    <?php
+    echo "<form method='POST' >
+        <input type='hidden' name='uid' value='Anonymous'>
+        <input type='hidden' name='date' value='".date('Y-m')."'>
+        <textarea name='message' style= 'width: 840px; height: 80px; resize=none; background-color: #fff;'></textarea><br>
+        <button type='submit' style= 'width: 100px; height: 40px; border=none; color:#fff; background-color: #282828; font-family:arial; cursor:pointer;' name='commentSubmit'>Comment</button>
+        </form>";
+    ?>
 <!-- footer -->
     
     <div class="footer">
