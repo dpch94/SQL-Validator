@@ -17,7 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
     <link rel ="stylesheet" href="css/style.css">
-
+    
+    
     <title>createpost</title>
 
     <style>
@@ -35,7 +36,7 @@
         <i class="fa fa-bars menu-toggle"></i>
         <ul class="nav" align-content: center;>
             <li><a href="index.php">Home</a></li> 
-            <li><a href="#">Documents</a></li>
+            
             <li><a href="#">Tutorial</a></li>
             <!-- <li><a href="#">Download</a></li> -->
             <li><button class="download-btn">Download</button></li>
@@ -107,6 +108,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="js/scripts.js"></script>
+
+    
 
     
 
