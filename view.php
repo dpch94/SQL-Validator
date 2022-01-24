@@ -1,8 +1,9 @@
 <?php
     date_default_timezone_set('Europe/Copenhagen');
-    include 'db8.inc.php';
+    include "db8.inc.php";
+    include "comments.inc.php";
 
-include "logic.php";
+    include "logic.php";
 
 ?>
 

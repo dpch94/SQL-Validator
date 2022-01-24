@@ -22,3 +22,4 @@ function getComments($conn){
         echo "</p></div>";
     }
 }
+?>

@@ -30,14 +30,17 @@
               <img src="images/avatar5.jpg"  onclick="triggerClick()" id="profileDisplay">
             </span>
             <input type="file" name="profileImage" onchange="displayImage(this)" id="profileImage" class="form-control" style="display: none;">
-            <label>Profile Image</label>
+            <!-- <label>Profile Image</label> -->
           </div>
+          
           <div class="form-group">
-            <label>Bio</label>
-            <textarea name="bio" class="form-control"></textarea>
+            <!-- <label>Bio</label> -->
+            
+            <textarea name="bio" class="form-control" placeholder="Describe about yourself..."></textarea>
           </div>
           <div class="form-group">
             <button type="submit" name="save_profile" class="btn btn-primary btn-block">Save User</button>
+            <button formaction="index.php" class="btn btn-primary btn-block">Home</button>
           </div>
         </form>
       </div>
