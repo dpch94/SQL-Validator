@@ -176,7 +176,7 @@
                     $sql_run = mysqli_query($conn, $sql);
                     if($sql_run)
                     {
-                        move_uploaded_file($_FILES['uploadfile']['tmp_name'] ,"upload/".$imgContent_new);
+                        move_uploaded_file($_FILES['uploadfile']['name'] ,"upload/".$imgContent_new);
                         header("Location: index.php?info=updated");
                         exit();
 

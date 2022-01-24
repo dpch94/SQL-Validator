@@ -42,7 +42,7 @@ if (isset($_GET['subject'])) {
         <i class="fa fa-bars menu-toggle"></i>
         <ul class="nav" align-content: center;>
             <li><a href="index.php">Home</a></li> 
-            <li><a href="https://www.google.com/intl/en-GB/drive/" target="_blank">Documents</a></li>
+            <li><a href="files.php">Documents</a></li>
             <li><a href="#">Tutorial</a></li>
             
             <!-- <li><a href="#"class="downloadaspdf">Download</a></li> -->
