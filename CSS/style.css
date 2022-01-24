@@ -449,6 +449,21 @@ form{
   cursor: pointer;
 }
 
+.commentbox {
+    width: 80%;
+    padding: 15px;
+    margin-bottom:  10px;
+    background-color:#ffffff;
+    border-radius: 5px;
+}
+
+.commentbox p{
+    font-size:  14px;
+    line-height: 15px;
+    
+
+}
+
 /*Media queries*/
 @media only screen and (max-width: 600px){
     header{

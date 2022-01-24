@@ -29,7 +29,7 @@
               </div>
               <img src="images/avatar5.jpg"  onclick="triggerClick()" id="profileDisplay">
             </span>
-            <input type="file" name="profileImage" onChange="displayImage(this)" id="profileImage" class="form-control" style="display: none;">
+            <input type="file" name="profileImage" onchange="displayImage(this)" id="profileImage" class="form-control" style="display: none;">
             <label>Profile Image</label>
           </div>
           <div class="form-group">
