@@ -98,14 +98,18 @@
         </div>
     </div>
     <?php
+    echo "<form method='POST' action='".getComments($conn)."' style='width: 20%; margin:20px;'>
+    </form>"; 
+
+    ?>
+    <?php
     echo "<form method='POST' action='".setComments($conn)."'>
         <input type='hidden' name='uid' value='Anonymous'>
         <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
-        <textarea name='message' style= 'width: 840px; height: 80px; resize=none; background-color: #fff;'></textarea><br>
+        <textarea name='message' style= 'width: 840px; height: 150px; resize=none; background-color: #fff;'></textarea><br>
         <button type='submit' style= 'width: 100px; height: 40px; border=none; color:#fff; background-color: #282828; font-family:arial; cursor:pointer;' name='commentSubmit'>Comment</button>
         </form>";
-        echo "<form method='POST' action='".getComments($conn)."'>
-        </form>";    
+           
     ?>
 <!-- footer -->
     
