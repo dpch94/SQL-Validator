@@ -66,7 +66,6 @@
                                 <?php while($row = $result->fetch_assoc()){ ?> 
                                     <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" class="imcenter" style="width:500px;height:300px"/> 
                                 <?php } ?> 
-                                
                             </div>
                         
                         <?php }
@@ -101,7 +100,15 @@
             <?php } ?>        
         </div>
     </div>
-    
+    <?php
+    echo "<form method='POST' action='".setComments($conn)."'>
+        <input type='hidden' name='uid' value='$id'>
+        <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
+        <textarea name='message' style= 'width: 840px; height: 150px; resize=none; background-color: #fff;'></textarea><br>
+        <button type='submit' style= 'width: 100px; height: 40px; border=none; color:#fff; background-color: #282828; font-family:arial; cursor:pointer;' name='commentSubmit'>Comment</button>
+        </form>";
+           
+    ?>
     
     <?php   
 
