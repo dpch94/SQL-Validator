@@ -16,7 +16,7 @@
       <div class="col-4 offset-md-4 form-div">
         <a href="users.php">View all profiles</a>
         <form action="profile.php" method="post" enctype="multipart/form-data">
-          <h2 class="text-center mb-3 mt-3">Update profile</h2>
+          <h2 class="text-center mb-3 mt-3">Add user profile</h2>
           <?php if (!empty($msg)): ?>
             <div class="alert <?php echo $msg_class ?>" role="alert">
               <?php echo $msg; ?>
