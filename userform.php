@@ -33,8 +33,8 @@
           $msg_class = "alert-danger2";
         }
       } else {
-        $error = "There was an erro uploading the file";
-        $msg = "alert-danger3";
+        $error = "There was an error uploading the file";
+        $msg = " please upload image";
       }
     }
   }

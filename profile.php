@@ -27,7 +27,7 @@
               <div class="text-center img-placeholder"  onclick="triggerClick()">
                 <h4>Update image</h4>
               </div>
-              <img src="images/avatar5.jpg"  onclick="triggerClick()" id="profileDisplay">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5U9TSnZEl9VWr77TbG0AfzUB09d1pWTXx95sPlsgk8g8jJ1NTmrM5CNpXbkmBzjoEIAk&usqp=CAU"  onclick="triggerClick()" id="profileDisplay">
             </span>
             <input type="file" name="profileImage" onchange="displayImage(this)" id="profileImage" class="form-control" style="display: none;">
             <!-- <label>Profile Image</label> -->
