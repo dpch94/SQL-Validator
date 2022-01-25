@@ -54,6 +54,9 @@
                             
                             // Get image data from database 
                             $result = $conn->query("SELECT image FROM data WHERE id = $id"); 
+                            
+
+                            
                         ?>    
                         
 
@@ -63,6 +66,7 @@
                                 <?php while($row = $result->fetch_assoc()){ ?> 
                                     <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" class="imcenter" style="width:500px;height:300px"/> 
                                 <?php } ?> 
+                                
                             </div>
                         
                         <?php }
@@ -97,20 +101,39 @@
             <?php } ?>        
         </div>
     </div>
-    <?php
-    echo "<form method='POST' action='".getComments($conn)."' style='width: 20%; margin:20px;'>
-    </form>"; 
+    
+    
+    <?php   
 
+    // Create connection
+    $conn = mysqli_connect("localhost", "root", "", "blogdb");
+    // Check connection
+    if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $sql = "SELECT uid,date,message FROM comments WHERE uid='$id'";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "<div class = 'commentbox'><p>";
+            echo $row['uid']."<br>";
+            echo $row['date']."<br>";
+            echo nl2br($row['message']);
+        echo "</p></div>";
+    }
+    } else {
+    echo "no comments";
+    }
+
+    mysqli_close($conn);
     ?>
-    <?php
-    echo "<form method='POST' action='".setComments($conn)."'>
-        <input type='hidden' name='uid' value='Anonymous'>
-        <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
-        <textarea name='message' style= 'width: 840px; height: 150px; resize=none; background-color: #fff;'></textarea><br>
-        <button type='submit' style= 'width: 100px; height: 40px; border=none; color:#fff; background-color: #282828; font-family:arial; cursor:pointer;' name='commentSubmit'>Comment</button>
-        </form>";
-           
-    ?>
+    
+    
+
+    
 <!-- footer -->
     
     <div class="footer">
