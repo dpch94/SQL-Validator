@@ -107,9 +107,12 @@
         <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
         <textarea name='message' style= 'width: 840px; height: 150px; resize=none; background-color: #fff;'></textarea><br>
         <button type='submit' style= 'width: 100px; height: 40px; border=none; color:#fff; background-color: #282828; font-family:arial; cursor:pointer;' name='commentSubmit'>Comment</button>
-        </form>";
-           
+    </form>";
+    
+         
     ?>
+
+    
     
     <?php   
 
@@ -126,7 +129,7 @@
     if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        echo "<div class = 'commentbox'><p>";
+        echo "<div class = 'comment-box'><p>";
             echo $row['uid']."<br>";
             echo $row['date']."<br>";
             echo nl2br($row['message']);
@@ -135,9 +138,10 @@
                 <input type='hidden' name='cid' value='".$row['cid']."' />                
                 <button type ='submit' name='commentDelete'>Delete</button>
             </form>
-            <form class ='editbuttonform' method='POST' action ='editcomment.php'>
-                <input type='hidden' name='cid' value='".$row['cid']."' />                
-                <input type='hidden' name='date' value='".$row['date']."' />
+            <form class ='edit-form' method='POST' action ='editcomment.php'>
+                <input type='hidden' name='cid' value='".$row['cid']."' />   
+                <input type='hidden' name='uid' value='".$row['uid']."' />                
+                <input type='hidden' name='date' value='".$row['date']."' />   
                 <input type='hidden' name='message' value='".$row['message']."' />
                 <button>Edit</button>
             </form>

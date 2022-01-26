@@ -449,7 +449,7 @@ form{
   cursor: pointer;
 }
 
-.commentbox {
+.comment-box {
     width: 60%;
     padding: 15px;
     margin:  10px;
@@ -459,20 +459,20 @@ form{
     position: relative;
 }
 
-.commentbox p{
+.comment-box p{
     font-size:  16px;
     line-height: 15px;
     
 
 }
 
-.editbuttonform {
+.edit-form {
     position: absolute;
     top: 0px;
     right: 0px;
 }
 
-.editbuttonform button {
+.edit-form button {
     width: 40px;
     height: 20px;
     color: #282828;
