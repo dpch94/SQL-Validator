@@ -34,6 +34,7 @@
             <li><a href="#">Tutorial</a></li>
             <!-- <li><a href="#">Download</a></li> -->
             <li><button class="download-btn">Download</button></li>
+            <li><a href="profile.php">Profile</a></li>
             
                         
             

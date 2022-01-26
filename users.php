@@ -19,6 +19,7 @@ include 'userform.php';
     <div class="row">
       <div class="col-4 offset-md-4" style="margin-top: 30px;">
         <a href="profile.php" class="btn btn-success">New profile</a>
+        <a href="index.php" class="btn btn-success">Home</a>
         <br>
         <br>
         <table class="table table-bordered">
