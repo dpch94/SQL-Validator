@@ -25,6 +25,7 @@ include 'userform.php';
           <thead>
             <th>Image</th>
             <th>Bio</th>
+            <th>Delete</th>
           </thead>
           <tbody>
             <?php foreach ($users as $user): ?>
@@ -33,6 +34,13 @@ include 'userform.php';
                   <img src="images/<?php echo $user['profile_image']; ?>" width="90" height="90" alt=""> 
                 </td>
                 <td> <?php echo $user['bio']; ?> </td>
+                
+                <form method="POST" onsubmit="return confirm('Are you sure you want to delete this Profile');">
+                  <input type="hidden" name="_DELPROFILE" value="DELETE">
+                  <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+                  <td> <button class="btn btn-danger btn-sm ml-2" type="submit">&#10006;</button> </td>
+                </form>
+
               </tr>
             <?php endforeach; ?>
           </tbody>

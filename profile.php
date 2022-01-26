@@ -11,6 +11,17 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="blog-alert">  
+    <!-- Display any info -->
+    <?php if(isset($_REQUEST['info'])){?>
+                <?php if($_REQUEST['info'] == "deleted"){?>
+                    <div class="alert-alert-success" role="alert" style="width: 680px; height: 80px;">
+                        <p>Profile has been deleted successfully.</p>
+                    </div>
+                <?php }?> 
+    <?php }?>            
+  </div>   
+
   <div class="container">
     <div class="row">
       <div class="col-4 offset-md-4 form-div">
@@ -36,7 +47,7 @@
           <div class="form-group">
             <!-- <label>Bio</label> -->
             
-            <textarea name="bio" class="form-control" placeholder="Describe about yourself..."></textarea>
+            <textarea name="bio" class="form-control" placeholder="Describe about yourself and mention your course..."></textarea>
           </div>
           <div class="form-group">
             <button type="submit" name="save_profile" class="btn btn-primary btn-block">Save User</button>
