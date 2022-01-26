@@ -130,7 +130,18 @@
             echo $row['uid']."<br>";
             echo $row['date']."<br>";
             echo nl2br($row['message']);
-        echo "</p></div>";
+        echo "</p>
+            <form class ='deletebuttonform' method='POST' action ='".deleteComments($conn)."'>
+                <input type='hidden' name='cid' value='".$row['cid']."' />                
+                <button type ='submit' name='commentDelete'>Delete</button>
+            </form>
+            <form class ='editbuttonform' method='POST' action ='editcomment.php'>
+                <input type='hidden' name='cid' value='".$row['cid']."' />                
+                <input type='hidden' name='date' value='".$row['date']."' />
+                <input type='hidden' name='message' value='".$row['message']."' />
+                <button>Edit</button>
+            </form>
+        </div>";
     }
     } else {
     echo "no comments";

@@ -14,15 +14,37 @@ function setComments($conn){
 }
 
 function getComments($conn){
-    $uid = $_POST['uid'];    
-    $sql = "SELECT uid,date,message FROM comments WHERE 'uid' = '$uid'";
+    $id = $_POST['id'];    
+    $sql = "SELECT uid,date,message FROM comments WHERE 'uid' = '$id'";
     $result = $conn->query($sql);
-    while($row = $result->fetch_assoc()){
+    if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)){
         echo "<div class = 'commentbox'><p>";
             echo $row['uid']."<br>";
             echo $row['date']."<br>";
             echo nl2br($row['message']);
         echo "</p></div>";
     }
+    } else {
+        echo " no comments";
+    }
 }
-?>
+
+function editComments($conn){
+    if (isset($_POST['commentSubmit'])){        
+        $cid = $_POST['cid'];          
+        $message = $_POST['message'];
+        $sql="UPDATE comments SET message = '$message' WHERE cid = '$cid'";
+        $result = $conn->query($sql);
+        header("Location: index.php");
+    }
+}
+
+function deleteComments($conn){
+    if (isset($_POST['commentDelete'])){        
+        $cid = $_POST['cid'];
+        $sql="DELETE FROM comments WHERE cid = '$cid'";
+        $result = $conn->query($sql);
+        
+    }
+}

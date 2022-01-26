@@ -456,6 +456,7 @@ form{
     background-color:#cccccc;
     border-radius: 5px;
     border: 1px solid #3b2b2b;
+    position: relative;
 }
 
 .commentbox p{
@@ -464,6 +465,24 @@ form{
     
 
 }
+
+.editbuttonform {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.editbuttonform button {
+    width: 40px;
+    height: 20px;
+    color: #282828;
+    background-color: #fff;
+}
+
+.edit-form button:hover {
+    opacity: 1;
+}
+
 
 /*Media queries*/
 @media only screen and (max-width: 600px){
