@@ -35,23 +35,25 @@ function getComments($conn){
 
 function editComments($conn){
     if (isset($_POST['commentSubmit'])){        
-        $cid = $_POST['cid'];     
+        $cid = (int) $_POST['cid'];     
         $uid = $_POST['uid'];   
         $date = $_POST['date'];        
         $message = $_POST['message'];
 
-        $sql="UPDATE comments SET message = '$message' WHERE cid = '$cid'";
+        $sql="UPDATE comments SET message = '$message', date = '$date' WHERE cid = '$cid'";
         $result = $conn->query($sql);
         header("Location: index.php");
     }
 }
 
 function deleteComments($conn){
-    if (isset($_POST['commentDelete'])){        
-        $cid = $_POST['cid'];
+    if ($_SERVER['REQUEST_METHOD'] == 'DELETE' || ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['commentDelete'])){        
+        $cid = (int) $_POST['cid'];
 
         $sql="DELETE FROM comments WHERE cid = '$cid'";
         $result = $conn->query($sql);
+        header("Location: index.php");
         
     }
 }
+?>

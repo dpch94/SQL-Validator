@@ -34,6 +34,7 @@
             <li><a href="#">Tutorial</a></li>
             <!-- <li><a href="#">Download</a></li> -->
             <li><button class="download-btn">Download</button></li>
+            <li><a href="profile.php">Profile</a></li>
             
             
                         
@@ -47,7 +48,8 @@
     </div>
     
     <?php
-    $cid = $_POST['cid'];    
+    $conn = mysqli_connect("localhost", "root", "", "blogdb");
+    $cid = (int) $_POST['cid'];    
     $uid = $_POST['uid'];    
     $date = $_POST['date'];    
     $message = $_POST['message'];
