@@ -103,6 +103,8 @@ a{
 
 
 
+
+
 .btn:hover{
     color: white !important;
     background: #005255;
@@ -480,6 +482,22 @@ form{
 }
 
 .edit-form button:hover {
+    opacity: 1;
+}
+
+.delete-form {
+    position: absolute;
+    top: 85px;
+    right: 0px;
+}
+
+.delete-form button {
+    width: 50px;
+    height: 20px;
+    color: #282828;
+    background-color: #fff;
+}
+.delete-form button:hover {
     opacity: 1;
 }
 

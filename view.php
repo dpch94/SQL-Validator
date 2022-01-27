@@ -2,7 +2,7 @@
     date_default_timezone_set('Europe/Copenhagen');
     include 'comments.inc.php';
     include 'db8.inc.php';
-
+    
     include "logic.php";
 
 ?>
@@ -135,18 +135,22 @@
                 echo $row['date']."<br>";
                 echo nl2br($row['message']);
             echo "</p>
-
-                <form class ='deletebuttonform' method='POST' action ='".deleteComments($conn)."'>
-                    <input type='hidden' name='cid' value='".$row['cid']."' />                
-                    <button type ='submit' name='commentDelete'>Delete</button>
-                </form>
                 <form class ='edit-form' method='POST' action ='editcomment.php'>
-                    <input type='hidden' name='cid' value='".$row['cid']."' />   
-                    <input type='hidden' name='uid' value='".$row['uid']."' />                
-                    <input type='hidden' name='date' value='".$row['date']."' />   
-                    <input type='hidden' name='message' value='".$row['message']."' />
+                    <input type='hidden' name='cid' value='".$row['cid']."'>   
+                    <input type='hidden' name='uid' value='".$row['uid']."'>                
+                    <input type='hidden' name='date' value='".$row['date']."'>   
+                    <input type='hidden' name='message' value='".$row['message']."'>
                     <button>Edit</button>
                 </form>
+
+                <form class ='delete-form' method='POST' action ='".deleteComments($conn)."'>
+                    <input type='hidden' name='cid' value='".$row['cid']."'>
+                    <input type='hidden' name='uid' value='".$row['uid']."'> 
+                    <input type='hidden' name='date' value='".$row['date']."'>   
+                    <input type='hidden' name='message' value='".$row['message']."'>               
+                    <button type ='submit' name='commentDelete'>Delete</button>
+                </form>
+                
             </div>";
         }
     }else {

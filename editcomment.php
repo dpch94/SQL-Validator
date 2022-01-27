@@ -50,15 +50,16 @@
     <?php
     $conn = mysqli_connect("localhost", "root", "", "blogdb");
     $cid = (int) $_POST['cid'];    
-    $uid = $_POST['uid'];    
+    $uid = (int) $_POST['uid'];    
     $date = $_POST['date'];    
     $message = $_POST['message'];
+
     echo "<form method='POST' action='".editComments($conn)."'>
         <input type='hidden' name='cid' value='".$cid."'>    
-        <input type='hidden' name='uid' value='".$uid."'> 
+        <input type='hidden' name='uid' value='".$uid."'>
         <input type='hidden' name='date' value='".$date."'>     
         <textarea name='message'>".$message."</textarea><br>
-        <button type='submit' name='commentSubmit'>Edit</button>
+        <button type='submit' name='commentEdit'>Edit</button>
     </form>";
         
     ?>
