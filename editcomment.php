@@ -58,7 +58,7 @@
         <input type='hidden' name='cid' value='".$cid."'>    
         <input type='hidden' name='uid' value='".$uid."'>
         <input type='hidden' name='date' value='".$date."'>     
-        <textarea name='message'>".$message."</textarea><br>
+        <textarea name='message' style='margin:20px 20px; width:60%; height: 120px; font-size: 1.3em;'>".$message."</textarea><br>
         <button type='submit' name='commentEdit'>Edit</button>
     </form>";
         

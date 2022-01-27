@@ -4,6 +4,7 @@
     include 'db8.inc.php';
     
     include "logic.php";
+   
 
 ?>
 
@@ -101,7 +102,9 @@
             <?php } ?>        
         </div>
     </div>
+    
     <?php
+
     echo "<form method='POST' action='".setComments($conn)."'>
         <input type='hidden' name='uid' value='$id'>
         <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
@@ -110,11 +113,7 @@
     </form>";
     
          
-    ?>
-
     
-    
-    <?php   
 
     // Create connection
     $conn = mysqli_connect("localhost", "root", "", "blogdb");
@@ -123,7 +122,7 @@
     die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = "SELECT uid,date,message FROM comments WHERE uid='$id'";
+    $sql = "SELECT * FROM comments WHERE uid='$id'";
     $result = mysqli_query($conn, $sql);
     // View, Edit and Delete comments
     if (mysqli_num_rows($result) > 0) {
@@ -131,10 +130,11 @@
     // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
             echo "<div class = 'comment-box'><p>";
-                echo $row['uid']."<br>";
+                // echo $row['uid']."<br>";
                 echo $row['date']."<br>";
                 echo nl2br($row['message']);
-            echo "</p>
+            echo "</p>   
+            
                 <form class ='edit-form' method='POST' action ='editcomment.php'>
                     <input type='hidden' name='cid' value='".$row['cid']."'>   
                     <input type='hidden' name='uid' value='".$row['uid']."'>                
@@ -144,14 +144,12 @@
                 </form>
 
                 <form class ='delete-form' method='POST' action ='".deleteComments($conn)."'>
-                    <input type='hidden' name='cid' value='".$row['cid']."'>
-                    <input type='hidden' name='uid' value='".$row['uid']."'> 
-                    <input type='hidden' name='date' value='".$row['date']."'>   
-                    <input type='hidden' name='message' value='".$row['message']."'>               
+                    <input type='hidden' name='cid' value='".$row['cid']."'>          
                     <button type ='submit' name='commentDelete'>Delete</button>
                 </form>
+            </div>";     
                 
-            </div>";
+                
         }
     }else {
     echo "no comments";

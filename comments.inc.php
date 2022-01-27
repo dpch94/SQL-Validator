@@ -11,6 +11,7 @@ function setComments($conn){
 
         $sql="INSERT INTO comments (uid,date,message) VALUES('$uid','$date','$message')";
         $result = $conn->query($sql);
+       
     }
 }
 
@@ -45,9 +46,12 @@ function editComments($conn){
         $message = $_POST['message'];
 
         $sql="UPDATE comments SET message = '$message' WHERE cid = '$cid'";
-        $result = $conn->query($sql);
-        
+        $result = mysqli_query($conn, $sql);
         header("Location: index.php");
+        
+        
+        
+        
     }
 }
 
@@ -58,8 +62,12 @@ function deleteComments($conn){
        
 
         $sql="DELETE FROM comments WHERE cid = '$cid'";
-        $result = $conn->query($sql);
+        $result = mysqli_query($conn, $sql);
         header("Location: index.php");
+        
+        
+       
+      
         
     }
 }
