@@ -59,7 +59,7 @@
         <input type='hidden' name='uid' value='".$uid."'>
         <input type='hidden' name='date' value='".$date."'>     
         <textarea name='message' style='margin:20px 20px; width:60%; height: 120px; font-size: 1.3em;'>".$message."</textarea><br>
-        <button type='submit' name='commentEdit'>Edit</button>
+        <button  class='btn btn-outline-dark my-3' type='submit' style= 'position:absolute; text-align:center; width: 140px; height: 40px; left:20px;'name='commentEdit'>Save</button>
     </form>";
         
     ?>
