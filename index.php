@@ -5,14 +5,14 @@ include "logic.php";
 $posts = array();
 $postsTitle = 'Searched Posts';
 //searching
-if (isset($_GET['subject'])) {
-    $posts = getPostsById($_GET['subject']);
-    $postsTitle = "You searched for posts under '" . $_GET['subject'] . "'";
+if (isset($POST['subject'])) {
+    $posts = getPostsById($POST['subject']);
+    $postsTitle = "You searched for posts under '" . $_POST['subject'] . "'";
 } else if (isset($_POST['search-term'])) {
     $postsTitle = "You searched for '" . $_POST['search-term'] . "'";
     $posts = searchPosts($_POST['search-term']);
 } else {
-    $posts = getPosts($_GET['description']);
+    $posts = getPosts($POST['description']);
 }
 ?>
 

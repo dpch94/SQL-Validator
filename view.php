@@ -135,6 +135,7 @@
                 echo $row['date']."<br>";
                 echo nl2br($row['message']);
             echo "</p>
+
                 <form class ='deletebuttonform' method='POST' action ='".deleteComments($conn)."'>
                     <input type='hidden' name='cid' value='".$row['cid']."' />                
                     <button type ='submit' name='commentDelete'>Delete</button>
