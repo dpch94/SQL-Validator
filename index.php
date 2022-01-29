@@ -14,6 +14,27 @@ if (isset($POST['subject'])) {
 } else {
     $posts = getPosts($POST['description']);
 }
+$conn = mysqli_connect("localhost", "root", "", "blogdb");
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+        $id = (int) $_POST['id'];
+        $name = $_POST["name"];
+        $rating = $_POST["rating"];
+
+        $sql = "INSERT INTO rate (ratename,rating) VALUES ('$name','$rating')";
+        if (mysqli_query($conn, $sql))
+        {
+            echo "New Rating added successfully";
+            header("Location: index.php?info=updated");
+        }
+        else
+        {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+       
+    }
+
+
 ?>
 
 
@@ -143,9 +164,9 @@ if (isset($POST['subject'])) {
                                 <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-more">&rarr;</span></a>
                                 <i class="card-text"  style="padding:5px;"><?php echo "Created at ", date('F j, Y H:i', strtotime($q['created_at']));?></i>
 
-                                <div class="container" style="position:relative;top:-170px; left:1200px;">
+                                <div class="container" style="position:relative;top:-170px; left:1450px;">
                                     <div class="row">
-                                        <form action="index.php" method="post">
+                                        <form action="index.php" method="POST">
                                             
                         
                                     
@@ -160,13 +181,13 @@ if (isset($POST['subject'])) {
                                                 
                                                     </div>
                                                     <div>
-                                                        <label>Name</label>
+                                                        <label>Tutor's Name</label>
                                                         <input type="text" name="name">
                                                     </div>
                                     
                                                     <div>
                                                         
-                                                        <input type="submit" name="add" value="Rate">
+                                                        <input type="submit" class="btn btn-dark" name="add" value="Rate">
                                                     </div>
                                         </form>
                                     </div>
@@ -182,6 +203,7 @@ if (isset($POST['subject'])) {
                 <?php }?>
             </div>
         </div>
+        
         
 
 
@@ -223,7 +245,7 @@ if (isset($POST['subject'])) {
         $(function () {
             $(".rateyo").rateYo({halfStar: true}).on("rateyo.change", function (e, data) {
                 
-                halfStar: true;
+                
                 var rating = data.rating;
                 
                 
@@ -237,24 +259,4 @@ if (isset($POST['subject'])) {
 
 </body>
 </html>
-<?php
- $conn = mysqli_connect("localhost", "root", "", "blogdb");        
- if ($_SERVER["REQUEST_METHOD"] == "POST")
- {
-     $id = (int) $_POST['id'];
-     $name = $_POST["name"];
-     $rating = $_POST["rating"];
 
-     $sql = "UPDATE data SET ratename = '$name', rating = '$rating' WHERE id = $id";
-     if (mysqli_query($conn, $sql))
-     {
-         echo "New Rating added successfully";
-         header("Location: index.php?info=added");
-     }
-     else
-     {
-         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-     }
-     mysqli_close($conn);
- }
-?> 
