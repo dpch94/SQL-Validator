@@ -31,7 +31,11 @@ if (isset($POST['subject'])) {
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
     <link rel ="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <title>Blog and Learn</title>
+    
+    
 </head>
 
 <body>
@@ -138,14 +142,48 @@ if (isset($POST['subject'])) {
                                 <p class="card-text" style="padding:5px;"><?php echo substr($q['description'], 0, 200);?>...</p>
                                 <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-more">&rarr;</span></a>
                                 <i class="card-text"  style="padding:5px;"><?php echo "Created at ", date('F j, Y H:i', strtotime($q['created_at']));?></i>
-                                
+
+                                <div class="container" style="position:relative;top:-170px; left:1200px;">
+                                    <div class="row">
+                                        <form action="index.php" method="post">
+                                            
+                        
+                                    
+                                                <div class="rateyo" id= "rating"
+                                                    data-rateyo-rating="3"
+                                                    data-rateyo-num-stars="5"
+                                                    data-rateyo-score="3">
+                                                </div>
+                                                    <div>
+                                                        <span class='result'>3</span>
+                                                        <input type="hidden" name="rating">
+                                                
+                                                    </div>
+                                                    <div>
+                                                        <label>Name</label>
+                                                        <input type="text" name="name">
+                                                    </div>
+                                    
+                                                    <div>
+                                                        
+                                                        <input type="submit" name="add" value="Rate">
+                                                    </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                            
 
                             </div>
                         </div>
                     </div>
+                    
+                
+                            
                 <?php }?>
             </div>
         </div>
+        
+
 
                        
     <!-- footer -->
@@ -176,5 +214,47 @@ if (isset($POST['subject'])) {
     document.getElementById('date-time').innerHTML=dt;
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    
+    <script>
+    
+    
+        $(function () {
+            $(".rateyo").rateYo({halfStar: true}).on("rateyo.change", function (e, data) {
+                
+                halfStar: true;
+                var rating = data.rating;
+                
+                
+                $(this).parent().find('.score').text('score :'+ $(this).attr('data-rateyo-score'));
+                $(this).parent().find('.result').text('rating :'+ rating);
+                $(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
+            });
+        });
+    
+    </script>
+
 </body>
 </html>
+<?php
+ $conn = mysqli_connect("localhost", "root", "", "blogdb");        
+ if ($_SERVER["REQUEST_METHOD"] == "POST")
+ {
+     $id = (int) $_POST['id'];
+     $name = $_POST["name"];
+     $rating = $_POST["rating"];
+
+     $sql = "UPDATE data SET ratename = '$name', rating = '$rating' WHERE id = $id";
+     if (mysqli_query($conn, $sql))
+     {
+         echo "New Rating added successfully";
+         header("Location: index.php?info=added");
+     }
+     else
+     {
+         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+     }
+     mysqli_close($conn);
+ }
+?> 

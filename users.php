@@ -13,6 +13,15 @@ include 'userform.php';
   <title>Image Preview and Upload</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+  <style>
+    html,body{
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    background: #f5f5f5;
+    font-family: 'Lora', serif;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
