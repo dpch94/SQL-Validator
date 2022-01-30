@@ -48,7 +48,7 @@
                     <input type="text" name="subject" placeholder="Blog Subject" class="form-control bg-dark text-white my-3" style="margin:60px 20px; width:60%; height: 60px; font-size: 1.5em;" value="<?php echo $q['subject']?>">
                     <textarea name="description" class="form-control bg-dark text-white my-3" style="margin:20px 20px; width:60%; height: 450px; font-size: 1.3em;"><?php echo $q['description']?></textarea>
                     <!-- <textarea name="description" class="form"><?php echo $q['description']?></textarea> -->
-                    <div id="image_content">
+                    <!-- <div id="image_content">
                         <label>Attachment</label>
                         <input type="file" name="uploadfile" value="" />
                         <div>
@@ -57,7 +57,7 @@
                             Upload
                             </button>
                         </div>
-                    </div>
+                    </div> -->
                     <button name="update" class="btn btn-dark" style=" position:absolute ; left:1300px; bottom:100px; text-align:center; width: 140px; height: 40px;">Update</button>
                     
                     <button formaction="index.php" class="btn btn-dark" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Cancel</button>

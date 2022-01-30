@@ -15,13 +15,16 @@ if (isset($POST['subject'])) {
     $posts = getPosts($POST['description']);
 }
 $conn = mysqli_connect("localhost", "root", "", "blogdb");
-if ($_SERVER["REQUEST_METHOD"] == "POST")
+
+if (isset($_POST['add']))
     {
         $id = (int) $_POST['id'];
+        $rid = (int) $_POST['rid'];
+        
         $name = $_POST["name"];
         $rating = $_POST["rating"];
 
-        $sql = "INSERT INTO rate (ratename,rating) VALUES ('$name','$rating')";
+        $sql = "UPDATE data set rid = id, ratename = '$name', rating ='$rating' WHERE rid=$rid";
         if (mysqli_query($conn, $sql))
         {
             echo "New Rating added successfully";
@@ -166,7 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
                                 <div class="container" style="position:relative;top:-170px; left:1450px;">
                                     <div class="row">
-                                        <form action="index.php" method="POST">
+                                        <form action="" method="POST">
                                             
                         
                                     
@@ -187,11 +190,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                                     
                                                     <div>
                                                         
-                                                        <input type="submit" class="btn btn-dark" name="add" value="Rate">
+                                                    <button name="add" type="submit" class="btn btn-dark">Rate</button>
                                                     </div>
+                                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo "Rating given by Tutor:";?></h5>
+                                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['ratename'];?></h5>
+                                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['rating'];?></h5>
+
                                         </form>
                                     </div>
                                 </div>
+                               
                                             
 
                             </div>
