@@ -21,13 +21,19 @@
         if (empty($_REQUEST['subject'])) {
             echo "<span class=\"error\">Error: Subject is required</span>";
         }
+        elseif (empty($_REQUEST['created_by'])) {
+            echo "<span class=\"error\">Error: Created by and Description are required</span>";
+        }
+        
         elseif (empty($_REQUEST['description'])) {
-            echo "<span class=\"error\">Error: Description is required</span>";
+            echo "<span class=\"error\">Error: Created by and Description are required</span>";
         }
         else {
 
             $subject = $_REQUEST['subject'];
+            $created_by = $_REQUEST['created_by'];
             $description = $_REQUEST['description'];
+            
 
             // If file upload form is submitted 
             $status = $statusMsg = '';
@@ -45,7 +51,7 @@
 
                         //inserting into database
                         
-                        $insert = $conn->query("INSERT into data (subject, description, image) VALUES ('$subject', '$description', '$imgContent')");
+                        $insert = $conn->query("INSERT into data (subject, created_by, description, image) VALUES ('$subject', '$created_by', '$description', '$imgContent')");
                         //$sql = "INSERT INTO data(subject, description, image) VALUES('$subject', '$description', '$imgContent')";
                         mysqli_query($conn, $sql);
 
@@ -65,7 +71,7 @@
                     } 
                 }elseif(empty($_FILES["uploadfile"]["name"])) {  
                                 
-                    $sql = "INSERT INTO data(subject, description) VALUES('$subject', '$description')";
+                    $sql = "INSERT INTO data(subject, created_by, description) VALUES('$subject', '$created_by', '$description')";
                     mysqli_query($conn, $sql);
 
                     echo $sql;

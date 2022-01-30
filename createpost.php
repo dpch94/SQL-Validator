@@ -57,6 +57,10 @@
                         <input type="text" name="subject" class="textsubject-input" style="margin:30px 2px;" >
                     </div>
                     <div>
+                        <h1>Created by</h1>
+                        <input type="text" name="created_by" class="textsubject-input" style="margin:30px 2px;" >
+                    </div>
+                    <div>
                         <h2>Description</h2>
                         <!-- <input type="text" name="description" class="createpost-input" style="margin:30px 2px; "> -->
                     </div>

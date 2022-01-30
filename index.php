@@ -30,6 +30,14 @@ if (isset($_POST['add']))
             echo "New Rating added successfully";
             header("Location: index.php?info=updated");
         }
+        
+        else if (!mysqli_query($conn, $sql)){
+            
+            $sqlu = "UPDATE data set ratename = '$name', rating ='$rating' WHERE rid=$rid";
+            mysqli_query($conn, $sqlu);
+            echo "New Rating added successfully";
+            header("Location: index.php?info=updated");
+        }
         else
         {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -132,6 +140,8 @@ if (isset($_POST['add']))
                 
                                 <div class="post-info">
                                     <h4><a href="view.php?id=<?php echo $post['id']; ?>"><?php echo $post['subject']; ?></a></h4>
+
+                                    <p class="card-text" style="padding:5px;"><?php echo $post['created_by']; ?></p>
                                     <p class="card-text" style="padding:5px;"><?php echo $post['description'];?></p>
                                     
                                     <i class="far fa-calendar"> <?php echo date('F j, Y H:i', strtotime($post['created_at'])); ?></i>
@@ -163,6 +173,7 @@ if (isset($_POST['add']))
                         <div class="card text-white bg-dark mt-5" style=" border:1px solid #005255; margin:30px; width: 50%; line-height: 2rem; border-radius: 15px;">                                                
                             <div class="card-body">
                                 <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['subject'];?></h5>
+                                <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['created_by'];?></h5>
                                 <p class="card-text" style="padding:5px;"><?php echo substr($q['description'], 0, 200);?>...</p>
                                 <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-more">&rarr;</span></a>
                                 <i class="card-text"  style="padding:5px;"><?php echo "Created at ", date('F j, Y H:i', strtotime($q['created_at']));?></i>

@@ -46,6 +46,7 @@
                 <form method="POST" action="" enctype="multipart/form-data">
                     <input type="text" hidden name="id" style="border:1px solid blue; margin:60px;"value="<?php echo $q['id'];?>">
                     <input type="text" name="subject" placeholder="Blog Subject" class="form-control bg-dark text-white my-3" style="margin:60px 20px; width:60%; height: 60px; font-size: 1.5em;" value="<?php echo $q['subject']?>">
+                    <h4>Description</h4>
                     <textarea name="description" class="form-control bg-dark text-white my-3" style="margin:20px 20px; width:60%; height: 450px; font-size: 1.3em;"><?php echo $q['description']?></textarea>
                     <!-- <textarea name="description" class="form"><?php echo $q['description']?></textarea> -->
                     <!-- <div id="image_content">
@@ -61,6 +62,10 @@
                     <button name="update" class="btn btn-dark" style=" position:absolute ; left:1300px; bottom:100px; text-align:center; width: 140px; height: 40px;">Update</button>
                     
                     <button formaction="index.php" class="btn btn-dark" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Cancel</button>
+                    <h4>Before adding your lines, Please add your name in description after the existing lines written by creator, while editing the post.</h4>
+                    <h3>For example,</h3>
+                    <h3> Student2:</h3>
+                    <h3>I would like to add that...<h3>
 
                 </form>
             <?php }?> 

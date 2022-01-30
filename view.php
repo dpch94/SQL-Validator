@@ -47,6 +47,8 @@
             <?php foreach($query as $q){?>
                 <div class="bg-dark p-5 rounded-lg text-white text-center" style="border:1px solid white; margin:70px 40px; position:relative; width:80%;">
                     <h1><?php echo $q['subject'];?></h1>
+                    <div class="bg-dark p-5 rounded-lg text-white text-center" style="border:1px solid white; margin:70px 40px; position:relative; width:80%;">
+                        <h1><?php echo $q['created_by'];?></h1>
                     
                     <div>
                         <p class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 20px; padding: 5px 15px; margin:60px 0px;  width: 80%; min-height: 300px;overflow: hidden"><?php echo $q['description'];?></p>
@@ -93,6 +95,7 @@
                         <input type="hidden" name="id" value="<?php echo $q['id']; ?>">
                         <button  class="btn btn-danger btn-sm ml-2" type="submit" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Delete</button>
                         </form>
+                    </div>    
                     </div>
                 </div>
                 
