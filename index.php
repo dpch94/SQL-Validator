@@ -79,7 +79,7 @@ if (isset($_POST['add']))
         <ul class="nav" align-content: center;>
             <li><a href="index.php">Home</a></li> 
             
-            <li><a href="#">Tutorial</a></li>
+            <li><a href="https://docs.google.com/document/d/17_ZMhns8wg6_umKgsxu9fja6OWFL9CenwSApa6GW8qw/edit?usp=sharing" target="_blank">Tutorial</a></li>
             
             <!-- <li><a href="#"class="downloadaspdf">Download</a></li> -->
             <li><button class="download-btn">Download</button></li> 

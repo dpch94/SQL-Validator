@@ -88,7 +88,7 @@
 
             </div>
             <div class="footer-section contact-form" >
-                <h2>Contact us   <i class="fas fa-envelope"></i>   team03@gmail.com   </h2>                
+                <h2>Contact us   <i class="fas fa-envelope"></i>   contact.team03@gmail.com   </h2>                
             </div>
         </div>
 
