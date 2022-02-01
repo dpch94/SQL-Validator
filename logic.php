@@ -58,8 +58,8 @@
                         if($insert){ 
                             $status = 'success'; 
                             $statusMsg = "File uploaded successfully.";
-                            echo $statusMsg;
-                            header("Location: index.php?info=added");
+                            // echo $statusMsg;
+                            header("Location: index.php");
                             exit(); 
                         }else{ 
                             $statusMsg = "File upload failed, please try again.";
@@ -74,9 +74,9 @@
                     $sql = "INSERT INTO data(subject, created_by, description) VALUES('$subject', '$created_by', '$description')";
                     mysqli_query($conn, $sql);
 
-                    echo $sql;
+                    // echo $sql;
 
-                    header("Location: index.php?info=added");
+                    header("Location: index.php");
                     exit();
                 }       
                         
@@ -149,7 +149,7 @@
         $result = mysqli_query($conn, $sql);
         if ($result !== false) {
             
-            header("Location: index.php?info=deleted");
+            header("Location: index.php");
             exit;
         }
     }
@@ -185,7 +185,7 @@
                     if($sql_run)
                     {
                         move_uploaded_file($_FILES['uploadfile']['name'] ,"upload/".$imgContent_new);
-                        header("Location: index.php?info=updated");
+                        header("Location: index.php");
                         exit();
 
 
@@ -206,9 +206,9 @@
                 $sql = "UPDATE data SET subject = '$subject', description = '$description' WHERE id = $id";
                 mysqli_query($conn, $sql);
 
-                echo $sql;
+                // echo $sql;
 
-                header("Location: index.php?info=updated");
+                header("Location: index.php");
                 exit();
             }
         }

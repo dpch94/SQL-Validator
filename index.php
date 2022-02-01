@@ -28,7 +28,7 @@ if (isset($_POST['add']))
         if (mysqli_query($conn, $sql))
         {
             echo "New Rating added successfully";
-            header("Location: index.php?info=updated");
+            header("Location: index.php");
         }
         
         else if (!mysqli_query($conn, $sql)){
@@ -36,7 +36,7 @@ if (isset($_POST['add']))
             $sqlu = "UPDATE data set ratename = '$name', rating ='$rating' WHERE rid=$rid";
             mysqli_query($conn, $sqlu);
             echo "New Rating added successfully";
-            header("Location: index.php?info=updated");
+            header("Location: index.php");
         }
         else
         {
