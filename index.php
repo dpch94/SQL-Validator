@@ -46,6 +46,7 @@ if (isset($_POST['add']))
     }
 
 
+
 ?>
 
 
@@ -169,8 +170,8 @@ if (isset($_POST['add']))
         <!-- Display posts from database -->
             <div class="row">
                 <?php foreach($query as $q){ ?>
-                    <div class="col-12 col-lg-4 d-flex justify-content-center">                    
-                        <div class="card text-white bg-dark mt-5" style=" border:1px solid #005255; margin:30px; width: 50%; line-height: 2rem; border-radius: 15px;">                                                
+                    <div class="searchedposts" style=" position: relative; padding:5px; width:90%; margin:10px;">                    
+                        <div class="card text-white bg-dark mt-5" style=" border:1px solid #005255;width:60%; margin:20px; height:200px; line-height: 1.1rem; border-radius: 15px;">                                                
                             <div class="card-body">
                                 <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['subject'];?></h5>
                                 <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['created_by'];?></h5>
@@ -178,7 +179,7 @@ if (isset($_POST['add']))
                                 <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-more">&rarr;</span></a>
                                 <i class="card-text"  style="padding:5px;"><?php echo "Created at ", date('F j, Y H:i', strtotime($q['created_at']));?></i>
 
-                                <div class="container" style="position:relative;top:-170px; left:1450px;">
+                                <div class="container" style="position: absolute; right:20px; top: 15px; width:30%;">
                                     <div class="row">
                                         <form action="" method="POST">
                                             
