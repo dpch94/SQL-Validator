@@ -196,8 +196,8 @@ if (isset($_POST['add']))
                                                 
                                                     </div>
                                                     <div>
-                                                        <label>Tutor's Name</label>
-                                                        <input type="text" name="name">
+                                                        <label>Tutor's Name and Feedback</label>
+                                                        <input type="text" name="name" size="40">
                                                     </div>
                                     
                                                     <div>
@@ -272,6 +272,7 @@ if (isset($_POST['add']))
                 $(this).parent().find('.score').text('score :'+ $(this).attr('data-rateyo-score'));
                 $(this).parent().find('.result').text('rating :'+ rating);
                 $(this).parent().find('input[name=rating]').val(rating); //add rating value to input field
+                
             });
         });
     
