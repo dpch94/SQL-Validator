@@ -1,9 +1,10 @@
 <?php
+
   // Don't display server errors 
   ini_set("display_errors", "off");
   $msg = "";
   $msg_class = "";
-  $conn = mysqli_connect("localhost", "root", "", "blogdb");
+  $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
   if (isset($_POST['save_profile'])) {
     if (empty($_POST['bio'])) {
       echo "<span class=\"error\">Error: Say something about you</span>";
@@ -45,7 +46,7 @@
     }
   }
 
-  $conn = mysqli_connect("localhost", "root", "", "blogdb");
+  $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 
   if ($_SERVER['REQUEST_METHOD'] == 'DELETE' || ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['_DELPROFILE'] == 'DELETE')) {
     $id = (int) $_POST['id'];

@@ -1,5 +1,6 @@
 <?php
-include "logic.php";
+include 'logic.php';
+
 ?>
 <?php
 $posts = array();
@@ -14,7 +15,7 @@ if (isset($POST['subject'])) {
 } else {
     $posts = getPosts($POST['description']);
 }
-$conn = mysqli_connect("localhost", "root", "", "blogdb");
+$conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 
 if (isset($_POST['add']))
     {
@@ -85,6 +86,8 @@ if (isset($_POST['add']))
             <!-- <li><a href="#"class="downloadaspdf">Download</a></li> -->
             <li><button class="download-btn">Download</button></li> 
             <li><a href="profile.php">Profile</a></li>
+            <li><a href="createDB.php">Database</a></li>
+
               
         </ul>
         

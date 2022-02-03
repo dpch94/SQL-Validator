@@ -1,10 +1,90 @@
 <?php
 
+if(array_key_exists('createDB', $_POST)) {
+    createDB();
+}
+else if(array_key_exists('createTables', $_POST)) {
+    createTables();
+}
+else if(array_key_exists('dropDB', $_POST)) {
+    dropDB();
+}
+
+
+//Creating a connection
+function createDB()
+{
+    $con = mysqli_connect("localhost", "root", "");
+    $success = mysqli_query($con, "CREATE DATABASE IF NOT EXISTS bloggingdb");
+
+
+    echo "Database created successfully\n";
+
+    //Closing the connection
+    mysqli_close($con);
+}
+
+function createTables()
+{
+    $con = mysqli_connect("localhost", "root", "", "bloggingdb");
+    mysqli_query($con, "CREATE TABLE IF NOT EXISTS comments(
+                                `cid` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                                `uid` int(11) NOT NULL,
+                                `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                                `message` text NOT NULL )");
+
+
+    mysqli_query($con, "CREATE TABLE IF NOT EXISTS data(
+                                `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                                `created_by` varchar(255) NOT NULL,
+                                `subject` varchar(255) NOT NULL,
+                                `description` longblob NOT NULL,
+                                `image` longblob NOT NULL,
+                                `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+                                `rid` int(11) NOT NULL,
+                                `ratename` varchar(255) NOT NULL,
+                                `rating` float DEFAULT 0 )");
+
+
+    mysqli_query($con, "CREATE TABLE IF NOT EXISTS users(
+                                `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                                `profile_image` varchar(255) NOT NULL,
+                                `bio` text NOT NULL )");
+
+
+
+
+
+    //Closing the connection
+    mysqli_close($con);
+}
+
+//Creating a connection
+function dropDB()
+{
+    //Creating a connection
+    $con = mysqli_connect("localhost", "root", "");
+
+    if(! $con ) {
+        die('Could not connect: ' . mysqli_error());
+    }
+
+    $sql = 'DROP DATABASE bloggingdb';
+    $retval = mysqli_query($con,$sql);
+
+    if(! $retval ) {
+        die('Could not delete database db_test: ' . mysqli_error());
+    }
+
+    echo "Database deleted successfully\n";
+
+    mysqli_close($con);
+}
     // Don't display server errors 
     ini_set("display_errors", "off");
 
     // Initialize a database connection
-    $conn = mysqli_connect("localhost", "root", "", "blogdb");
+    $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 
     // Destroy if not possible to create a connection
     if(!$conn){
@@ -214,7 +294,7 @@
         }
     }
 
-    // $conn = mysqli_connect("localhost", "root", "", "blogdb");        
+    // $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
     
     
     

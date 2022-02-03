@@ -1,9 +1,10 @@
 <?php
     date_default_timezone_set('Europe/Copenhagen');
+
     include 'comments.inc.php';
     include 'db8.inc.php';
     
-    include "logic.php";
+    include 'logic.php';
    
 
 ?>
@@ -53,7 +54,7 @@
                     <div>
                         <p class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 20px; padding: 5px 15px; margin:60px 0px;  width: 80%; min-height: 300px;overflow: hidden"><?php echo $q['description'];?></p>
                         <?php
-                        $conn = mysqli_connect("localhost", "root", "", "blogdb");
+                        $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
                             // $result = mysqli_query($conn, "SELECT image FROM data WHERE id = $id");
                             
                             // Get image data from database to display image
@@ -121,7 +122,7 @@
     
 
     // Create connection
-    $conn = mysqli_connect("localhost", "root", "", "blogdb");
+    $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
     // Check connection
     if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());

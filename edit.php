@@ -1,6 +1,7 @@
 <?php
 
-    include "logic.php";
+    include 'logic.php';
+
 
 ?>
 

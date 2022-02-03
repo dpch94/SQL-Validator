@@ -1,9 +1,10 @@
 <?php
     date_default_timezone_set('Europe/Copenhagen');
+
     include 'comments.inc.php';
     include 'db8.inc.php';
 
-    include "logic.php";
+    include 'logic.php';
 
 ?>
 
@@ -48,7 +49,7 @@
     </div>
     
     <?php
-    $conn = mysqli_connect("localhost", "root", "", "blogdb");
+    $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
     $cid = (int) $_POST['cid'];    
     $uid = (int) $_POST['uid'];    
     $date = $_POST['date'];    
