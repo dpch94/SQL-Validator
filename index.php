@@ -208,7 +208,7 @@ if (isset($_POST['add']))
                                                     </div>
                                                     <div>
                                                         <label>Tutor's Name and Feedback</label>
-                                                        <input type="text" name="name" size="40">
+                                                        <input type="text" name="name" size="20">
                                                     </div>
 
                                                     <div>
