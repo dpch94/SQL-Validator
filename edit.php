@@ -21,6 +21,7 @@
 </head>
 
 <body>
+<div class="concenter">
     <header>
         <div class="logo">
             <h1 class="logo-text"style="text-align:center">Blog and Learn</h1>
@@ -60,13 +61,17 @@
                             </button>
                         </div>
                     </div> -->
-                    <button name="update" class="btn btn-dark" style=" position:absolute ; left:1300px; bottom:100px; text-align:center; width: 140px; height: 40px;">Update</button>
+                    <button name="update" class="btn btn-dark" style=" position:absolute ; left:600px; bottom:220px; text-align:center; width: 140px; height: 40px;">Update</button>
                     
-                    <button formaction="index.php" class="btn btn-dark" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Cancel</button>
-                    <h4>Before adding your lines, Please add your name in description after the existing lines written by creator, while editing the post.</h4>
-                    <h3>For example,</h3>
-                    <h3> Student2:</h3>
-                    <h3>I would like to add that...<h3>
+                    <button formaction="index.php" class="btn btn-dark" style=" position:absolute ; left:600px; bottom:160px; text-align:center; width: 140px; height: 40px;">Cancel</button>
+                    <div style=" position:absolute ; left:18px;">
+                        <h4>Before adding your lines, Please add your name in description after the existing lines written by creator, while editing the post.</h4>
+                        <h3>For example,</h3>
+                        <h3> Student2:</h3>
+                        <h3>I would like to add that...<h3>
+                        <br>
+                        <br>
+                    </div>
 
                 </form>
             <?php }?> 
@@ -82,21 +87,22 @@
 
 <!-- footer -->
     
-    <div class="footer">
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h2 class="logo-text">Learn and Blog</h2>
-
-            </div>
-            <div class="footer-section contact-form" >
-                <h2>Contact us   <i class="fas fa-envelope"></i>   contact.team03@gmail.com   </h2>                
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            Blog Developed by Team 3
-        </div>
-    </div>
+<!--    <div class="footer">-->
+<!--        <div class="footer-content">-->
+<!--            <div class="footer-section about">-->
+<!--                <h2 class="logo-text">Learn and Blog</h2>-->
+<!---->
+<!--            </div>-->
+<!--            <div class="footer-section contact-form" >-->
+<!--                <h2>Contact us   <i class="fas fa-envelope"></i>   contact.team03@gmail.com   </h2>                -->
+<!--            </div>-->
+<!--        </div>-->
+<!---->
+<!--        <div class="footer-bottom">-->
+<!--            Blog Developed by Team 3-->
+<!--        </div>-->
+<!--    </div>-->
+</div>
            
 
 <!-- //footer -->

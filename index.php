@@ -68,11 +68,15 @@ if (isset($_POST['add']))
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <title>Blog and Learn</title>
+
     
     
 </head>
 
 <body>
+<div class="concenter">
+
+
     <header>
         <div class="logo">
             <h1 class="logo-text"style="text-align:center">Blog and Learn</h1>
@@ -145,7 +149,7 @@ if (isset($_POST['add']))
                                 <div class="post-info">
                                     <h4><a href="view.php?id=<?php echo $post['id']; ?>"><?php echo $post['subject']; ?></a></h4>
 
-                                    <p class="card-text" style="padding:5px;"><?php echo $post['created_by']; ?></p>
+                                    <p class="card-text" style="padding:5px;"><?php echo "Created By ".$post['created_by']; ?></p>
                                     <p class="card-text" style="padding:5px;"><?php echo $post['description'];?></p>
                                     
                                     <i class="far fa-calendar"> <?php echo date('F j, Y H:i', strtotime($post['created_at'])); ?></i>
@@ -173,21 +177,25 @@ if (isset($_POST['add']))
         <!-- Display posts from database -->
             <div class="row">
                 <?php foreach($query as $q){ ?>
-                    <div class="searchedposts" style=" position: relative; padding:5px; width:90%; margin:10px;">                    
-                        <div class="card text-white bg-dark mt-5" style=" border:1px solid #005255;width:60%; margin:20px; height:200px; line-height: 1.1rem; border-radius: 15px;">                                                
+                    <div class="searchedposts" style=" position: relative; padding:5px; width:90%; margin:10px;">
+                        <div class="card text-white bg-dark mt-5" style=" border:1px solid #005255;width:60%; margin:20px; height:180px; line-height: 1.1rem; border-radius: 15px;">
                             <div class="card-body">
                                 <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['subject'];?></h5>
-                                <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['created_by'];?></h5>
-                                <p class="card-text" style="padding:5px;"><?php echo substr($q['description'], 0, 200);?>...</p>
+                                <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo "Created By ".$q['created_by'];?></h5>
+                                <p class="card-text" style="padding:5px;"><?php echo substr($q['description'], 0, 100);?>...</p>
                                 <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-more">&rarr;</span></a>
                                 <i class="card-text"  style="padding:5px;"><?php echo "Created at ", date('F j, Y H:i', strtotime($q['created_at']));?></i>
+                                <br>
+                            </div>
+                        </div>
 
-                                <div class="container" style="position: absolute; right:20px; top: 15px; width:30%;">
+
+                                <div class="container" style="position: relative; left:20px; width:30%;">
                                     <div class="row">
                                         <form action="" method="POST">
-                                            
-                        
-                                    
+
+
+
                                                 <div class="rateyo" id= "rating"
                                                     data-rateyo-rating="3"
                                                     data-rateyo-num-stars="5"
@@ -196,20 +204,21 @@ if (isset($_POST['add']))
                                                     <div>
                                                         <span class='result'>3</span>
                                                         <input type="hidden" name="rating">
-                                                
+
                                                     </div>
                                                     <div>
                                                         <label>Tutor's Name and Feedback</label>
                                                         <input type="text" name="name" size="40">
                                                     </div>
-                                    
+
                                                     <div>
-                                                        
+
                                                     <button name="add" type="submit" class="btn btn-dark">Rate</button>
                                                     </div>
-                                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo "Rating given by Tutor:";?></h5>
-                                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['ratename'];?></h5>
-                                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['rating'];?></h5>
+
+                                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo "Rating given by Tutor ".$q['ratename'].": " .$q['rating'];?></h5>
+<!--                                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;">--><?php //echo $q['rating'];?><!--</h5>-->
+                                                    <hr style="width:200%;text-align:left;margin-left:0">
 
                                         </form>
                                     </div>
@@ -217,8 +226,8 @@ if (isset($_POST['add']))
                                
                                             
 
-                            </div>
-                        </div>
+
+
                     </div>
                     
                 
@@ -226,6 +235,7 @@ if (isset($_POST['add']))
                 <?php }?>
             </div>
         </div>
+</div>
         
         
 

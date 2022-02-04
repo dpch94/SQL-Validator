@@ -25,6 +25,7 @@ include 'userform.php';
   </style>
 </head>
 <body>
+<div class="concenter">
   <div class="container">
     <div class="row">
       <div class="col-4 offset-md-4" style="margin-top: 30px;">
@@ -59,5 +60,6 @@ include 'userform.php';
       </div>
     </div>
   </div>
+</div>
 </body>
 </html>

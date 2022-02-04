@@ -30,6 +30,7 @@
 </head>
 
 <body>
+<div class="concenter">
     <header>
         <div class="logo">
             <h1 class="logo-text"style="text-align:center">Blog and Learn</h1>
@@ -41,6 +42,7 @@
             <li><a href="https://docs.google.com/document/d/17_ZMhns8wg6_umKgsxu9fja6OWFL9CenwSApa6GW8qw/edit?usp=sharing" target="_blank">Tutorial</a></li>
             <!-- <li><a href="#">Download</a></li> -->
             <li><button class="download-btn">Download</button></li>
+            <li><a href="profile.php">Profile</a></li>
             
             
         </ul>
@@ -81,7 +83,7 @@
                         </div>
                     </div>
                     <div>
-                        <button type="submit" name="add_post" class="btn-post">Submit</button>
+                        <button type="submit" name="add_post" class="btn btn-outline-dark my-3">Submit</button>
                     </div>                    
                 </form>
             </div>
@@ -90,21 +92,22 @@
     
     <!-- footer -->
     
-    <div class="footer">
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h2 class="logo-text">Learn and Blog</h2>
-
-            </div>
-            <div class="footer-section contact-form" >
-                <h2>Contact us   <i class="fas fa-envelope"></i>   contact.team03@gmail.com   </h2>                
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            Blog Developed by Team 3
-        </div>
-    </div>
+<!--    <div class="footer" >-->
+<!--        <div class="footer-content">-->
+<!--            <div class="footer-section about">-->
+<!--                <h2 class="logo-text">Learn and Blog</h2>-->
+<!---->
+<!--            </div>-->
+<!--            <div class="footer-section contact-form" >-->
+<!--                <h2>Contact us   <i class="fas fa-envelope"></i>   contact.team03@gmail.com   </h2>                -->
+<!--            </div>-->
+<!--        </div>-->
+<!---->
+<!--        <div class="footer-bottom">-->
+<!--            Blog Developed by Team 3-->
+<!--        </div>-->
+<!--    </div>-->
+</div>
            
     <!-- //footer -->
 
