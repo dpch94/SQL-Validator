@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "blogdb");
+$conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 
 function setComments($conn){
     if (isset($_POST['commentSubmit'])){
