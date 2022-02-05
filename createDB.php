@@ -52,12 +52,14 @@ include 'logic.php';
                 <br>
             </form>
 
-<!--<form method="post">-->
-<!--    <h2>DB Deletion</h2>-->
-<!--    <div>-->
-<!--        <input type="submit" name="dropDB" class="button" value="Drop DB" style="font-size: 20px"/>-->
-<!--    </div>-->
-<!--</form>-->
+<form method="post">
+   <h2>DB Deletion</h2>
+   <div>
+       <input type="submit" name="dropDB" class="btn btn-outline-dark my-3" value="Drop DB" style="font-size: 20px"/>
+   </div>
+   <br>
+   <br>
+</form>
 
 
 
