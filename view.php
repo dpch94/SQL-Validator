@@ -61,11 +61,12 @@
                                 // Get image data from database to display image
                             $result = $conn->query("SELECT image FROM data WHERE id = $id");
                             $rows = $conn->query("SELECT COUNT(image) FROM data WHERE id = $id");
-                            if($rows = 0 ){
-                                echo "no images uploaded";
+                            $row = mysqli_fetch_assoc($result);
+                            if (!$row['image']){
+                                echo "no image uploaded";
 
                             } else {
-                            while($row = mysqli_fetch_assoc($result)){
+                            if($row['image']){
                                 echo "<div class='gallery'>"; ?>
                                     <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" class="imcenter" style="width:500px;height:300px"/>
                                           <?php
