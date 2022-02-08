@@ -22,10 +22,10 @@ if (isset($_POST['add']))
         $id = (int) $_POST['id'];
         $rid = (int) $_POST['rid'];
         
-        $name = $_POST["name"];
-        $rating = $_POST["rating"];
+        $name = $_POST['name'];
+        $rating = $_POST['rating'];
 
-        $sql = "UPDATE data set rid = id, ratename = '$name', rating ='$rating' WHERE rid=$rid";
+        $sql = "UPDATE data SET rid = id, ratename = '$name', rating = '$rating' WHERE rid=$rid";
         if (mysqli_query($conn, $sql))
         {
             echo "New Rating added successfully";
@@ -34,9 +34,9 @@ if (isset($_POST['add']))
         
         else if (!mysqli_query($conn, $sql)){
             
-            $sqlu = "UPDATE data set ratename = '$name', rating ='$rating' WHERE rid=$rid";
+            $sqlu = "UPDATE data SET ratename = '$name', rating ='$rating' WHERE rid=$rid";
             mysqli_query($conn, $sqlu);
-            echo "New Rating added successfully";
+            
             header("Location: index.php");
         }
         else
@@ -45,6 +45,8 @@ if (isset($_POST['add']))
         }
        
     }
+
+            
 
 
 
@@ -214,11 +216,13 @@ if (isset($_POST['add']))
 
                                                     <div>
 
-                                                    <button name="add" type="submit" class="btn btn-dark">Rate</button>
+                                                        <button name="add" type="submit" class="btn btn-dark">Rate</button>
                                                     </div>
 
+                                                    
+
                                                     <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo "Rating given by Tutor ".$q['ratename'].": " .$q['rating'];?></h5>
-<!--                                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;">--><?php //echo $q['rating'];?><!--</h5>-->
+                                                    
                                                     <hr style="width:200%;text-align:left;margin-left:0">
 
                                         </form>

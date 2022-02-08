@@ -63,7 +63,7 @@
                             $rows = $conn->query("SELECT COUNT(image) FROM data WHERE id = $id");
                             $row = mysqli_fetch_assoc($result);
                             if (!$row['image']){
-                                echo "no image uploaded";
+                                
 
                             } else {
                             if($row['image']){
