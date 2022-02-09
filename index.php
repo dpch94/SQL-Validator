@@ -66,10 +66,11 @@ if (isset($_POST['add']))
 
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
-    <link rel ="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
+    <link rel ="stylesheet" href="css/style.css">
     <title>Blog and Learn</title>
 
     
@@ -78,7 +79,7 @@ if (isset($_POST['add']))
 
 <body>
 <div class="concenter">
-    
+    <div class = "container">
 
 
     <header>
@@ -185,9 +186,9 @@ if (isset($_POST['add']))
                
                     <?php foreach($query as $q){ ?>
                    
-
-                            <div class="card text-white bg-dark mt-5" style=" position: relative; padding:5px; width:90%; margin:10px;">
-                                <div class="card-body" style=" border:1px solid #005255;width:60%; margin:20px; height:180px; line-height: 1.1rem; border-radius: 15px;">
+                        <div class="col-6">
+                            <div class="card text-white bg-dark mt-5" style=" padding:5px; margin:10px;">
+                                <div class="card-body" style=" border:1px solid #005255; margin:20px; line-height: 1.1rem; border-radius: 15px; background: rgb(163, 163, 168);">
                                     <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['subject'];?></h5>
                                     <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo "Created By ".$q['created_by'];?></h5>
                                     <p class="card-text" style="padding:5px;"><?php echo substr($q['description'], 0, 100);?>...</p>
@@ -199,7 +200,7 @@ if (isset($_POST['add']))
 
 
                                 <div class="container">
-                                    <div class="row" style="position: relative; left:20px; width:30%;">
+                                    <div class="row">
                                         
                                             <form action="" method="POST">
 
@@ -248,7 +249,7 @@ if (isset($_POST['add']))
             </div>
         </div>
         </div>
-    
+    </div>
 </div>
         
         
