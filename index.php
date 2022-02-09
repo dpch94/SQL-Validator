@@ -69,6 +69,7 @@ if (isset($_POST['add']))
     <link rel ="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    
     <title>Blog and Learn</title>
 
     
@@ -77,6 +78,7 @@ if (isset($_POST['add']))
 
 <body>
 <div class="concenter">
+    
 
 
     <header>
@@ -178,68 +180,75 @@ if (isset($_POST['add']))
                 <h1>Recent Posts</h1>                
             </div>
         <!-- Display posts from database -->
+        <div class ="container">
             <div class="row">
-                <?php foreach($query as $q){ ?>
-                    <div class="searchedposts" style=" position: relative; padding:5px; width:90%; margin:10px;">
-                        <div class="card text-white bg-dark mt-5" style=" border:1px solid #005255;width:60%; margin:20px; height:180px; line-height: 1.1rem; border-radius: 15px;">
-                            <div class="card-body">
-                                <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['subject'];?></h5>
-                                <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo "Created By ".$q['created_by'];?></h5>
-                                <p class="card-text" style="padding:5px;"><?php echo substr($q['description'], 0, 100);?>...</p>
-                                <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-more">&rarr;</span></a>
-                                <i class="card-text"  style="padding:5px;"><?php echo "Created at ", date('F j, Y H:i', strtotime($q['created_at']));?></i>
-                                <br>
+               
+                    <?php foreach($query as $q){ ?>
+                   
+
+                            <div class="card text-white bg-dark mt-5" style=" position: relative; padding:5px; width:90%; margin:10px;">
+                                <div class="card-body" style=" border:1px solid #005255;width:60%; margin:20px; height:180px; line-height: 1.1rem; border-radius: 15px;">
+                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['subject'];?></h5>
+                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo "Created By ".$q['created_by'];?></h5>
+                                    <p class="card-text" style="padding:5px;"><?php echo substr($q['description'], 0, 100);?>...</p>
+                                    <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">Read More <span class="text-more">&rarr;</span></a>
+                                    <i class="card-text"  style="padding:5px;"><?php echo "Created at ", date('F j, Y H:i', strtotime($q['created_at']));?></i>
+                                    <br>
+                                </div>
                             </div>
-                        </div>
 
 
-                                <div class="container" style="position: relative; left:20px; width:30%;">
-                                    <div class="row">
-                                        <form action="" method="POST">
+                                <div class="container">
+                                    <div class="row" style="position: relative; left:20px; width:30%;">
+                                        
+                                            <form action="" method="POST">
 
 
 
-                                                <div class="rateyo" id= "rating"
-                                                    data-rateyo-rating="3"
-                                                    data-rateyo-num-stars="5"
-                                                    data-rateyo-score="3">
-                                                </div>
-                                                    <div>
-                                                        <span class='result'>3</span>
-                                                        <input type="hidden" name="rating">
-
+                                                    <div class="rateyo" id= "rating"
+                                                        data-rateyo-rating="3"
+                                                        data-rateyo-num-stars="5"
+                                                        data-rateyo-score="3">
                                                     </div>
-                                                    <div>
-                                                        <label>Tutor's Name and Feedback</label>
-                                                        <input type="text" name="name" size="20">
-                                                    </div>
+                                                        <div>
+                                                            <span class='result'>3</span>
+                                                            <input type="hidden" name="rating">
 
-                                                    <div>
+                                                        </div>
+                                                        <div>
+                                                            <label>Tutor's Name and Feedback</label>
+                                                            <input type="text" name="name" size="20">
+                                                        </div>
 
-                                                        <button name="add" type="submit" class="btn btn-dark">Rate</button>
-                                                    </div>
+                                                        <div>
 
-                                                    
+                                                            <button name="add" type="submit" class="btn btn-dark">Rate</button>
+                                                        </div>
 
-                                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo "Rating given by Tutor ".$q['ratename'].": " .$q['rating'];?></h5>
-                                                    
-                                                    <hr style="width:200%;text-align:left;margin-left:0">
+                                                        
 
-                                        </form>
+                                                        <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo "Rating given by Tutor ".$q['ratename'].": " .$q['rating'];?></h5>
+                                                        
+                                                        <!-- <hr style="width:200%;text-align:left;margin-left:0"> -->
+
+                                            </form>
+                                        
                                     </div>
                                 </div>
-                               
-                                            
+                            
+                                                
 
 
 
-                    </div>
-                    
+                        </div>
+               
                 
                             
-                <?php }?>
+                    <?php }?>
             </div>
         </div>
+        </div>
+    
 </div>
         
         
