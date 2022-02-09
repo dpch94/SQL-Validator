@@ -187,8 +187,8 @@ if (isset($_POST['add']))
                     <?php foreach($query as $q){ ?>
                    
                         <div class="col-6">
-                            <div class="card text-white bg-dark mt-5" style=" padding:5px; margin:10px;">
-                                <div class="card-body" style=" border:1px solid #005255; margin:20px; line-height: 1.1rem; border-radius: 15px; background: rgb(163, 163, 168);">
+                            <div class>
+                                <div class="card-body" style=" border:1px solid #005255; margin:20px; line-height: 1.1rem; border-radius: 15px;">
                                     <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo $q['subject'];?></h5>
                                     <h5 class="card-title" style="padding:5px; font-size: 1.3em;"><?php echo "Created By ".$q['created_by'];?></h5>
                                     <p class="card-text" style="padding:5px;"><?php echo substr($q['description'], 0, 100);?>...</p>
