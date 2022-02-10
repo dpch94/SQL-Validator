@@ -31,6 +31,7 @@ function createTables()
                                 `cid` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
                                 `uid` int(11) NOT NULL,
                                 `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                                `cname` varchar(255) NOT NULL,
                                 `message` text NOT NULL )");
 
 

@@ -54,12 +54,13 @@
         $cid = (int) $_POST['cid'];
         $uid = (int) $_POST['uid'];
         $date = $_POST['date'];
+        $cname = $_POST['cname'];
         $message = $_POST['message'];
 
         echo "<form method='POST' action='".editComments($conn)."'>
             <input type='hidden' name='cid' value='".$cid."'>    
             <input type='hidden' name='uid' value='".$uid."'>
-            <input type='hidden' name='date' value='".$date."'>     
+            <input type='hidden' name='date' value='".$date."'>  
             <textarea name='message' style='margin:20px 20px; width:60%; height: 120px; font-size: 1.3em;'>".$message."</textarea><br>
             <button  class='btn btn-outline-dark my-3' type='submit' style= 'position:absolute; text-align:center; width: 140px; height: 40px; left:20px;'name='commentEdit'>Save</button>
         </form>";

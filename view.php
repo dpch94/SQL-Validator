@@ -115,7 +115,8 @@
         echo "<form method='POST' action='".setComments($conn)."'>
             <input type='hidden' name='uid' value='$id'>
             <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
-            <textarea name='message' style= 'width: 600px; height: 100px; margin-left:14px; resize=none; background-color: #fff;'></textarea><br>
+            <input type='text' name='comment_by' class='textsubject-input' placeholder='Enter name' style='margin:5px 5px; width: 30%; margin-left:14px;'>
+            <textarea name='message' placeholder='Enter comment' style= 'width: 600px; height: 100px; margin-left:14px; resize=none; background-color: #fff;'></textarea><br>
             <button class='btn btn-outline-dark my-3' type='submit' style= 'position:absolute; text-align:center; width: 120px; height: 40px; left:490px;' ' name='commentSubmit'>Comment</button>
         </form>";
 
@@ -140,13 +141,15 @@
                 echo "<div class = 'comment-box'><p>";
                     // echo $row['uid']."<br>";
                     echo $row['date']."<br>";
+                    echo "Comment by " .$row['cname']."<br>";
+                    echo "<br>";
                     echo nl2br($row['message']);
                 echo "</p>   
                 
                     <form class ='edit-form' method='POST' action ='editcomment.php'>
                         <input type='hidden' name='cid' value='".$row['cid']."'>   
                         <input type='hidden' name='uid' value='".$row['uid']."'>                
-                        <input type='hidden' name='date' value='".$row['date']."'>   
+                        <input type='hidden' name='date' value='".$row['date']."'>
                         <input type='hidden' name='message' value='".$row['message']."'>
                         <button>Edit</button>
                     </form>
