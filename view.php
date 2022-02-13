@@ -21,7 +21,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
-<link rel ="stylesheet" href="css/style.css">
+<link rel ="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
@@ -47,13 +47,13 @@
         <div class="page-wrapper">
             <div class="container mt-5">
                 <?php foreach($query as $q){?>
-                    <div class="bg-dark p-5 rounded-lg text-white text-center" style="border:1px solid white; margin:70px 40px; position:relative; width:80%;">
+                    <div class="bg-dark p-5 rounded-lg " style=" margin:70px 40px; position:relative; width:100%; ">
                         <h1><?php echo $q['subject'];?></h1>
-                        <div class="bg-dark p-5 rounded-lg text-white text-center" style="border:1px solid white; margin:70px 40px; position:relative; width:80%;">
+                        <div class="bg-dark  rounded-lg " style=" position:relative; width:100%;">
                             <h1><?php echo "Created By ".$q['created_by'];?></h1>
 
                         <div>
-                            <p class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 20px; padding: 5px 15px; margin:60px 0px;  width: 80%; min-height: 300px;overflow: hidden"><?php echo $q['description'];?></p>
+                        <p class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 15px; padding: 15px 15px; font-size: 1.3em;  width: 80%; min-height: 300px;word-wrap: break-word"><?php echo $q['description'];?></p>
                             <?php
                             $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
                                 // $result = mysqli_query($conn, "SELECT image FROM data WHERE id = $id");
@@ -78,46 +78,29 @@
                             <?php } ?>
 
 
-
-
-
-
-
-
-
-                            <a href="edit.php?id=<?php echo $q['id']?>" class="btn btn-outline-dark my-3" name="edit" style=" position:absolute; text-align:center; width: 140px; bottom:100px; height: 40px; left:500px;">Edit</a>
-
-
-                            <!-- <form method="POST">
-                                <input type="text" hidden value='<?php echo $q['id']?>' name="id" style="border:1px solid red; ">
-                                <button class="btn btn-danger btn-sm ml-2" name="delete" style=" position:absolute ; left:1300px; bottom:40px; text-align:center; width: 140px; height: 40px;">Delete</button>
-                            </form> -->
-
+                            <a href="edit.php?id=<?php echo $q['id']?>" class="btn btn-danger" name="edit" style=" position:relative; text-align:center; width: 140px; bottom:0px; height: 40px; left:230px;">Edit</a>
+                                   
                             <form method="POST" onsubmit="return confirm('Are you sure you want to delete this Post?');">
                             <input type="hidden" name="_METHOD" value="DELETE">
                             <input type="hidden" name="id" value="<?php echo $q['id']; ?>">
-                            <button  class="btn btn-danger btn-sm ml-2" type="submit" style=" position:absolute ; left:500px; bottom:40px; text-align:center; width: 140px; height: 40px;">Delete</button>
+                            <button  class="btn btn-danger " type="submit" style=" position:relative; left:80px; bottom:30px; text-align:center; width: 75x; height: 40px;">Delete</button>
                             </form>
                         </div>
                         </div>
                     </div>
 
-
-
-
                 <?php } ?>
             </div>
         </div>
-
+        <div>
         <?php
-
 
         echo "<form method='POST' action='".setComments($conn)."'>
             <input type='hidden' name='uid' value='$id'>
             <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
-            <input type='text' name='comment_by' class='textsubject-input' placeholder='Enter name' style='margin:5px 5px; width: 30%; margin-left:14px;'>
-            <textarea name='message' placeholder='Enter comment' style= 'width: 600px; height: 100px; margin-left:14px; resize=none; background-color: #fff;'></textarea><br>
-            <button class='btn btn-outline-dark my-3' type='submit' style= 'position:absolute; text-align:center; width: 120px; height: 40px; left:490px;' ' name='commentSubmit'>Comment</button>
+            <input type='text' name='comment_by' class='textsubject-input' placeholder='Enter name' style=' position:relative;margin:5px 5px; width: 30%; margin-left:90px;'>
+            <textarea name='message' placeholder='Enter comment' style= 'width: 600px; height: 100px; margin-left:90px; resize=none; background-color: #fff;'></textarea><br>
+            <button class='btn btn-outline-dark my-3' type='submit' style= 'position:relative; text-align:center; width: 120px; height: 40px; left:490px;' ' name='commentSubmit'>Comment</button>
         </form>";
 
 
@@ -138,7 +121,8 @@
 
         // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
-                echo "<div class = 'comment-box'><p>";
+                // echo "<div class = 'comment-box'><p>";
+                echo "<div class = 'comment-box'  style='margin:5px 5px; width: 50%; margin-left:90px;'><p>";
                     // echo $row['uid']."<br>";
                     echo $row['date']."<br>";
                     echo "Comment by " .$row['cname']."<br>";
@@ -168,7 +152,7 @@
 
         mysqli_close($conn);
         ?>
-
+        </div>
 
 
 

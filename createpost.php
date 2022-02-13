@@ -17,7 +17,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
-    <link rel ="stylesheet" href="css/style.css">
+    <link rel ="stylesheet" href="CSS/style.css">
     
     
     <title>createpost</title>

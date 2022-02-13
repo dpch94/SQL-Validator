@@ -6,9 +6,9 @@ if(array_key_exists('createDB', $_POST)) {
 else if(array_key_exists('createTables', $_POST)) {
     createTables();
 }
-else if(array_key_exists('dropDB', $_POST)) {
-    dropDB();
-}
+// else if(array_key_exists('dropDB', $_POST)) {
+//     dropDB();
+// }
 
 
 //Creating a connection
@@ -61,26 +61,26 @@ function createTables()
 }
 
 //Creating a connection
-function dropDB()
-{
-    //Creating a connection
-    $con = mysqli_connect("localhost", "root", "");
+// function dropDB()
+// {
+//     //Creating a connection
+//     $con = mysqli_connect("localhost", "root", "");
 
-    if(! $con ) {
-        die('Could not connect: ' . mysqli_error());
-    }
+//     if(! $con ) {
+//         die('Could not connect: ' . mysqli_error());
+//     }
 
-    $sql = 'DROP DATABASE bloggingdb';
-    $retval = mysqli_query($con,$sql);
+//     $sql = 'DROP DATABASE bloggingdb';
+//     $retval = mysqli_query($con,$sql);
 
-    if(! $retval ) {
-        die('Could not delete database db_test: ' . mysqli_error());
-    }
+//     if(! $retval ) {
+//         die('Could not delete database db_test: ' . mysqli_error());
+//     }
 
-    echo "Database deleted successfully\n";
+//     echo "Database deleted successfully\n";
 
-    mysqli_close($con);
-}
+//     mysqli_close($con);
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,7 +94,7 @@ function dropDB()
 
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
-    <link rel ="stylesheet" href="css/style.css">
+    <link rel ="stylesheet" href="CSS/style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <title>Blog and Learn</title>
@@ -121,7 +121,7 @@ function dropDB()
             <li><a href="https://docs.google.com/document/d/17_ZMhns8wg6_umKgsxu9fja6OWFL9CenwSApa6GW8qw/edit?usp=sharing" target="_blank">Tutorial</a></li>
             
             <!-- <li><a href="#"class="downloadaspdf">Download</a></li> -->
-            <li><button class="download-btn">Download</button></li> 
+            <!-- <li><button class="download-btn">Download</button></li>  -->
             <li><a href="profile.php">Profile</a></li>
            
               
@@ -153,14 +153,14 @@ function dropDB()
                 <br>
             </form>
 
-            <form method="post">
+            <!-- <form method="post">
             <h2>DB Deletion</h2>
             <div>
                 <input type="submit" name="dropDB" class="btn btn-outline-dark my-3" value="Drop DB" style="font-size: 20px"/>
             </div>
             <br>
             <br>
-            </form>
+            </form> -->
     
 
 </div>        

@@ -6,9 +6,9 @@ if(array_key_exists('createDB', $_POST)) {
 else if(array_key_exists('createTables', $_POST)) {
     createTables();
 }
-else if(array_key_exists('dropDB', $_POST)) {
-    dropDB();
-}
+// else if(array_key_exists('dropDB', $_POST)) {
+//     dropDB();
+// }
 
 
 //Creating a connection
@@ -60,26 +60,26 @@ function createTables()
 }
 
 //Creating a connection
-function dropDB()
-{
-    //Creating a connection
-    $con = mysqli_connect("localhost", "root", "");
+// function dropDB()
+// {
+//     //Creating a connection
+//     $con = mysqli_connect("localhost", "root", "");
 
-    if(! $con ) {
-        die('Could not connect: ' . mysqli_error());
-    }
+//     if(! $con ) {
+//         die('Could not connect: ' . mysqli_error());
+//     }
 
-    $sql = 'DROP DATABASE bloggingdb';
-    $retval = mysqli_query($con,$sql);
+//     $sql = 'DROP DATABASE bloggingdb';
+//     $retval = mysqli_query($con,$sql);
 
-    if(! $retval ) {
-        die('Could not delete database db_test: ' . mysqli_error());
-    }
+//     if(! $retval ) {
+//         die('Could not delete database db_test: ' . mysqli_error());
+//     }
 
-    echo "Database deleted successfully\n";
+//     echo "Database deleted successfully\n";
 
-    mysqli_close($con);
-}
+//     mysqli_close($con);
+// }
     // Don't display server errors 
     ini_set("display_errors", "off");
 
