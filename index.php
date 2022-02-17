@@ -17,39 +17,6 @@ if (isset($POST['subject'])) {
 }
 $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 
-if (isset($_POST['add']))
-    {
-        $id = (int) $_POST['id'];
-        $rid = (int) $_POST['rid'];
-        
-        $name = $_POST['name'];
-        $rating = $_POST['rating'];
-
-        $sql = "UPDATE data SET rid = id, ratename = '$name', rating = '$rating' WHERE rid=$rid";
-        if (mysqli_query($conn, $sql))
-        {
-            echo "New Rating added successfully";
-            header("Location: index.php");
-        }
-        
-        else if (!mysqli_query($conn, $sql)){
-            
-            $sqlu = "UPDATE data SET ratename = '$name', rating ='$rating' WHERE rid=$rid";
-            mysqli_query($conn, $sqlu);
-            
-            header("Location: index.php");
-        }
-        else
-        {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
-       
-    }
-
-            
-
-
-
 ?>
 
 
@@ -201,41 +168,41 @@ if (isset($_POST['add']))
 
                                 <div class="container">
                                     <div class="row">
-                                        
-                                            <form action="" method="POST">
 
+                                        <form action="" method="POST">
+                                            <input type="hidden" name="id" value="<?php echo $q['id']; ?>">
+                                                <div class="rateyo" style="margin:5px;" id= "rating"
+                                                    data-rateyo-rating="3"
+                                                    data-rateyo-num-stars="5"
+                                                    data-rateyo-score="3">
+                                                </div>
+                                                    <div style="margin:5px;">
+                                                        <span class='result'>3</span>
+                                                        <input type="hidden" name="rating">
 
-
-                                                    <div class="rateyo" style="margin:5px;" id= "rating"
-                                                        data-rateyo-rating="3"
-                                                        data-rateyo-num-stars="5"
-                                                        data-rateyo-score="3">
+                                                    </div>                                               
+                                                        
+                                                    <div style="margin:15px;">
+                                                        <label>Tutor's Name and Feedback</label>
+                                                        <input type="text" name="name" size="20">
                                                     </div>
-                                                        <div style="margin:5px;">
-                                                            <span class='result'>3</span>
-                                                            <input type="hidden" name="rating">
 
-                                                        </div>
-                                                        <div style="margin:15px;">
-                                                            <label>Tutor's Name and Feedback</label>
-                                                            <input type="text" name="name" size="20">
-                                                        </div>
 
-                                                        <div>
+                                                    <div>
 
-                                                            <button name="add" type="submit" class="btn btn-dark">Rate</button>
-                                                        </div>
-
-                                                        
-
-                                                        <h5 class="card-title" style="margin:5px; padding:5px; font-size: 1.3em;"><?php echo "Rating given by Tutor ".$q['ratename'].": " .$q['rating'];?></h5>
-                                                        
-                                                        <!-- <hr style="width:200%;text-align:left;margin-left:0"> -->
+                                                        <button name="add" type="submit" class="btn btn-dark">Rate</button>
+                                                    </div>
+                                                    
+                                                    <h5 class="card-title" style="margin:5px; padding:5px; font-size: 1.3em;"><?php echo "Rating given by Tutor ".$q['ratename'].": " .$q['rating'];?></h5>
+                                                    
+                                                    <!-- <hr style="width:200%;text-align:left;margin-left:0"> -->
 
                                             </form>
-                                        
+                            
                                     </div>
                                 </div>
+                                        
+                                            
                             
                                                 
 
@@ -251,31 +218,7 @@ if (isset($_POST['add']))
         </div>
     </div>
 </div>
-        
-        
-
-
-                       
-    <!-- footer -->
     
-    <!-- <div class="footer">
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h2 class="logo-text">Learn and Blog</h2>
-
-            </div>
-            <div class="footer-section contact-form" >
-                <h2>Contact us   <i class="fas fa-envelope"></i>   team03@gmail.com   </h2>                
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            Blog Developed by Team 3
-        </div>
-    </div> -->
-           
-    <!-- //footer -->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="js/scripts.js"></script>

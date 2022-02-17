@@ -166,44 +166,6 @@ function createTables()
         }
     }  
 
-   
-    
-
-
-
-    
-                
-        //old code for image uploading
-        // error_reporting(0);
-
-        // $msg = "";
-        //     if (isset($_POST['add_post'])) {
-
-        //         $filename = $_FILES["uploadfile"]["name"];
-        //         $tempname = $_FILES["uploadfile"]["tmp_name"];	
-        //         $folder = "image/".$tempname;
-        //         $sql = "INSERT INTO data(subject, description, image) VALUES('$subject', '$description', '$folder')";
-        //         mysqli_query($conn, $sql);
-                
-        //         echo $sql;
-                
-        //         if ($sql)  {
-        //             $msg = "Image uploaded successfully";
-        //         }else{
-        //             $msg = "Failed to upload image";
-        //         }
-                
-
-        //         header("Location: index.php?info=added");
-        //         exit();
-
-                
-        //     }
-            
-
-   
-        
-
 
     // Get post data based on id
     if(isset($_REQUEST['id'])){
@@ -294,7 +256,25 @@ function createTables()
         }
     }
 
-    // $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
+    //Update rating
+    if (isset($_POST['add']))
+    {
+        $id = (int) $_POST['id'];
+        $name = $_REQUEST['name'];
+        $rating = $_REQUEST['rating'];
+        $sql = "UPDATE data SET ratename = '$name', rating = '$rating' WHERE id=$id";
+        if (mysqli_query($conn, $sql))
+        {
+            
+            echo "New Rating added successfully";
+            header("Location: index.php");
+        }
+        else
+        {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }    
+        
+    }
     
     
     
