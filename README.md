@@ -2,11 +2,13 @@
 This is a blogging system developed for SQL Validator using Html, Css, Javascript, Php and Mysql. 
 Users can add blog posts, comments, profiles and also edit, delete them.
 Interface is simple and easy to use.
-![createpost](https://user-images.githubusercontent.com/49433860/152567641-ad5c9a46-03a4-47c6-962d-7a9b398e9c79.PNG)
-![database creation](https://user-images.githubusercontent.com/49433860/152567651-88bb0973-89d7-4e55-8030-cd9ffed66453.PNG)
-![other profiles](https://user-images.githubusercontent.com/49433860/152567654-4764ed27-24bc-4297-97c3-90efd8ca6582.PNG)
-![profile](https://user-images.githubusercontent.com/49433860/152567658-b485bac8-a901-44a8-b6fe-a671689b9324.PNG)
-![ratings](https://user-images.githubusercontent.com/49433860/152567660-f33cedc8-7d27-4e66-ba7c-528922633012.PNG)
-![search post](https://user-images.githubusercontent.com/49433860/152567663-adac9a7e-9aef-430d-9ff8-5d428f1090d8.PNG)
-![view post](https://user-images.githubusercontent.com/49433860/152567667-214c47dc-9134-4265-a278-4505eb00d660.PNG)
-![comments](https://user-images.githubusercontent.com/49433860/152567675-6e372031-ab10-42b8-a0b9-d87613f2dbc0.PNG)
+![image](https://user-images.githubusercontent.com/49433860/153961427-15d0c00e-d674-461b-ab93-e780f11aa7ac.png)
+![image](https://user-images.githubusercontent.com/49433860/153961487-c977e335-fa65-4b7b-8603-0dc1328e2571.png)
+![image](https://user-images.githubusercontent.com/49433860/153961513-1ac0087c-95c1-4be5-98cf-187865b9a813.png)
+![image](https://user-images.githubusercontent.com/49433860/153961548-3370ee52-71ef-4b95-a2b4-6006189a6ee9.png)
+![image](https://user-images.githubusercontent.com/49433860/153961690-70ea51b6-d7ac-4a28-a97e-94d445fcc848.png)
+![image](https://user-images.githubusercontent.com/49433860/153961758-5f13745b-2496-46c3-905f-cf35057b00ea.png)
+![image](https://user-images.githubusercontent.com/49433860/153961838-d027f376-b59f-4498-8f16-bae2e2be748a.png)
+![image](https://user-images.githubusercontent.com/49433860/153961886-919daca3-f474-48af-b981-3876d446fa6b.png)
+![image](https://user-images.githubusercontent.com/49433860/153961907-09b7d05a-da12-4dd8-895a-017475c20da3.png)
+![image](https://user-images.githubusercontent.com/49433860/153961976-d778a287-59b7-472c-80fd-e25514195a35.png)
