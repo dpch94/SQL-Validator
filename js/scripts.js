@@ -10,8 +10,6 @@ function displayImage(e) {
     reader.readAsDataURL(e.files[0]);
   }
 }
-
-
 const downloadaspdf = document.querySelector(".download-btn");
 
 downloadaspdf.addEventListener("click", () => {

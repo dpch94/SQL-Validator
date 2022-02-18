@@ -1,12 +1,8 @@
 <?php
     date_default_timezone_set('Europe/Copenhagen');
-
     include 'comments.inc.php';
-    include 'db8.inc.php';
-    
+    include 'db8.inc.php';    
     include 'logic.php';
-   
-
 ?>
 
 <!DOCTYPE html>
@@ -16,9 +12,6 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script src="https://kit.fontawesome.com/f6154e7f2f.js" crossorigin="anonymous"></script>
-
 <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
 <link rel ="stylesheet" href="CSS/style.css">
@@ -35,7 +28,6 @@
                 <li><a href="index.php">Home</a></li>
 
                 <li><a href="https://docs.google.com/document/d/17_ZMhns8wg6_umKgsxu9fja6OWFL9CenwSApa6GW8qw/edit?usp=sharing" target="_blank">Tutorial</a></li>
-                <!-- <li><a href="#">Download</a></li> -->
                 <li><button class="download-btn">Download</button></li>
                 <li><a href="profile.php">Profile</a></li>
 
@@ -104,9 +96,6 @@
         </form>";
 
 
-
-
-
         // Create connection
         $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
         // Check connection
@@ -153,37 +142,12 @@
         mysqli_close($conn);
         ?>
         </div>
-
-
-
-    <!-- footer -->
-
-<!--        <div class="footer">-->
-<!--            <div class="footer-content">-->
-<!--                <div class="footer-section about">-->
-<!--                    <h2 class="logo-text">Learn and Blog</h2>-->
-<!---->
-<!--                </div>-->
-<!--                <div class="footer-section contact-form" >-->
-<!--                    <h2>Contact us   <i class="fas fa-envelope"></i>  contact.team03@gmail.com   </h2>-->
-<!--                </div>-->
-<!--            </div>-->
-<!---->
-<!--            <div class="footer-bottom">-->
-<!--                Blog Developed by Team 3-->
-<!--            </div>-->
-<!--        </div>-->
 </div>
+</body>
+</html>
 
-<!-- //footer -->
-
-
+<script src="https://kit.fontawesome.com/f6154e7f2f.js" crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="js/scripts.js"></script>
-
-
-
-</body>
-</html>

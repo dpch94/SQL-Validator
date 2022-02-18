@@ -42,7 +42,6 @@ function createTables()
                                 `description` longblob NOT NULL,
                                 `image` longblob NOT NULL,
                                 `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-                                `rid` int(11) NOT NULL,
                                 `ratename` varchar(255) NOT NULL,
                                 `rating` float DEFAULT 0 )");
 
@@ -89,9 +88,6 @@ function createTables()
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://kit.fontawesome.com/f6154e7f2f.js" crossorigin="anonymous"></script>
-
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
     <link rel ="stylesheet" href="CSS/style.css">
@@ -119,9 +115,7 @@ function createTables()
             <li><a href="index.php">Home</a></li> 
             
             <li><a href="https://docs.google.com/document/d/17_ZMhns8wg6_umKgsxu9fja6OWFL9CenwSApa6GW8qw/edit?usp=sharing" target="_blank">Tutorial</a></li>
-            
-            <!-- <li><a href="#"class="downloadaspdf">Download</a></li> -->
-            <!-- <li><button class="download-btn">Download</button></li>  -->
+                      
             <li><a href="profile.php">Profile</a></li>
            
               
@@ -162,7 +156,7 @@ function createTables()
             <br>
             </form> -->
     
-
 </div>        
 </body>        
 </html>
+<script src="https://kit.fontawesome.com/f6154e7f2f.js" crossorigin="anonymous"></script>

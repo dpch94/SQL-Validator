@@ -1,4 +1,5 @@
 <?php
+ date_default_timezone_set('Europe/Copenhagen');
 
 if(array_key_exists('createDB', $_POST)) {
     createDB();
@@ -136,13 +137,10 @@ function createTables()
 
                         if($insert){ 
                             $status = 'success'; 
-                            $statusMsg = "File uploaded successfully.";
-                            // echo $statusMsg;
+                            $statusMsg = "Post created successfully.";
+                            echo $statusMsg;
                             header("Location: index.php");
-                            exit(); 
-                        }else{ 
-                            $statusMsg = "File upload failed, please try again.";
-                            echo $statusMsg; 
+                            //exit(); 
                         }  
                     }else{ 
                         $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
@@ -152,11 +150,16 @@ function createTables()
                                 
                     $sql = "INSERT INTO data(subject, created_by, description) VALUES('$subject', '$created_by', '$description')";
                     mysqli_query($conn, $sql);
+                    //echo 'Error: ' . mysqli_error($conn);
+                    $status = 'success'; 
+                    $statusMsg = "Post created successfully";
+                    echo $statusMsg;
+                    header("Location: index.php");
 
                     // echo $sql;
 
-                    header("Location: index.php");
-                    exit();
+                    // header("Location: index.php");
+                    // exit();
                 }       
                         
                         
@@ -173,15 +176,6 @@ function createTables()
         $query = mysqli_query($conn, $sql);
     }
 
-    
-    // if(isset($_REQUEST['delete'])){
-    //     $id = $_REQUEST['id'];
-    //     $sql = "DELETE FROM data WHERE id = $id";
-    //     mysqli_query($conn, $sql);
-    //     header("Location: index.php?info=deleted");
-    //     exit();
-    // }
-
     // Delete a post
     if ($_SERVER['REQUEST_METHOD'] == 'DELETE' || ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['_METHOD'] == 'DELETE')) {
         $id = (int) $_POST['id'];
@@ -189,15 +183,12 @@ function createTables()
         $sql = "DELETE FROM data WHERE id = $id";
         $result = mysqli_query($conn, $sql);
         if ($result !== false) {
+            echo "Post deleted successfully";
             
             header("Location: index.php");
-            exit;
+            //exit;
         }
     }
-
-
-    
-
     
     // Update a post
     if(isset($_REQUEST['update'])){
@@ -227,7 +218,7 @@ function createTables()
                     {
                         move_uploaded_file($_FILES['uploadfile']['name'] ,"upload/".$imgContent_new);
                         header("Location: index.php");
-                        exit();
+                        //exit();
 
 
                     } 
@@ -237,20 +228,16 @@ function createTables()
                     
                 }
             }
-
-            
-           
-                    
-        
             
             else {                   
                 $sql = "UPDATE data SET subject = '$subject', description = '$description' WHERE id = $id";
                 mysqli_query($conn, $sql);
+                echo "Post updated successfully";
 
                 // echo $sql;
 
                 header("Location: index.php");
-                exit();
+                //exit();
             }
         }
     }
@@ -275,10 +262,7 @@ function createTables()
         
     }
     
-    
-    
-    
-    
+        
     //Displaying search results
     function selectAll($table, $conditions = [])
     {

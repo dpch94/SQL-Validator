@@ -22,29 +22,6 @@ function setComments($conn){
     }
 }
 
-// function getComments($conn){
-//     $uid = $_POST['uid'];    
-//     $sql = "SELECT uid,data,message FROM comments WHERE uid = $uid";
-    
-//     $result = $conn->query($sql);
-    
-//     if (mysqli_num_rows($result) > 0) {
-//     while($row = mysqli_fetch_assoc($result)){
-//         echo "<div class = 'commentbox'><p>";
-//             echo $row['uid']."<br>";
-//             echo $row['date']."<br>";
-//             echo nl2br($row['message']);
-//         echo "</p>
-            
-        
-//         </div>";
-//     }
-//     } else {
-//         echo "no comments";
-        
-//     }
-// }
-
 function editComments($conn){
     if (isset($_POST['commentEdit'])){        
         $cid = (int) $_POST['cid'];     
