@@ -5,14 +5,14 @@ include 'logic.php';
 $posts = array();
 $postsTitle = 'Searched Posts';
 //searching
-if (isset($POST['subject'])) {
-    $posts = getPostsById($POST['subject']);
+if (isset($_POST['subject'])) {
+    $posts = getPostsById($_POST['subject']);
     $postsTitle = "You searched for posts under '" . $_POST['subject'] . "'";
 } else if (isset($_POST['search-term'])) {
     $postsTitle = "You searched for '" . $_POST['search-term'] . "'";
     $posts = searchPosts($_POST['search-term']);
 } else {
-    $posts = getPosts($POST['description']);
+    $posts = getPosts($_POST['description']);
 }
 $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 

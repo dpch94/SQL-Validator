@@ -94,7 +94,7 @@ a{
     border: 1px solid transparent;
     border-radius: .25rem;
     font-size: 1.08em;
-    font-family: 'Lora' serif;
+    font-family: 'Lora';
 }
 .download-btn{
     padding: .5rem 1rem;
@@ -103,7 +103,7 @@ a{
     border: 1px solid transparent;
     border-radius: .25rem;
     font-size: 1.08em;
-    font-family: 'Lora' serif;
+    font-family: 'Lora';
     
 }
 
@@ -163,7 +163,7 @@ header ul li{
 header ul li a{
     display: block;
     padding: 20px;
-    padding: 1.em;
+    padding: 1em;
     text-decoration: none;
 }
 
