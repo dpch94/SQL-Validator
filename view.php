@@ -40,7 +40,8 @@
             <div class="container mt-5">
                 <?php foreach($query as $q){?>
                     <div class="bg-dark p-5 rounded-lg " style=" margin:70px 40px; position:relative; width:100%; ">
-                        <h1><?php echo $q['subject'];?></h1>
+                        <br>
+                        <h1 align="left;"><?php echo $q['subject'];?></h1>
                         <div class="bg-dark  rounded-lg " style=" position:relative; width:100%;">
                             <h1><?php echo "Created By ".$q['created_by'];?></h1>
 
@@ -70,12 +71,19 @@
                             <?php } ?>
 
 
-                            <a href="edit.php?id=<?php echo $q['id']?>" class="btn btn-danger" name="edit" style=" position:relative; text-align:center; width: 140px; bottom:0px; height: 40px; left:230px;">Edit</a>
+                            <a href="edit.php?id=<?php echo $q['id']?>" class="btn btn-danger" name="edit" style=" position:relative; text-align:center; width: 140px; bottom:0px; height: 40px; left:100px;">Edit</a>
                                    
                             <form method="POST" onsubmit="return confirm('Are you sure you want to delete this Post?');">
                             <input type="hidden" name="_METHOD" value="DELETE">
                             <input type="hidden" name="id" value="<?php echo $q['id']; ?>">
-                            <button  class="btn btn-danger " type="submit" style=" position:relative; left:80px; bottom:30px; text-align:center; width: 75x; height: 40px;">Delete</button>
+                            <button  class="btn btn-danger " type="submit" style=" position:relative; left:10px; bottom:30px; text-align:center; width: 75px; height: 40px;">Delete</button>
+                            </form>
+
+                            <form action="" method="POST">
+                            <input type="hidden" name="id" value="<?php echo $q['id']; ?>">
+                            <input type="hidden" name="upvotes" value="<?php echo $q['upvotes']; ?>">
+                            <button  class="btn btn-danger " name="upvote" type="submit" style=" position:relative; left:180px; bottom:70px; text-align:center; width: 80px; height: 40px;">Upvote</button>
+                            <?php echo $q['upvotes']." Upvotes";?>  
                             </form>
                         </div>
                         </div>
@@ -84,6 +92,16 @@
                 <?php } ?>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div>
         <?php
 

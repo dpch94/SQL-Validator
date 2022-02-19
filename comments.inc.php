@@ -32,10 +32,7 @@ function editComments($conn){
 
         $sql="UPDATE comments SET message = '$message' WHERE cid = '$cid'";
         $result = mysqli_query($conn, $sql);
-        header("Location: index.php");
-        
-        
-        
+        header("Location: index.php");   
         
     }
 }
@@ -44,15 +41,9 @@ function editComments($conn){
 function deleteComments($conn){
     if (isset($_POST['commentDelete'])){        
         $cid = (int) $_POST['cid'];
-       
-
         $sql="DELETE FROM comments WHERE cid = '$cid'";
         $result = mysqli_query($conn, $sql);
         header("Location: index.php");
-        
-        
-       
-      
         
     }
 }

@@ -42,6 +42,7 @@ function createTables()
                                 `description` longblob NOT NULL,
                                 `image` longblob NOT NULL,
                                 `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+                                `upvotes` int(11) NULL,
                                 `ratename` varchar(255) NOT NULL,
                                 `rating` float DEFAULT 0 )");
 
@@ -259,6 +260,27 @@ function createTables()
         {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }    
+        
+    }
+    //Update upvotes for post
+    
+    if (isset($_POST['upvote']))
+    {
+        $id = (int) $_POST['id'];
+        $upvote =  (int) $_POST['upvotes'];
+        $upvote++;
+        $upsql = "UPDATE data SET upvotes = '$upvote' WHERE id=$id";
+        if (mysqli_query($conn, $upsql))
+        {
+            
+           
+            header("Location: index.php");
+        }
+        else
+        {
+            echo "Error: " . $upsql . "<br>" . mysqli_error($conn);
+        }
+       
         
     }
     
