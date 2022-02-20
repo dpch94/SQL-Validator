@@ -1,4 +1,6 @@
-<?php include 'logic.php' ?>
+<?php include 'logic.php';
+ 
+?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -1,6 +1,10 @@
 <?php
+session_start();
 include 'logic.php';
+#include("functions.php");
+#$user_data = check_login($conn);
 ?>
+
 <?php
 $posts = array();
 $postsTitle = 'Searched Posts';
@@ -59,6 +63,8 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
                             target="_blank">Tutorial</a></li>
 
                     <li><a href="profile.php">Profile</a></li>
+                    <li><a href="login.php">Login</a></li>
+                    <li><a href="logout.php">Logout</a></li>
 
         </ul>
 
