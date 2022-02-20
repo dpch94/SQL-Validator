@@ -30,7 +30,7 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
-
+    <link href="https://fonts.googleapis.com/css2?family=Candal&family=DM+Serif+Display&family=Inria+Serif:wght@700&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Lora&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@300;400;600&family=PT+Serif:wght@700&family=Roboto+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -38,8 +38,7 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
     <link rel="stylesheet" href="CSS/style.css">
     <title>Blog and Learn</title>
 
-
-
+    
 </head>
 
 <body>
@@ -121,7 +120,7 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
                         <h1><a href="createpost.php">Create Post</a></h1>
                     </div>
                 </div>
-                <div style="margin:60px 30px;">
+                <div style="margin:60px 30px; font-weight: bold;">
                     <h1>Recent Posts</h1>
                 </div>
                 <!-- Display posts from database -->
@@ -133,10 +132,10 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
                         <div class="col-6">
                             <div class>
                                 <div class="card-body"
-                                    style=" border:1px solid #005255; margin:20px; line-height: 1.8rem; border-radius: 15px;">
-                                    <h5 class="card-title" style="padding:5px; font-size: 1.6em; font-weight: bold;">
+                                    style=" border:1px solid #005255; margin:5px; line-height: 1.8rem; border-radius: 15px;">
+                                    <h5 class="card-title" style="padding:1px; font-size: 1.6em; font-weight: bold; background: #0b2829; color:white;">
                                         <?php echo $q['subject'];?></h5>
-                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;">
+                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;background: #005255; color:white;">
                                         <?php echo "Created By ".$q['created_by'];?></h5>
                                     <p class="card-text" style="padding:5px; font-size: 1.4em;">
                                         <?php echo substr($q['description'], 0, 100);?>...</p>
@@ -184,12 +183,6 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
                                 </div>
                             </div>
 
-
-
-
-
-
-
                         </div>
 
 
@@ -198,6 +191,28 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
                     </div>
                 </div>
             </div>
+                <!-- footer -->
+            <div class="footer">
+                <div class="footer-content">
+                    <div class="footer-section about">
+                        <h2 class="logo-text">Learn and Blog</h2>
+                        <h3>This blog is a project for our Master studies at Otto-von-Guericke Univerty Magdeburg offered by Computer Science Department.</h3>
+
+                    </div>
+                    <div class="footer-section contact-form" >
+                        <h2>Contact us at    </h2> 
+                        <h3><i class="fas fa-phone"></i> :  123-432-546</h3>          
+                        <h3><i class="fas fa-envelope"></i>   :  team03@gmail.com </h3> 
+
+                                  
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    Blog Developed by Team 03
+                </div>
+            </div>
+    <!-- //footer -->
         </div>
     </div>
     

@@ -81,7 +81,10 @@ include 'logic.php';
                 </form>
             </div>
         </div>
+
+        
 </div>
+
 </body>           
 </html>   
 <script src="https://kit.fontawesome.com/f6154e7f2f.js" crossorigin="anonymous"></script>

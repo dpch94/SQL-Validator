@@ -13,6 +13,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Candal&family=DM+Serif+Display&family=Inria+Serif:wght@700&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Lora&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@300;400;600&family=PT+Serif:wght@700&family=Roboto+Serif&display=swap" rel="stylesheet">
 
 <link rel ="stylesheet" href="CSS/style.css">
 </head>
@@ -92,6 +93,7 @@
                 <?php } ?>
             </div>
         </div>
+
         <br>
         <br>
         <br>
@@ -160,6 +162,29 @@
         mysqli_close($conn);
         ?>
         </div>
+        <!-- footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2 class="logo-text">Learn and Blog</h2>
+                    <h3>This blog is intended as a team project for our Master studies at Otto-von-Guericke Univerty Magdeburg offered by Computer Science Department.</h3>
+
+                </div>
+                <div class="footer-section contact-form" >
+                    <h2>Contact us at    </h2> 
+                    <h3><i class="fas fa-phone"></i> :  123-432-546</h3>          
+                    <h3><i class="fas fa-envelope"></i>   :  team03@gmail.com </h3> 
+
+                            
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                Blog Developed by Team 03
+            </div>
+        </div>
+        
+    <!-- //footer -->
 </div>
 </body>
 </html>
