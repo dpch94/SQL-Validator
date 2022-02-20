@@ -161,3 +161,5 @@ function createTables()
 </body>        
 </html>
 <script src="https://kit.fontawesome.com/f6154e7f2f.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Candal&family=DM+Serif+Display&family=Inria+Serif:wght@700&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Lora&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@300;400;600&family=PT+Serif:wght@700&family=Roboto+Serif&display=swap" rel="stylesheet">
+    
