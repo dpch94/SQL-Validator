@@ -31,18 +31,8 @@
                     <input type="text" hidden name="id" style="border:1px solid blue; margin:60px;"value="<?php echo $q['id'];?>">
                     <input type="text" name="subject" placeholder="Blog Subject" class="form-control bg-dark text-white my-3" style="margin:60px 20px; width:60%; height: 60px; font-size: 1.5em;" value="<?php echo $q['subject']?>">
                     <h4>Description</h4>
-                    <textarea name="description" class="form-control bg-dark text-white my-3" style="margin:20px 20px; width:60%; height: 450px; font-size: 1.3em;"><?php echo $q['description']?></textarea>
-                    <!-- <textarea name="description" class="form"><?php echo $q['description']?></textarea> -->
-                    <!-- <div id="image_content">
-                        <label>Attachment</label>
-                        <input type="file" name="uploadfile" value="" />
-                        <div>
-                            <button type="submit"
-                                    name="upload" style="display: none;">
-                            Upload
-                            </button>
-                        </div>
-                    </div> -->
+                    <textarea name="description" class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 15px; padding: 15px 15px; font-size: 1.6em; line-height:1.4em;  width: 80%; min-height: 300px;word-wrap: break-word"><?php echo $q['description']?></textarea>
+                    
                     <button name="update" class="btn btn-dark" style=" position:absolute ; left:600px; bottom:220px; text-align:center; width: 140px; height: 40px;">Update</button>
                     
                     <button formaction="index.php" class="btn btn-dark" style=" position:absolute ; left:600px; bottom:160px; text-align:center; width: 140px; height: 40px;">Cancel</button>

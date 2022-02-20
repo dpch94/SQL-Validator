@@ -162,7 +162,7 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 
                                         </div>
 
-                                        <div style="margin:15px;">
+                                        <div style="margin:15px; font-size: 1.3em;">
                                             <label>Tutor's Name and Feedback</label>
                                             <input type="text" name="name" size="20">
                                         </div>
@@ -202,7 +202,7 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
                     <div class="footer-section contact-form" >
                         <h2>Contact us at    </h2> 
                         <h3><i class="fas fa-phone"></i> :  123-432-546</h3>          
-                        <h3><i class="fas fa-envelope"></i>   :  team03@gmail.com </h3> 
+                        <h3><i class="fas fa-envelope"></i>   :  contact.team03@gmail.com </h3> 
 
                                   
                     </div>

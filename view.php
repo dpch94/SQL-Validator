@@ -47,7 +47,7 @@
                             <h1><?php echo "Created By ".$q['created_by'];?></h1>
 
                         <div>
-                        <p class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 15px; padding: 15px 15px; font-size: 1.3em;  width: 80%; min-height: 300px;word-wrap: break-word"><?php echo $q['description'];?></p>
+                        <p class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 15px; padding: 15px 15px; font-size: 1.6em; line-height:1.4em;  width: 80%; min-height: 300px;word-wrap: break-word"><?php echo $q['description'];?></p>
                             <?php
                             $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
                                 // $result = mysqli_query($conn, "SELECT image FROM data WHERE id = $id");
