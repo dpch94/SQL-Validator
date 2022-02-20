@@ -8,7 +8,7 @@ html,body{
     margin: 0px;
     color: black;
     background: white;
-    font-family: 'Inria Serif', serif;
+    font-family: 'Lato', sans-serif;
 }
 .concenter {
     max-width: 100%;
@@ -222,10 +222,10 @@ img{
     width:  fit-content;
     
     padding: 10px 15px;
-    border: 2px solid rgb(189, 13, 13);
+    /* border: 2px solid rgb(189, 13, 13); */
     border-radius: 10px;
     font-weight: bold;
-    font-family: 'PT Serif', serif;
+    font-family: 'Lato', sans-serif;
 }
 .create:hover{
     background: #0b2829;
@@ -373,7 +373,7 @@ img{
     width: 100%;
     margin: auto;
     padding: 20px;
-    background: #517e80;
+    background: #a8c4c4;
     border-radius: 5px;
     float: left;
 }
@@ -406,7 +406,7 @@ form{
     color: #062325;
     height: 200px;
     position: relative;
-    margin-top: 100px;
+    /* margin-top: 100px; */
     font-weight: bold;
     
 }

@@ -36,8 +36,8 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=DM+Serif+Display&family=Inria+Serif:wght@700&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Lora&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@300;400;600&family=PT+Serif:wght@700&family=Roboto+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" -->
-        <!-- integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
 
     <link rel="stylesheet" href="CSS/style.css">
     <title>Blog and Learn</title>
@@ -78,7 +78,7 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 
 
         <!-- Search posts -->
-        <div class="sidebar" style ="  background: #517e80;">
+        <div class="sidebar" style ="  background: #a8c4c4;">
             <div class="section search">
 
                 <form action="index.php" method="post">
@@ -140,9 +140,9 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
                             <div class>
                                 <div class="card-body"
                                     style=" border:1px solid #005255; margin:5px; line-height: 1.8rem; border-radius: 15px;">
-                                    <h5 class="card-title" style="padding:1px; font-size: 1.6em; font-weight: bold; background: #0b2829; color:white;">
+                                    <h5 class="card-title" style="padding:10px; font-size: 1.6em; font-weight: bold; background: #0b2829; color:white;">
                                         <?php echo $q['subject'];?></h5>
-                                    <h5 class="card-title" style="padding:5px; font-size: 1.3em;background: #005255; color:white;">
+                                    <h5 class="card-title" style="padding:10px; font-size: 1.3em;background: #005255;  color:white;">
                                         <?php echo "Created By ".$q['created_by'];?></h5>
                                     <p class="card-text" style="padding:5px; font-size: 1.4em;">
                                         <?php echo substr($q['description'], 0, 100);?>...</p>
