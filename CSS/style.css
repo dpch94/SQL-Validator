@@ -222,7 +222,7 @@ img{
     width:  fit-content;
     
     padding: 10px 15px;
-    border: 2px solid rgb(189, 13, 13);
+    /* border: 2px solid rgb(189, 13, 13); */
     border-radius: 10px;
     font-weight: bold;
     font-family: 'PT Serif', serif;

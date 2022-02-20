@@ -52,15 +52,15 @@ include 'logic.php';
                         <li>Subject required</li>
                     </div> -->        
                     <div>
-                        <h1>Subject</h1>
+                        <h1 style=" color: white;">Subject</h1>
                         <input type="text" name="subject" class="textsubject-input" style="margin:30px 2px;" >
                     </div>
                     <div>
-                        <h1>Created by</h1>
+                        <h1 style=" color: white;">Created by</h1>
                         <input type="text" name="created_by" class="textsubject-input" style="margin:30px 2px;" >
                     </div>
                     <div>
-                        <h2>Description</h2>
+                        <h2 style=" color: white;">Description</h2>
                         <!-- <input type="text" name="description" class="createpost-input" style="margin:30px 2px; "> -->
                     </div>
                     <div> 
@@ -68,7 +68,7 @@ include 'logic.php';
                     </div>  
                     
                     <div id="image_content">
-                        <label>Attachment</label>
+                        <label style=" color: white;">Attachment</label>
                         <input type="file" name="uploadfile" value="" />
                         <div>
                             <button type="submit"
