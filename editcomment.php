@@ -20,7 +20,7 @@
 <link rel ="stylesheet" href="CSS/style.css">
 </head>
 
-<body>
+<body style ="  background: #517e80;">
 <div class="concenter">
     <header>
             <div class="logo">
@@ -56,7 +56,7 @@
             <input type='hidden' name='cid' value='".$cid."'>    
             <input type='hidden' name='uid' value='".$uid."'>
             <input type='hidden' name='date' value='".$date."'>  
-            <textarea name='message' style='margin:100px 100px; width:60%; height: 120px; font-size: 1.3em;'>".$message."</textarea><br>
+            <textarea name='message' style='margin:100px 20px; width:60%; height: 120px; font-size: 1.3em;'>".$message."</textarea><br>
             <button  class='btn btn-outline-dark my-3' type='submit' style= 'position:absolute; text-align:center; width: 140px; height: 40px; left:20px;'name='commentEdit'>Save</button>
         </form>";
 
