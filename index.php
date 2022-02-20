@@ -92,7 +92,7 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 
                 <!-- Post Slider -->
                 <div class="post-slider">
-                    <h1 class="slider-title">Searched Posts</h1>               
+                    <h1 class="slider-title" style=" color: white;">Searched Posts</h1>               
 
                     <div class="post-wrapper">
 
@@ -128,7 +128,7 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
                     </div>
                 </div>
                 <div style="margin:60px 30px; font-weight: bold;">
-                    <h1>Recent Posts</h1>
+                    <h1 style=" color: white;">Recent Posts</h1>
                 </div>
                 <!-- Display posts from database -->
                 <div class="container">

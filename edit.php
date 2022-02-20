@@ -25,23 +25,23 @@
     
     </header>
 
-    <div class="page-wrapper">
+    <div class="page-wrapper" style=" position:relative;left:18px;">
         <div class="container mt-5">
             <?php foreach($query as $q){?>
                 <form method="POST" action="" enctype="multipart/form-data">
                     <input type="text" hidden name="id" style="border:1px solid blue; margin:60px;"value="<?php echo $q['id'];?>">
                     <input type="text" name="subject" placeholder="Blog Subject" class="form-control bg-dark text-white my-3" style="margin:60px 20px; width:60%; height: 60px; font-size: 1.5em;" value="<?php echo $q['subject']?>">
-                    <h4>Description</h4>
+                    <h4 style=" position:relative;left:18px; color: white;">Description</h4>
                     <textarea name="description" class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 15px; padding: 15px 15px; font-size: 1.6em; line-height:1.4em;  width: 80%; min-height: 300px;word-wrap: break-word"><?php echo $q['description']?></textarea>
                     
-                    <button name="update" class="btn btn-dark" style=" position:absolute ; left:600px; bottom:220px; text-align:center; width: 140px; height: 40px;">Update</button>
+                    <button name="update" class="btn btn-dark" style=" position:absolute ; left:1600px; bottom:220px; text-align:center; width: 140px; height: 40px;">Update</button>
                     
-                    <button formaction="index.php" class="btn btn-dark" style=" position:absolute ; left:600px; bottom:160px; text-align:center; width: 140px; height: 40px;">Cancel</button>
-                    <div style=" position:absolute ; left:18px;">
-                        <h4>Before adding your lines, Please add your name in description after the existing lines written by creator, while editing the post.</h4>
-                        <h3>For example,</h3>
-                        <h3> Student2:</h3>
-                        <h3>I would like to add that...<h3>
+                    <button formaction="index.php" class="btn btn-dark" style=" position:absolute ; left:1600px; bottom:160px; text-align:center; width: 140px; height: 40px;">Cancel</button>
+                    <div style=" position:relative; left:18px;">
+                        <h4 style=" color: white;">Before adding your lines, Please add your name in description after the existing lines written by creator, while editing the post.</h4>
+                        <h3 style=" color: white;">For example,</h3>
+                        <h3 style=" color: white;"> Student2:</h3>
+                        <h3 style=" color: white;">I would like to add that...<h3>
                         <br>
                         <br>
                     </div>

@@ -29,7 +29,7 @@
                 <li><a href="index.php">Home</a></li>
 
                 <li><a href="https://docs.google.com/document/d/17_ZMhns8wg6_umKgsxu9fja6OWFL9CenwSApa6GW8qw/edit?usp=sharing" target="_blank">Tutorial</a></li>
-                <li><button class="download-btn">Download</button></li>
+                <li><button class="download-btn" style=" color: white;">Download</button></li>
                 <li><a href="profile.php">Profile</a></li>
 
 
