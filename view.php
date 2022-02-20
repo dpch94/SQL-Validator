@@ -35,7 +35,8 @@
 
 
             </ul>
-        </header>
+    </header>
+    <div style ="  background: #517e80;">
 
         <div class="page-wrapper">
             <div class="container mt-5">
@@ -185,6 +186,7 @@
         </div>
         
     <!-- //footer -->
+    </div>
 </div>
 </body>
 </html>

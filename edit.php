@@ -16,8 +16,7 @@
 
     <link rel ="stylesheet" href="CSS/style.css">
 </head>
-
-<body>
+<body style ="  background: #517e80;">
 <div class="concenter">
     <header>
         <div class="logo">

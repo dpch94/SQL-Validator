@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body>
+<body style ="  background: #517e80;">
+
 <div class="concenter">
       <div class="blog-alert">
         <!-- Display any info -->
@@ -59,6 +60,7 @@
         </div>
       </div>
 </div>
+
 </body>
 </html>
 <script src="js/scripts.js"></script>

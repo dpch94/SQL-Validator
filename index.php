@@ -36,8 +36,8 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=DM+Serif+Display&family=Inria+Serif:wght@700&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Lora&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@300;400;600&family=PT+Serif:wght@700&family=Roboto+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" -->
+        <!-- integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
     <link rel="stylesheet" href="CSS/style.css">
     <title>Blog and Learn</title>
@@ -46,7 +46,7 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 </head>
 
 <body>
-    <div class="concenter">
+    <!-- <div class="concenter"> -->
         <div class="container">
 
 
@@ -60,9 +60,10 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
                     <li><a href="index.php">Home</a></li>
 
                     <li><a href="https://docs.google.com/document/d/17_ZMhns8wg6_umKgsxu9fja6OWFL9CenwSApa6GW8qw/edit?usp=sharing"
-                            target="_blank">Tutorial</a></li>
+                            target="_blank">How to Use</a></li>
 
                     <li><a href="profile.php">Profile</a></li>
+                    <li><a href="feedback.php">Feedback</a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><a href="logout.php">Logout</a></li>
 
@@ -77,7 +78,7 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 
 
         <!-- Search posts -->
-        <div class="sidebar">
+        <div class="sidebar" style ="  background: #517e80;">
             <div class="section search">
 
                 <form action="index.php" method="post">
@@ -220,7 +221,7 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
             </div>
     <!-- //footer -->
         </div>
-    </div>
+    <!-- </div> -->
     
 </body>
 
