@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body style ="  background: #517e80;">
+<body style ="  background: #a8c4c4;">
 
 <div class="concenter">
       <div class="blog-alert">

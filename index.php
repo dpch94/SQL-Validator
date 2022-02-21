@@ -100,10 +100,10 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
                         <div class="post">
 
                             <div class="post-info">
-                                <h4><a href="view.php?id=<?php echo $post['id']; ?>"><?php echo $post['subject']; ?></a>
+                                <h4 style=" color: white;"><a href="view.php?id=<?php echo $post['id']; ?>"><?php echo $post['subject']; ?></a>
                                 </h4>
 
-                                <p class="card-text" style="padding:5px;">
+                                <p class="card-text" style=" color: white;padding:5px;">
                                     <?php echo "Created By ".$post['created_by']; ?></p>
                                 <p class="card-text" style="padding:5px;"><?php echo $post['description'];?></p>
 

@@ -20,7 +20,7 @@
 <link rel ="stylesheet" href="CSS/style.css">
 </head>
 
-<body style ="  background: #517e80;">
+<body style ="  background: #a8c4c4;">
 <div class="concenter">
     <header>
             <div class="logo">
