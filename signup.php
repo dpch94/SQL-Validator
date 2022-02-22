@@ -34,9 +34,10 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Signup</title>
+<link rel ="stylesheet" href="CSS/style.css">
+<title>Signup</title>
 </head>
-<body>
+<body class="concenter" style =" background: #a8c4c4;">
 
 	<style type="text/css">
 	

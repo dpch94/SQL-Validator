@@ -53,9 +53,10 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+<link rel ="stylesheet" href="CSS/style.css">
+<title>Login</title>
 </head>
-<body>
+<body class="concenter" style =" background: #a8c4c4;">
 
 	<style type="text/css">
 	

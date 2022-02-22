@@ -16,7 +16,7 @@
 
     <link rel ="stylesheet" href="CSS/style.css">
 </head>
-<body style ="  background: #a8c4c4;">
+<body class="concenter" style =" background: #a8c4c4;">
 <div class="concenter">
     <header>
         <div class="logo">
@@ -34,9 +34,9 @@
                     <h4 style=" position:relative;left:18px; color: white;">Description</h4>
                     <textarea name="description" class="mt-5 border-left border-dark pl-3" style="border:1px solid #3a6e3a; border-radius: 15px; padding: 15px 15px; font-size: 1.6em; line-height:1.4em;  width: 80%; min-height: 300px;word-wrap: break-word"><?php echo $q['description']?></textarea>
                     
-                    <button name="update" class="btn btn-dark" style=" position:absolute ; left:1550px; bottom:260px; text-align:center; width: 140px; height: 40px;">Update</button>
+                    <button name="update" class="btn btn-dark" style=" position:absolute ; left:820px; bottom:320px; text-align:center; width: 140px; height: 40px;">Update</button>
                     
-                    <button formaction="index.php" class="btn btn-dark" style=" position:absolute ; left:1550px; bottom:200px; text-align:center; width: 140px; height: 40px;">Cancel</button>
+                    <button formaction="index.php" class="btn btn-dark" style=" position:absolute ; left:820px; bottom:260px; text-align:center; width: 140px; height: 40px;">Cancel</button>
                     <div style=" position:relative; left:18px;">
                         <h4 style=" color: white;">Before adding your lines, Please add your name in description after the existing lines written by creator, while editing the post.</h4>
                         <h3 style=" color: white;">For example,</h3>

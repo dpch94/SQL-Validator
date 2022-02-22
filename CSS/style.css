@@ -11,7 +11,7 @@ html,body{
     font-family: 'Lato', sans-serif;
 }
 .concenter {
-    max-width: 100%;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -100,14 +100,25 @@ a{
     font-family: 'Lato', sans-serif;
 }
 .download-btn{
-    padding: .5rem 1rem;
+    padding: 1em;
     background: #005255;
     color: white;
     border: 1px solid transparent;
     border-radius: .25rem;
     font-size: 1.08em;
+    padding-top: 27px;
+
     font-family: 'Lato', sans-serif;
     
+}
+.download-btn:hover{
+    display: block;
+    color: white !important;
+    background: #0b2829;
+    border: 1px solid transparent;
+    height: 10px;
+    padding:1em;
+    transition: 0.5s;
 }
 
 /*.download-btn:hover{*/
