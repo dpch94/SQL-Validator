@@ -61,9 +61,10 @@ session_start();
 
 	#box{
 
-		background-color: grey;
+		background-color: #a8c4c4;;
 		margin: auto;
 		width: 300px;
+		height:300px;
 		padding: 20px;
 	}
 

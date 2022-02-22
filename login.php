@@ -34,16 +34,26 @@ session_start();
 					{
 
 						$_SESSION['user_id'] = $user_data['user_id'];
-						header("Location: index.php");
+						echo "You are logged in";?>
+						<script>setTimeout(function(){window.location =
+							"index.php";}, 1000);
+						</script>
+						<?php
+						//header("Location: index.php");
 						
 					}
+					
 				}
 			}
+		
 			
-			echo "wrong username or password!";
 		}else
 		{
-			echo "wrong username or password!";
+			echo "Please enter valid information to proceed!";?>
+			<script>setTimeout(function(){window.location =
+				"index.php";}, 1000);
+			</script>
+			<?php
 		}
 	}
 
@@ -80,9 +90,10 @@ session_start();
 
 	#box{
 
-		background-color: grey;
+		background-color: #a8c4c4;
 		margin: auto;
 		width: 300px;
+		height:300px;
 		padding: 20px;
 	}
 
