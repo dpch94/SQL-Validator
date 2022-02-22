@@ -1,4 +1,5 @@
 <?php
+ 
  date_default_timezone_set('Europe/Copenhagen');
 
 if(array_key_exists('createDB', $_POST)) {
@@ -97,77 +98,81 @@ function createTables()
     $query = mysqli_query($conn, $sql);
 
     // Create a new post
+   
     if(isset($_REQUEST['add_post'])){
+      
+        if(isset($_REQUEST['add_post'])){
 
-        if (empty($_REQUEST['subject'])) {
-            echo "<span class=\"error\">Error: Subject is required</span>";
-        }
-        elseif (empty($_REQUEST['created_by'])) {
-            echo "<span class=\"error\">Error: Created by and Description are required</span>";
-        }
-        
-        elseif (empty($_REQUEST['description'])) {
-            echo "<span class=\"error\">Error: Created by and Description are required</span>";
-        }
-        else {
-
-            $subject = $_REQUEST['subject'];
-            $created_by = $_REQUEST['created_by'];
-            $description = $_REQUEST['description'];
+            if (empty($_REQUEST['subject'])) {
+                echo "<span class=\"error\">Error: Subject is required</span>";
+            }
+            elseif (empty($_REQUEST['created_by'])) {
+                echo "<span class=\"error\">Error: Created by and Description are required</span>";
+            }
             
+            elseif (empty($_REQUEST['description'])) {
+                echo "<span class=\"error\">Error: Created by and Description are required</span>";
+            }
+            else {
 
-            // If file upload form is submitted 
-            $status = $statusMsg = '';
-            if(isset($_POST["add_post"])){ 
-                $status = 'error'; 
-                if(!empty($_FILES["uploadfile"]["name"])) { 
-                    // Get file info 
-                    $fileName = basename($_FILES["uploadfile"]["name"]); 
-                    $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
-                    // Allow certain file formats 
-                    $allowTypes = array('jpg','png','jpeg','gif'); 
-                    if(in_array($fileType, $allowTypes)){ 
-                        $image = $_FILES['uploadfile']['tmp_name']; 
-                        $imgContent = addslashes(file_get_contents($image));   
+                $subject = $_REQUEST['subject'];
+                $created_by = $_REQUEST['created_by'];
+                $description = $_REQUEST['description'];
+                
 
-                        //inserting into database
-                        
-                        $insert = $conn->query("INSERT into data (subject, created_by, description, image) VALUES ('$subject', '$created_by', '$description', '$imgContent')");
-                        //$sql = "INSERT INTO data(subject, description, image) VALUES('$subject', '$description', '$imgContent')";
-                        mysqli_query($conn, $sql);
+                // If file upload form is submitted 
+                $status = $statusMsg = '';
+                if(isset($_POST["add_post"])){ 
+                    $status = 'error'; 
+                    if(!empty($_FILES["uploadfile"]["name"])) { 
+                        // Get file info 
+                        $fileName = basename($_FILES["uploadfile"]["name"]); 
+                        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+                        // Allow certain file formats 
+                        $allowTypes = array('jpg','png','jpeg','gif'); 
+                        if(in_array($fileType, $allowTypes)){ 
+                            $image = $_FILES['uploadfile']['tmp_name']; 
+                            $imgContent = addslashes(file_get_contents($image));   
 
-                        if($insert){ 
-                            $status = 'success'; 
-                            $statusMsg = "Post created successfully.";
+                            //inserting into database
+                            
+                            $insert = $conn->query("INSERT into data (subject, created_by, description, image) VALUES ('$subject', '$created_by', '$description', '$imgContent')");
+                            //$sql = "INSERT INTO data(subject, description, image) VALUES('$subject', '$description', '$imgContent')";
+                            mysqli_query($conn, $sql);
+
+                            if($insert){ 
+                                $status = 'success'; 
+                                $statusMsg = "Post created successfully.";
+                                echo $statusMsg;
+                                header("Location: index.php");
+                                //exit(); 
+                            }  
+                        }else{ 
+                            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
                             echo $statusMsg;
-                            header("Location: index.php");
-                            //exit(); 
-                        }  
-                    }else{ 
-                        $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
+                        } 
+                    }elseif(empty($_FILES["uploadfile"]["name"])) {  
+                                    
+                        $sql = "INSERT INTO data(subject, created_by, description) VALUES('$subject', '$created_by', '$description')";
+                        mysqli_query($conn, $sql);
+                        //echo 'Error: ' . mysqli_error($conn);
+                        $status = 'success'; 
+                        $statusMsg = "Post created successfully";
                         echo $statusMsg;
-                    } 
-                }elseif(empty($_FILES["uploadfile"]["name"])) {  
-                                
-                    $sql = "INSERT INTO data(subject, created_by, description) VALUES('$subject', '$created_by', '$description')";
-                    mysqli_query($conn, $sql);
-                    //echo 'Error: ' . mysqli_error($conn);
-                    $status = 'success'; 
-                    $statusMsg = "Post created successfully";
-                    echo $statusMsg;
-                    header("Location: index.php");
+                        header("Location: index.php");
 
-                    // echo $sql;
+                        // echo $sql;
 
-                    // header("Location: index.php");
-                    // exit();
-                }       
-                        
-                        
-                        
+                        // header("Location: index.php");
+                        // exit();
+                    }       
+                            
+                }
             }
         }
-    }  
+        
+    }
+    
 
 
     // Get post data based on id
