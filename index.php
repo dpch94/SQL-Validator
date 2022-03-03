@@ -64,7 +64,7 @@ $conn = mysqli_connect("localhost", "root", "", "bloggingdb");
 
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="feedback.php">Feedback</a></li>
-                    <li><a href="login.php">Login</a></li>
+                    <!-- <li><a href="login.php">Login</a></li> -->
                     <li><a href="logout.php">Logout</a></li>
 
         </ul>

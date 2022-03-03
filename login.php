@@ -34,7 +34,7 @@ session_start();
 					{
 
 						$_SESSION['user_id'] = $user_data['user_id'];
-						echo "You are logged in";?>
+						echo "You are logging in";?>
 						<script>setTimeout(function(){window.location =
 							"index.php";}, 1000);
 						</script>
